@@ -81,6 +81,9 @@
     <EmbeddedResource Include="FormFillUp.resx">
       <DependentUpon>FormFillUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
