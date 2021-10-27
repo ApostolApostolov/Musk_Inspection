@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Musk_Inspections
 {
-    public partial class Form3 : Form
+    public partial class Create_report_page : Form
     {
-        public Form3()
+        public Create_report_page()
         {
             InitializeComponent();
         }
