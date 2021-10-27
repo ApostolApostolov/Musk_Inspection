@@ -16,5 +16,13 @@ namespace Musk_Inspections
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Dashboard dash = new Dashboard();
+            dash.ShowDialog();
+            this.Close();
+        }
     }
 }

@@ -16,5 +16,13 @@ namespace Musk_Inspections
         {
             InitializeComponent();
         }
+
+        private void btnOpenCreateReport_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Create_report_page Cr = new Create_report_page();
+            Cr.ShowDialog();
+            this.Close();
+        }
     }
 }
