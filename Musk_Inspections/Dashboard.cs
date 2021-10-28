@@ -15,6 +15,9 @@ namespace Musk_Inspections
         public Dashboard()
         {
             InitializeComponent();
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "yyyy";
+            dateTimePicker1.ShowUpDown = true;
         }
 
         private void btnOpenCreateReport_Click(object sender, EventArgs e)
@@ -23,6 +26,16 @@ namespace Musk_Inspections
             Create_report_page Cr = new Create_report_page();
             Cr.ShowDialog();
             this.Close();
+        }
+
+        private void btnLogOff_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Refresh();
         }
     }
 }
