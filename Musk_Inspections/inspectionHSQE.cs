@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Musk_Inspections
 {
-    public partial class FormFillUp : Form
+    public partial class inspectionHSQE : Form
     {
-        public FormFillUp()
+        public inspectionHSQE()
         {
             InitializeComponent();
         }

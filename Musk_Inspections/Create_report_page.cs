@@ -24,5 +24,13 @@ namespace Musk_Inspections
             dash.ShowDialog();
             this.Close();
         }
+
+        private void openFormButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            inspectionHSQE HSQE = new inspectionHSQE();
+            HSQE.ShowDialog();
+            //this.Close();
+        }
     }
 }

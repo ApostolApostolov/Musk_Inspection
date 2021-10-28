@@ -58,11 +58,11 @@
     <Compile Include="Create_report_page.Designer.cs">
       <DependentUpon>Create_report_page.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormFillUp.cs">
+    <Compile Include="inspectionHSQE.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormFillUp.Designer.cs">
-      <DependentUpon>FormFillUp.cs</DependentUpon>
+    <Compile Include="inspectionHSQE.Designer.cs">
+      <DependentUpon>inspectionHSQE.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
@@ -78,8 +78,8 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormFillUp.resx">
-      <DependentUpon>FormFillUp.cs</DependentUpon>
+    <EmbeddedResource Include="inspectionHSQE.resx">
+      <DependentUpon>inspectionHSQE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>

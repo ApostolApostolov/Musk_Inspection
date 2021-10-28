@@ -61,6 +61,7 @@
             this.openFormButton.TabIndex = 2;
             this.openFormButton.Text = "Open";
             this.openFormButton.UseVisualStyleBackColor = true;
+            this.openFormButton.Click += new System.EventHandler(this.openFormButton_Click);
             // 
             // Create_report_page
             // 
