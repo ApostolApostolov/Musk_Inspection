@@ -64,6 +64,12 @@
     <Compile Include="inspectionHSQE.Designer.cs">
       <DependentUpon>inspectionHSQE.cs</DependentUpon>
     </Compile>
+    <Compile Include="inspectionHSQE2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inspectionHSQE2.Designer.cs">
+      <DependentUpon>inspectionHSQE2.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="inspectionHSQE.resx">
       <DependentUpon>inspectionHSQE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inspectionHSQE2.resx">
+      <DependentUpon>inspectionHSQE2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
