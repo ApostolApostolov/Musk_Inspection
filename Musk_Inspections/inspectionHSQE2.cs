@@ -12,19 +12,9 @@ namespace Musk_Inspections
 {
     public partial class inspectionHSQE2 : Form
     {
-        
         public inspectionHSQE2()
         {
-            
             InitializeComponent();
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            
-            
-
-
         }
     }
 }
