@@ -23,6 +23,7 @@ namespace Musk_Inspections
             Dashboard dash = new Dashboard();
             dash.ShowDialog();
             this.Close();
+            //this is a text
         }
 
         private void openFormButton_Click(object sender, EventArgs e)
