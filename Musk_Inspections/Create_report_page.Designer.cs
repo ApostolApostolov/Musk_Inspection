@@ -48,14 +48,14 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Health, Safety, Quality and Enviromental Site Inspection"});
-            this.comboBox1.Location = new System.Drawing.Point(134, 144);
+            this.comboBox1.Location = new System.Drawing.Point(179, 34);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(337, 24);
             this.comboBox1.TabIndex = 1;
             // 
             // openFormButton
             // 
-            this.openFormButton.Location = new System.Drawing.Point(511, 145);
+            this.openFormButton.Location = new System.Drawing.Point(522, 35);
             this.openFormButton.Name = "openFormButton";
             this.openFormButton.Size = new System.Drawing.Size(75, 23);
             this.openFormButton.TabIndex = 2;
@@ -71,7 +71,9 @@
             this.Controls.Add(this.openFormButton);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Create_report_page";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report";
             this.ResumeLayout(false);
 

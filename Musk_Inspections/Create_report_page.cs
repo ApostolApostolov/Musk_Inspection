@@ -30,7 +30,7 @@ namespace Musk_Inspections
             this.Hide();
             inspectionHSQE HSQE = new inspectionHSQE();
             HSQE.ShowDialog();
-            //this.Close();
+            this.Close();
         }
     }
 }
