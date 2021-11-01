@@ -28,10 +28,13 @@ namespace Musk_Inspections
 
         private void openFormButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            inspectionHSQE HSQE = new inspectionHSQE();
-            HSQE.ShowDialog();
+            //this.Hide();
+            inspectionHSQE HSQE = new inspectionHSQE() {Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.pForms.Controls.Add(HSQE);
+            HSQE.Show();
+            //HSQE.ShowDialog();
             //this.Close();
+
         }
     }
 }

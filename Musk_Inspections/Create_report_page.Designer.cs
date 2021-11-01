@@ -31,6 +31,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.openFormButton = new System.Windows.Forms.Button();
+            this.pForms = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // button1
@@ -48,14 +49,14 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Health, Safety, Quality and Enviromental Site Inspection"});
-            this.comboBox1.Location = new System.Drawing.Point(134, 144);
+            this.comboBox1.Location = new System.Drawing.Point(133, 34);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(337, 24);
             this.comboBox1.TabIndex = 1;
             // 
             // openFormButton
             // 
-            this.openFormButton.Location = new System.Drawing.Point(511, 145);
+            this.openFormButton.Location = new System.Drawing.Point(476, 34);
             this.openFormButton.Name = "openFormButton";
             this.openFormButton.Size = new System.Drawing.Size(75, 23);
             this.openFormButton.TabIndex = 2;
@@ -63,14 +64,25 @@
             this.openFormButton.UseVisualStyleBackColor = true;
             this.openFormButton.Click += new System.EventHandler(this.openFormButton_Click);
             // 
+            // pForms
+            // 
+            this.pForms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pForms.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pForms.Location = new System.Drawing.Point(0, 63);
+            this.pForms.Name = "pForms";
+            this.pForms.Size = new System.Drawing.Size(1538, 890);
+            this.pForms.TabIndex = 3;
+            // 
             // Create_report_page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1122, 665);
+            this.ClientSize = new System.Drawing.Size(1538, 953);
+            this.Controls.Add(this.pForms);
             this.Controls.Add(this.openFormButton);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Create_report_page";
             this.Text = "Report";
             this.ResumeLayout(false);
@@ -82,5 +94,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button openFormButton;
+        private System.Windows.Forms.Panel pForms;
     }
 }
