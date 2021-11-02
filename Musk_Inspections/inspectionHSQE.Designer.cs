@@ -87,7 +87,6 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
@@ -165,9 +164,9 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, -63);
+            this.label1.Location = new System.Drawing.Point(40, -82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1248, 102);
+            this.label1.Size = new System.Drawing.Size(1123, 102);
             this.label1.TabIndex = 0;
             this.label1.Text = "Health, Safety, Quality and Enviromental Site Inspection";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -395,7 +394,6 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 5;
@@ -486,7 +484,6 @@
             this.tableLayoutPanel1.Controls.Add(this.checkBox10, 3, 13);
             this.tableLayoutPanel1.Controls.Add(this.checkBox11, 3, 14);
             this.tableLayoutPanel1.Controls.Add(this.checkBox12, 3, 15);
-            this.tableLayoutPanel1.Controls.Add(this.textBox11, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox10, 4, 8);
             this.tableLayoutPanel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(46, 219);
@@ -838,15 +835,6 @@
             this.label30.TabIndex = 27;
             this.label30.Text = "Health,Safety, Quality and Eviromental Site Inspection";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBox11
-            // 
-            this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox11.Location = new System.Drawing.Point(4, 4);
-            this.textBox11.Multiline = true;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(253, 17);
-            this.textBox11.TabIndex = 50;
             // 
             // textBox12
             // 
@@ -1352,7 +1340,6 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBox15;

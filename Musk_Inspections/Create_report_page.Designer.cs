@@ -66,12 +66,14 @@
             // 
             // pForms
             // 
+            this.pForms.AutoScroll = true;
             this.pForms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pForms.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pForms.Location = new System.Drawing.Point(0, 49);
             this.pForms.Name = "pForms";
             this.pForms.Size = new System.Drawing.Size(1538, 904);
             this.pForms.TabIndex = 3;
+            this.pForms.Paint += new System.Windows.Forms.PaintEventHandler(this.pForms_Paint);
             // 
             // Create_report_page
             // 

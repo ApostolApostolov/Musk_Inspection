@@ -36,5 +36,10 @@ namespace Musk_Inspections
             //this.Close();
 
         }
+
+        private void pForms_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
     }
 }
