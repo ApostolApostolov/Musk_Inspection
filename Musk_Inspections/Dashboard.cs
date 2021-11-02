@@ -15,6 +15,7 @@ namespace Musk_Inspections
         public Dashboard()
         {
             InitializeComponent();
+            //correct format for picking a date
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "yyyy";
             dateTimePicker1.ShowUpDown = true;
