@@ -15,6 +15,8 @@ namespace Musk_Inspections
         public inspectionHSQE2()
         {
             InitializeComponent();
+            //removes the arrows
+            nudInterventions.Controls.RemoveAt(0);
         }
     }
 }

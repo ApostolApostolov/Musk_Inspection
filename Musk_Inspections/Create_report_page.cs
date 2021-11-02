@@ -19,18 +19,27 @@ namespace Musk_Inspections
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Open the dashboard
             this.Hide();
             Dashboard dash = new Dashboard();
             dash.ShowDialog();
             this.Close();
+          
         }
 
         private void openFormButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            inspectionHSQE HSQE = new inspectionHSQE();
-            HSQE.ShowDialog();
-            //this.Close();
+            //opent the HSQE form inside the panel
+            inspectionHSQE HSQE = new inspectionHSQE() {Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            this.pForms.Controls.Add(HSQE);
+            HSQE.Show();
+           
+
+        }
+
+        private void pForms_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
     }
 }
