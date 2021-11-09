@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Reflection;
+using Word = Microsoft.Office.Interop.Word;
+
 
 namespace Musk_Inspections
 {
@@ -40,6 +44,11 @@ namespace Musk_Inspections
         private void pForms_Paint(object sender, PaintEventArgs e)
         {
             
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
