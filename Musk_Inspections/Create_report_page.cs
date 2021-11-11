@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
 using Word = Microsoft.Office.Interop.Word;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 
 namespace Musk_Inspections
@@ -126,6 +128,11 @@ namespace Musk_Inspections
         private void button3_Click(object sender, EventArgs e)
         {
             CreateWordDocument(@"C:\Developement\Musk_Inspection\Temp.docx", @"C:\Developement\Musk_Inspection\MuskReport.docx");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CreateWordDocument(@"C:\Developement\Musk_Inspection\Temp.docx", @"C:\Developement\Musk_Inspection\MuskReport.pdf");
         }
     }
 }
