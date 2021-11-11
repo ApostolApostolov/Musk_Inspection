@@ -106,8 +106,7 @@ namespace Musk_Inspections
                 this.FindAndReplace(wordApp, "<site>", textBox3.Text);
                 this.FindAndReplace(wordApp, "<jobDescription>", textBox4.Text);
                 this.FindAndReplace(wordApp, "<type>", textBox5.Text);
-                this.FindAndReplace(wordApp, "<feedback>", textBox6.Text);
-                this.FindAndReplace(wordApp, "<date>", dateTimePicker1.Value.ToShortDateString());
+                this.FindAndReplace(wordApp, "<feedback>", textBox6.Text);               
                 this.FindAndReplace(wordApp, "<date>", DateTime.Now.ToShortDateString());
             }
             else
