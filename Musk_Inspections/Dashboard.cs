@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,11 @@ namespace Musk_Inspections
 {
     public partial class Dashboard : Form
     {
+        static class Directories
+        {
+            public static string dirPDFfile;
+            public static string dirWordFile;
+        }
         public Dashboard()
         {
             //Ignore and DO NOT REMOVE THIS GIBBERISH
@@ -31,6 +37,15 @@ namespace Musk_Inspections
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "yyyy";
             dateTimePicker1.ShowUpDown = true;
+            gettingDirectories();
+        }
+        private void gettingDirectories()
+        {
+            string directory = Directory.GetCurrentDirectory();
+            directory = directory.Substring(0, directory.Length - 9); //remove the unneccesery parts of the current directory
+            Directories.dirPDFfile = Path.Combine(directory, "pdf_files");
+            Directories.dirWordFile = Path.Combine(directory, "word_files");
+
         }
 
         private void btnOpenCreateReport_Click(object sender, EventArgs e)
@@ -53,6 +68,8 @@ namespace Musk_Inspections
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'musk_DBDS.Inspectors' table. You can move, or remove it, as needed.
+            this.inspectorsTableAdapter.Fill(this.musk_DBDS.Inspectors);
             // TODO: This line of code loads data into the 'musk_DBDS.Inspection' table. You can move, or remove it, as needed.
             this.inspectionTableAdapter.Fill(this.musk_DBDS.Inspection);
             // TODO: This line of code loads data into the 'musk_DBDataSet.Inspection' table. You can move, or remove it, as needed.
@@ -68,11 +85,14 @@ namespace Musk_Inspections
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.CurrentCell.ColumnIndex.Equals(7) && e.RowIndex != -1)
+            if (dataGridView1.CurrentCell.ColumnIndex.Equals(1) && e.RowIndex != -1)
             {
                 if (dataGridView1.CurrentCell != null && dataGridView1.CurrentCell.Value != null)
                 {
                     MessageBox.Show(dataGridView1.CurrentCell.Value.ToString());
+                    
+                    MessageBox.Show(Directories.dirPDFfile);
+                    
                 }
             }
         }
