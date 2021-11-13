@@ -34,21 +34,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnLogOff = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.musk_DBDataSet = new Musk_Inspections.Musk_DBDataSet();
             this.cbMonths = new System.Windows.Forms.ComboBox();
             this.cbInspectors = new System.Windows.Forms.ComboBox();
-            this.inspectorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.musk_DBDataSet = new Musk_Inspections.Musk_DBDataSet();
             this.lblInspector = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.cbSite = new System.Windows.Forms.ComboBox();
             this.lblSite = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.muskDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inspectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inspectionsTableAdapter = new Musk_Inspections.Musk_DBDataSetTableAdapters.InspectionsTableAdapter();
-            this.inspectorsTableAdapter = new Musk_Inspections.Musk_DBDataSetTableAdapters.InspectorsTableAdapter();
-            this.muskDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inspectionsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.inpectionsidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inspectoridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supervisorNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,12 +55,11 @@
             this.attachmentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wordfileDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pDFfileDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.siteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inspectorsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.musk_DBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inspectionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.muskDBDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inspectionsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inspectionsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHome
@@ -121,8 +117,9 @@
             this.dateCurrentDataGridViewTextBoxColumn,
             this.attachmentsDataGridViewTextBoxColumn,
             this.wordfileDataGridViewTextBoxColumn,
-            this.pDFfileDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.inspectionsBindingSource1;
+            this.pDFfileDataGridViewTextBoxColumn,
+            this.siteDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.inspectionsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(95, 181);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -130,6 +127,11 @@
             this.dataGridView1.Size = new System.Drawing.Size(1032, 484);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // musk_DBDataSet
+            // 
+            this.musk_DBDataSet.DataSetName = "Musk_DBDataSet";
+            this.musk_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cbMonths
             // 
@@ -154,23 +156,11 @@
             // 
             // cbInspectors
             // 
-            this.cbInspectors.DataSource = this.inspectorsBindingSource;
-            this.cbInspectors.DisplayMember = "FirstName";
             this.cbInspectors.FormattingEnabled = true;
             this.cbInspectors.Location = new System.Drawing.Point(525, 144);
             this.cbInspectors.Name = "cbInspectors";
             this.cbInspectors.Size = new System.Drawing.Size(121, 24);
             this.cbInspectors.TabIndex = 6;
-            // 
-            // inspectorsBindingSource
-            // 
-            this.inspectorsBindingSource.DataMember = "Inspectors";
-            this.inspectorsBindingSource.DataSource = this.musk_DBDataSet;
-            // 
-            // musk_DBDataSet
-            // 
-            this.musk_DBDataSet.DataSetName = "Musk_DBDataSet";
-            this.musk_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblInspector
             // 
@@ -223,28 +213,19 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(166, 22);
             this.dateTimePicker1.TabIndex = 12;
             // 
-            // inspectionsBindingSource
-            // 
-            this.inspectionsBindingSource.DataMember = "Inspections";
-            this.inspectionsBindingSource.DataSource = this.musk_DBDataSet;
-            // 
-            // inspectionsTableAdapter
-            // 
-            this.inspectionsTableAdapter.ClearBeforeFill = true;
-            // 
-            // inspectorsTableAdapter
-            // 
-            this.inspectorsTableAdapter.ClearBeforeFill = true;
-            // 
             // muskDBDataSetBindingSource
             // 
             this.muskDBDataSetBindingSource.DataSource = this.musk_DBDataSet;
             this.muskDBDataSetBindingSource.Position = 0;
             // 
-            // inspectionsBindingSource1
+            // inspectionsBindingSource
             // 
-            this.inspectionsBindingSource1.DataMember = "Inspections";
-            this.inspectionsBindingSource1.DataSource = this.muskDBDataSetBindingSource;
+            this.inspectionsBindingSource.DataMember = "Inspections";
+            this.inspectionsBindingSource.DataSource = this.muskDBDataSetBindingSource;
+            // 
+            // inspectionsTableAdapter
+            // 
+            this.inspectionsTableAdapter.ClearBeforeFill = true;
             // 
             // inpectionsidDataGridViewTextBoxColumn
             // 
@@ -301,7 +282,6 @@
             this.wordfileDataGridViewTextBoxColumn.HeaderText = "Word_file";
             this.wordfileDataGridViewTextBoxColumn.Name = "wordfileDataGridViewTextBoxColumn";
             this.wordfileDataGridViewTextBoxColumn.ReadOnly = true;
-            this.wordfileDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // pDFfileDataGridViewTextBoxColumn
             // 
@@ -309,6 +289,13 @@
             this.pDFfileDataGridViewTextBoxColumn.HeaderText = "PDF_file";
             this.pDFfileDataGridViewTextBoxColumn.Name = "pDFfileDataGridViewTextBoxColumn";
             this.pDFfileDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // siteDataGridViewTextBoxColumn
+            // 
+            this.siteDataGridViewTextBoxColumn.DataPropertyName = "Site";
+            this.siteDataGridViewTextBoxColumn.HeaderText = "Site";
+            this.siteDataGridViewTextBoxColumn.Name = "siteDataGridViewTextBoxColumn";
+            this.siteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Dashboard
             // 
@@ -332,11 +319,9 @@
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inspectorsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.musk_DBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inspectionsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.muskDBDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inspectionsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inspectionsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,10 +343,9 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private Musk_DBDataSet musk_DBDataSet;
+        private System.Windows.Forms.BindingSource muskDBDataSetBindingSource;
         private System.Windows.Forms.BindingSource inspectionsBindingSource;
         private Musk_DBDataSetTableAdapters.InspectionsTableAdapter inspectionsTableAdapter;
-        private System.Windows.Forms.BindingSource inspectorsBindingSource;
-        private Musk_DBDataSetTableAdapters.InspectorsTableAdapter inspectorsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn inpectionsidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn inspectoridDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn supervisorNameDataGridViewTextBoxColumn;
@@ -371,7 +355,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn attachmentsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn wordfileDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pDFfileDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource inspectionsBindingSource1;
-        private System.Windows.Forms.BindingSource muskDBDataSetBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn siteDataGridViewTextBoxColumn;
     }
 }

@@ -14,14 +14,17 @@ namespace Musk_Inspections
     {
         public Dashboard()
         {
-            //DO NOT REMOVE THIS GIBBERISH
+            //Ignore and DO NOT REMOVE THIS GIBBERISH
             //V momenta v  koito cuknish sumbmit se pravi Word file 
             // sled tova se pravi nova row s id i drygite atribyti
             //sled tova vzima word fila i go preimenyva s id to 
             //chak togava pravi pdf file s id na reporta
             //!! no moje i da napravim purvo row i sled tova da kopirame id-to i da go slojim na word fila
+            // Da napravish 
+            // 1 da pokazva iztegli vmesto linka kum failsa
+            // nameri nachin da otvaeq faila sled kato cuknish na kletkata (VIEW) tova e samo za PDF
             //
-           
+
             // YeeYee
             InitializeComponent();
             //correct format for picking a date
@@ -50,6 +53,8 @@ namespace Musk_Inspections
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'musk_DBDataSet.Inspections' table. You can move, or remove it, as needed.
+            this.inspectionsTableAdapter.Fill(this.musk_DBDataSet.Inspections);
             // TODO: This line of code loads data into the 'musk_DBDataSet.Inspectors' table. You can move, or remove it, as needed.
             this.inspectorsTableAdapter.Fill(this.musk_DBDataSet.Inspectors);
             // TODO: This line of code loads data into the 'musk_DBDataSet.Inspections' table. You can move, or remove it, as needed.
