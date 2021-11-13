@@ -23,7 +23,7 @@ namespace Musk_Inspections
             // Da napravish 
             // 1 da pokazva iztegli vmesto linka kum failsa
             // nameri nachin da otvaeq faila sled kato cuknish na kletkata (VIEW) tova e samo za PDF
-            //
+            // chujdite klychove da pokazvat value vmesto reference
 
             // YeeYee
             InitializeComponent();
@@ -53,12 +53,16 @@ namespace Musk_Inspections
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'musk_DBDS.Inspection' table. You can move, or remove it, as needed.
+            this.inspectionTableAdapter.Fill(this.musk_DBDS.Inspection);
+            // TODO: This line of code loads data into the 'musk_DBDataSet.Inspection' table. You can move, or remove it, as needed.
+            this.inspectionTableAdapter.Fill(this.musk_DBDS.Inspection);
             // TODO: This line of code loads data into the 'musk_DBDataSet.Inspections' table. You can move, or remove it, as needed.
-            this.inspectionsTableAdapter.Fill(this.musk_DBDataSet.Inspections);
+            this.inspectionTableAdapter.Fill(this.musk_DBDS.Inspection);
             // TODO: This line of code loads data into the 'musk_DBDataSet.Inspectors' table. You can move, or remove it, as needed.
-            this.inspectorsTableAdapter.Fill(this.musk_DBDataSet.Inspectors);
+           // this.inspectorTableAdapter.Fill(this.musk_DBDS.Inspectors);
             // TODO: This line of code loads data into the 'musk_DBDataSet.Inspections' table. You can move, or remove it, as needed.
-            this.inspectionsTableAdapter.Fill(this.musk_DBDataSet.Inspections);
+            this.inspectionTableAdapter.Fill(this.musk_DBDS.Inspection);
 
         }
 
