@@ -90,9 +90,15 @@ namespace Musk_Inspections
                 if (dataGridView1.CurrentCell != null && dataGridView1.CurrentCell.Value != null)
                 {
                     MessageBox.Show(dataGridView1.CurrentCell.Value.ToString());
-                    
+                  
                     MessageBox.Show(Directories.dirPDFfile);
-                    
+
+                    string filename = Path.Combine(Directories.dirPDFfile, "5.pdf");
+                    System.Diagnostics.Process.Start(filename);
+
+                    //SLED kato razgadaish kak da napravish fail s imeto koeto da e id-to 
+                    //IMPORTANT THE FILE NAME HAS TO BE THE SAME AS THE ID
+
                 }
             }
         }
