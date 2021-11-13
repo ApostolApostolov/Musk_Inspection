@@ -132,10 +132,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Musk_DB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Musk_DB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>Musk_DB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
