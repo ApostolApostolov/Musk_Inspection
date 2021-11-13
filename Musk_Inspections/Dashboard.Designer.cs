@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnOpenCreateReport = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -41,7 +42,15 @@
             this.lblSite = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.musk_DBDataSet = new Musk_Inspections.Musk_DBDataSet();
+            this.inspectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inspectionsTableAdapter = new Musk_Inspections.Musk_DBDataSetTableAdapters.InspectionsTableAdapter();
+            this.inspectorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inspectorsTableAdapter = new Musk_Inspections.Musk_DBDataSetTableAdapters.InspectorsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.musk_DBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inspectionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inspectorsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHome
@@ -116,6 +125,8 @@
             // 
             // cbInspectors
             // 
+            this.cbInspectors.DataSource = this.inspectorsBindingSource;
+            this.cbInspectors.DisplayMember = "FirstName";
             this.cbInspectors.FormattingEnabled = true;
             this.cbInspectors.Location = new System.Drawing.Point(525, 144);
             this.cbInspectors.Name = "cbInspectors";
@@ -173,6 +184,29 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(166, 22);
             this.dateTimePicker1.TabIndex = 12;
             // 
+            // musk_DBDataSet
+            // 
+            this.musk_DBDataSet.DataSetName = "Musk_DBDataSet";
+            this.musk_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // inspectionsBindingSource
+            // 
+            this.inspectionsBindingSource.DataMember = "Inspections";
+            this.inspectionsBindingSource.DataSource = this.musk_DBDataSet;
+            // 
+            // inspectionsTableAdapter
+            // 
+            this.inspectionsTableAdapter.ClearBeforeFill = true;
+            // 
+            // inspectorsBindingSource
+            // 
+            this.inspectorsBindingSource.DataMember = "Inspectors";
+            this.inspectorsBindingSource.DataSource = this.musk_DBDataSet;
+            // 
+            // inspectorsTableAdapter
+            // 
+            this.inspectorsTableAdapter.ClearBeforeFill = true;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -193,7 +227,11 @@
             this.Controls.Add(this.btnHome);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.musk_DBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inspectionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inspectorsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +252,10 @@
         private System.Windows.Forms.Label lblSite;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private Musk_DBDataSet musk_DBDataSet;
+        private System.Windows.Forms.BindingSource inspectionsBindingSource;
+        private Musk_DBDataSetTableAdapters.InspectionsTableAdapter inspectionsTableAdapter;
+        private System.Windows.Forms.BindingSource inspectorsBindingSource;
+        private Musk_DBDataSetTableAdapters.InspectorsTableAdapter inspectorsTableAdapter;
     }
 }
