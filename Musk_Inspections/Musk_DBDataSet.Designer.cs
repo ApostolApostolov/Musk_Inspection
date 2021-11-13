@@ -451,6 +451,8 @@ namespace Musk_Inspections {
             
             private global::System.Data.DataColumn columnPDF_file;
             
+            private global::System.Data.DataColumn columnSite;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public InspectionsDataTable() {
@@ -558,6 +560,14 @@ namespace Musk_Inspections {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn SiteColumn {
+                get {
+                    return this.columnSite;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -593,7 +603,7 @@ namespace Musk_Inspections {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public InspectionsRow AddInspectionsRow(InspectorsRow parentInspectorsRowByFK__Inspectio__Inspe__1F98B2C1, string Supervisor_Name, bool Outstanding, int Interventions, System.DateTime Date_Current, string Attachments, string Word_file, string PDF_file) {
+            public InspectionsRow AddInspectionsRow(InspectorsRow parentInspectorsRowByFK__Inspectio__Inspe__1F98B2C1, string Supervisor_Name, bool Outstanding, int Interventions, System.DateTime Date_Current, string Attachments, string Word_file, string PDF_file, string Site) {
                 InspectionsRow rowInspectionsRow = ((InspectionsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -604,7 +614,8 @@ namespace Musk_Inspections {
                         Date_Current,
                         Attachments,
                         Word_file,
-                        PDF_file};
+                        PDF_file,
+                        Site};
                 if ((parentInspectorsRowByFK__Inspectio__Inspe__1F98B2C1 != null)) {
                     columnValuesArray[1] = parentInspectorsRowByFK__Inspectio__Inspe__1F98B2C1[0];
                 }
@@ -646,6 +657,7 @@ namespace Musk_Inspections {
                 this.columnAttachments = base.Columns["Attachments"];
                 this.columnWord_file = base.Columns["Word_file"];
                 this.columnPDF_file = base.Columns["PDF_file"];
+                this.columnSite = base.Columns["Site"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -669,6 +681,8 @@ namespace Musk_Inspections {
                 base.Columns.Add(this.columnWord_file);
                 this.columnPDF_file = new global::System.Data.DataColumn("PDF_file", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPDF_file);
+                this.columnSite = new global::System.Data.DataColumn("Site", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSite);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnInpections_id}, true));
                 this.columnInpections_id.AutoIncrement = true;
@@ -2092,6 +2106,22 @@ namespace Musk_Inspections {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Site {
+                get {
+                    try {
+                        return ((string)(this[this.tableInspections.SiteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Site\' in table \'Inspections\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInspections.SiteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public InspectorsRow InspectorsRow {
                 get {
                     return ((InspectorsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Inspectio__Inspe__1F98B2C1"])));
@@ -2111,6 +2141,18 @@ namespace Musk_Inspections {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetAttachmentsNull() {
                 this[this.tableInspections.AttachmentsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsSiteNull() {
+                return this.IsNull(this.tableInspections.SiteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetSiteNull() {
+                this[this.tableInspections.SiteColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -14,6 +14,14 @@ namespace Musk_Inspections
     {
         public Dashboard()
         {
+            //DO NOT REMOVE THIS GIBBERISH
+            //V momenta v  koito cuknish sumbmit se pravi Word file 
+            // sled tova se pravi nova row s id i drygite atribyti
+            //sled tova vzima word fila i go preimenyva s id to 
+            //chak togava pravi pdf file s id na reporta
+            //!! no moje i da napravim purvo row i sled tova da kopirame id-to i da go slojim na word fila
+            //
+           
             // YeeYee
             InitializeComponent();
             //correct format for picking a date
@@ -47,6 +55,17 @@ namespace Musk_Inspections
             // TODO: This line of code loads data into the 'musk_DBDataSet.Inspections' table. You can move, or remove it, as needed.
             this.inspectionsTableAdapter.Fill(this.musk_DBDataSet.Inspections);
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.CurrentCell.ColumnIndex.Equals(7) && e.RowIndex != -1)
+            {
+                if (dataGridView1.CurrentCell != null && dataGridView1.CurrentCell.Value != null)
+                {
+                    MessageBox.Show(dataGridView1.CurrentCell.Value.ToString());
+                }
+            }
         }
     }
 }
