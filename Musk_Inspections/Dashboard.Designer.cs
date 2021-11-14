@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnOpenCreateReport = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnLogOff = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.InspetionLink = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.inspectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbMonths = new System.Windows.Forms.ComboBox();
             this.cbInspectors = new System.Windows.Forms.ComboBox();
             this.lblInspector = new System.Windows.Forms.Label();
@@ -41,7 +44,25 @@
             this.lblSite = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.inspectorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inpectionsidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.siteidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.workAreaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inspectoridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.interventionsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.outstandingDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.wordfileDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pDFfileDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.muskDBDSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.musk_DBDS = new Musk_Inspections.Musk_DBDS();
+            this.inspectionTableAdapter = new Musk_Inspections.Musk_DBDSTableAdapters.InspectionTableAdapter();
+            this.inspectorsTableAdapter = new Musk_Inspections.Musk_DBDSTableAdapters.InspectorsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inspectionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inspectorsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.muskDBDSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.musk_DBDS)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHome
@@ -86,12 +107,42 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.inpectionsidDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.siteidDataGridViewTextBoxColumn,
+            this.workAreaDataGridViewTextBoxColumn,
+            this.inspectoridDataGridViewTextBoxColumn,
+            this.interventionsDataGridViewTextBoxColumn,
+            this.outstandingDataGridViewCheckBoxColumn,
+            this.wordfileDataGridViewTextBoxColumn,
+            this.pDFfileDataGridViewTextBoxColumn,
+            this.InspetionLink});
+            this.dataGridView1.DataSource = this.inspectionBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(95, 181);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1032, 484);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // InspetionLink
+            // 
+            this.InspetionLink.HeaderText = "Inspection";
+            this.InspetionLink.Name = "InspetionLink";
+            this.InspetionLink.ReadOnly = true;
+            this.InspetionLink.Text = "View";
+            this.InspetionLink.UseColumnTextForLinkValue = true;
+            // 
+            // inspectionBindingSource
+            // 
+            this.inspectionBindingSource.DataMember = "Inspection";
+            this.inspectionBindingSource.DataSource = this.muskDBDSBindingSource;
             // 
             // cbMonths
             // 
@@ -173,6 +224,95 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(166, 22);
             this.dateTimePicker1.TabIndex = 12;
             // 
+            // inspectorsBindingSource
+            // 
+            this.inspectorsBindingSource.DataMember = "Inspectors";
+            this.inspectorsBindingSource.DataSource = this.muskDBDSBindingSource;
+            // 
+            // inpectionsidDataGridViewTextBoxColumn
+            // 
+            this.inpectionsidDataGridViewTextBoxColumn.DataPropertyName = "Inpections_id";
+            this.inpectionsidDataGridViewTextBoxColumn.HeaderText = "Inpections_id";
+            this.inpectionsidDataGridViewTextBoxColumn.Name = "inpectionsidDataGridViewTextBoxColumn";
+            this.inpectionsidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.inpectionsidDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // siteidDataGridViewTextBoxColumn
+            // 
+            this.siteidDataGridViewTextBoxColumn.DataPropertyName = "Site_id";
+            this.siteidDataGridViewTextBoxColumn.HeaderText = "Site_id";
+            this.siteidDataGridViewTextBoxColumn.Name = "siteidDataGridViewTextBoxColumn";
+            this.siteidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // workAreaDataGridViewTextBoxColumn
+            // 
+            this.workAreaDataGridViewTextBoxColumn.DataPropertyName = "Work_Area";
+            this.workAreaDataGridViewTextBoxColumn.HeaderText = "Work_Area";
+            this.workAreaDataGridViewTextBoxColumn.Name = "workAreaDataGridViewTextBoxColumn";
+            this.workAreaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // inspectoridDataGridViewTextBoxColumn
+            // 
+            this.inspectoridDataGridViewTextBoxColumn.DataPropertyName = "Inspector_id";
+            this.inspectoridDataGridViewTextBoxColumn.HeaderText = "Inspector_id";
+            this.inspectoridDataGridViewTextBoxColumn.Name = "inspectoridDataGridViewTextBoxColumn";
+            this.inspectoridDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // interventionsDataGridViewTextBoxColumn
+            // 
+            this.interventionsDataGridViewTextBoxColumn.DataPropertyName = "Interventions";
+            this.interventionsDataGridViewTextBoxColumn.HeaderText = "Interventions";
+            this.interventionsDataGridViewTextBoxColumn.Name = "interventionsDataGridViewTextBoxColumn";
+            this.interventionsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // outstandingDataGridViewCheckBoxColumn
+            // 
+            this.outstandingDataGridViewCheckBoxColumn.DataPropertyName = "Outstanding";
+            this.outstandingDataGridViewCheckBoxColumn.HeaderText = "Outstanding";
+            this.outstandingDataGridViewCheckBoxColumn.Name = "outstandingDataGridViewCheckBoxColumn";
+            this.outstandingDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // wordfileDataGridViewTextBoxColumn
+            // 
+            this.wordfileDataGridViewTextBoxColumn.DataPropertyName = "Word_file";
+            this.wordfileDataGridViewTextBoxColumn.HeaderText = "Word_file";
+            this.wordfileDataGridViewTextBoxColumn.Name = "wordfileDataGridViewTextBoxColumn";
+            this.wordfileDataGridViewTextBoxColumn.ReadOnly = true;
+            this.wordfileDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // pDFfileDataGridViewTextBoxColumn
+            // 
+            this.pDFfileDataGridViewTextBoxColumn.DataPropertyName = "PDF_file";
+            this.pDFfileDataGridViewTextBoxColumn.HeaderText = "PDF_file";
+            this.pDFfileDataGridViewTextBoxColumn.Name = "pDFfileDataGridViewTextBoxColumn";
+            this.pDFfileDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pDFfileDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // muskDBDSBindingSource
+            // 
+            this.muskDBDSBindingSource.DataSource = this.musk_DBDS;
+            this.muskDBDSBindingSource.Position = 0;
+            // 
+            // musk_DBDS
+            // 
+            this.musk_DBDS.DataSetName = "Musk_DBDS";
+            this.musk_DBDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // inspectionTableAdapter
+            // 
+            this.inspectionTableAdapter.ClearBeforeFill = true;
+            // 
+            // inspectorsTableAdapter
+            // 
+            this.inspectorsTableAdapter.ClearBeforeFill = true;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -193,7 +333,12 @@
             this.Controls.Add(this.btnHome);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inspectionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inspectorsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.muskDBDSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.musk_DBDS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +359,21 @@
         private System.Windows.Forms.Label lblSite;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.BindingSource muskDBDSBindingSource;
+        private Musk_DBDS musk_DBDS;
+        private System.Windows.Forms.BindingSource inspectionBindingSource;
+        private Musk_DBDSTableAdapters.InspectionTableAdapter inspectionTableAdapter;
+        private System.Windows.Forms.BindingSource inspectorsBindingSource;
+        private Musk_DBDSTableAdapters.InspectorsTableAdapter inspectorsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inpectionsidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn siteidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn workAreaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inspectoridDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn interventionsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn outstandingDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wordfileDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pDFfileDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewLinkColumn InspetionLink;
     }
 }
