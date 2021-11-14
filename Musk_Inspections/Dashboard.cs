@@ -13,7 +13,7 @@ namespace Musk_Inspections
 {
     public partial class Dashboard : Form
     {
-        static class Directories
+        public static class Directories
         {
             public static string dirPDFfile;
             public static string dirWordFile;
@@ -41,7 +41,7 @@ namespace Musk_Inspections
             dateTimePicker1.ShowUpDown = true;
             gettingDirectories();
         }
-        private void gettingDirectories()
+        public void gettingDirectories()
         {
             string directory = Directory.GetCurrentDirectory();
             directory = directory.Substring(0, directory.Length - 9); //remove the unneccesery parts of the current directory
@@ -71,17 +71,17 @@ namespace Musk_Inspections
         private void Dashboard_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'musk_DBDS.Inspectors' table. You can move, or remove it, as needed.
-            this.inspectorsTableAdapter.Fill(this.musk_DBDS.Inspectors);
+           // this.inspectorsTableAdapter.Fill(this.musk_DBDS.Inspectors);
             // TODO: This line of code loads data into the 'musk_DBDS.Inspection' table. You can move, or remove it, as needed.
-            this.inspectionTableAdapter.Fill(this.musk_DBDS.Inspection);
+           // this.inspectionTableAdapter.Fill(this.musk_DBDS.Inspection);
             // TODO: This line of code loads data into the 'musk_DBDataSet.Inspection' table. You can move, or remove it, as needed.
-            this.inspectionTableAdapter.Fill(this.musk_DBDS.Inspection);
+           // this.inspectionTableAdapter.Fill(this.musk_DBDS.Inspection);
             // TODO: This line of code loads data into the 'musk_DBDataSet.Inspections' table. You can move, or remove it, as needed.
-            this.inspectionTableAdapter.Fill(this.musk_DBDS.Inspection);
+           //this.inspectionTableAdapter.Fill(this.musk_DBDS.Inspection);
             // TODO: This line of code loads data into the 'musk_DBDataSet.Inspectors' table. You can move, or remove it, as needed.
            // this.inspectorTableAdapter.Fill(this.musk_DBDS.Inspectors);
             // TODO: This line of code loads data into the 'musk_DBDataSet.Inspections' table. You can move, or remove it, as needed.
-            this.inspectionTableAdapter.Fill(this.musk_DBDS.Inspection);
+           // this.inspectionTableAdapter.Fill(this.musk_DBDS.Inspection);
 
         }
 

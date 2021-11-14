@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,6 +56,43 @@ namespace Musk_Inspections
         {
             HSQE2.Hide();
             HSQE.Show();
+        }
+
+      
+
+        private void SaveFile(string filePath)
+        {
+            using(Stream stream = File.OpenRead(filePath))
+            {
+                byte[] buffer = new byte[stream.Length];
+                stream.Read(buffer, 0, buffer.Length);
+
+                string extn = new FileInfo(filePath).Extension;
+                string query = "INSERT INTO pdf_files (Data,Extension)VALUES(@data,@extn) ";
+
+                using (SqlConnection cn=GetConnection())
+                {
+                    
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cmd.Parameters.Add("@data", SqlDbType.VarBinary).Value = buffer;
+                    cmd.Parameters.Add("@extn", SqlDbType.Char).Value = extn;
+                    cn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        private SqlConnection GetConnection()
+        {
+            return new SqlConnection(@"Data Source=(localdb)\Local; Database=Musk_DB.mdf;Integrated Security= sspi;  ");
+            
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            string filePath = Dashboard.Directories.dirPDFfile;
+            filePath = Path.Combine(filePath, "test.pdf");
+            SaveFile(filePath);
+            MessageBox.Show("A Great Success");
         }
     }
 }
