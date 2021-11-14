@@ -26,19 +26,13 @@ namespace Musk_Inspections {
         
         private InspectionDataTable tableInspection;
         
-        private InspectionsDataTable tableInspections;
-        
         private InspectorsDataTable tableInspectors;
         
         private SitesDataTable tableSites;
         
-        private global::System.Data.DataRelation relationFK__Inspectio__Inspe__69FBBC1F;
-        
         private global::System.Data.DataRelation relationFK__Inspectio__Site___6AEFE058;
         
-        private global::System.Data.DataRelation relationFK__Inspectio__Inspe__662B2B3B;
-        
-        private global::System.Data.DataRelation relationFK__Inspectio__Site___671F4F74;
+        private global::System.Data.DataRelation relationFK__Inspectio__Inspe__69FBBC1F;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -71,9 +65,6 @@ namespace Musk_Inspections {
                 if ((ds.Tables["Inspection"] != null)) {
                     base.Tables.Add(new InspectionDataTable(ds.Tables["Inspection"]));
                 }
-                if ((ds.Tables["Inspections"] != null)) {
-                    base.Tables.Add(new InspectionsDataTable(ds.Tables["Inspections"]));
-                }
                 if ((ds.Tables["Inspectors"] != null)) {
                     base.Tables.Add(new InspectorsDataTable(ds.Tables["Inspectors"]));
                 }
@@ -105,16 +96,6 @@ namespace Musk_Inspections {
         public InspectionDataTable Inspection {
             get {
                 return this.tableInspection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public InspectionsDataTable Inspections {
-            get {
-                return this.tableInspections;
             }
         }
         
@@ -208,9 +189,6 @@ namespace Musk_Inspections {
                 if ((ds.Tables["Inspection"] != null)) {
                     base.Tables.Add(new InspectionDataTable(ds.Tables["Inspection"]));
                 }
-                if ((ds.Tables["Inspections"] != null)) {
-                    base.Tables.Add(new InspectionsDataTable(ds.Tables["Inspections"]));
-                }
                 if ((ds.Tables["Inspectors"] != null)) {
                     base.Tables.Add(new InspectorsDataTable(ds.Tables["Inspectors"]));
                 }
@@ -256,12 +234,6 @@ namespace Musk_Inspections {
                     this.tableInspection.InitVars();
                 }
             }
-            this.tableInspections = ((InspectionsDataTable)(base.Tables["Inspections"]));
-            if ((initTable == true)) {
-                if ((this.tableInspections != null)) {
-                    this.tableInspections.InitVars();
-                }
-            }
             this.tableInspectors = ((InspectorsDataTable)(base.Tables["Inspectors"]));
             if ((initTable == true)) {
                 if ((this.tableInspectors != null)) {
@@ -274,10 +246,8 @@ namespace Musk_Inspections {
                     this.tableSites.InitVars();
                 }
             }
-            this.relationFK__Inspectio__Inspe__69FBBC1F = this.Relations["FK__Inspectio__Inspe__69FBBC1F"];
             this.relationFK__Inspectio__Site___6AEFE058 = this.Relations["FK__Inspectio__Site___6AEFE058"];
-            this.relationFK__Inspectio__Inspe__662B2B3B = this.Relations["FK__Inspectio__Inspe__662B2B3B"];
-            this.relationFK__Inspectio__Site___671F4F74 = this.Relations["FK__Inspectio__Site___671F4F74"];
+            this.relationFK__Inspectio__Inspe__69FBBC1F = this.Relations["FK__Inspectio__Inspe__69FBBC1F"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -290,39 +260,23 @@ namespace Musk_Inspections {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableInspection = new InspectionDataTable();
             base.Tables.Add(this.tableInspection);
-            this.tableInspections = new InspectionsDataTable();
-            base.Tables.Add(this.tableInspections);
             this.tableInspectors = new InspectorsDataTable();
             base.Tables.Add(this.tableInspectors);
             this.tableSites = new SitesDataTable();
             base.Tables.Add(this.tableSites);
-            this.relationFK__Inspectio__Inspe__69FBBC1F = new global::System.Data.DataRelation("FK__Inspectio__Inspe__69FBBC1F", new global::System.Data.DataColumn[] {
-                        this.tableInspectors.Inspector_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableInspection.Inspector_idColumn}, false);
-            this.Relations.Add(this.relationFK__Inspectio__Inspe__69FBBC1F);
             this.relationFK__Inspectio__Site___6AEFE058 = new global::System.Data.DataRelation("FK__Inspectio__Site___6AEFE058", new global::System.Data.DataColumn[] {
                         this.tableSites.Site_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableInspection.Site_idColumn}, false);
             this.Relations.Add(this.relationFK__Inspectio__Site___6AEFE058);
-            this.relationFK__Inspectio__Inspe__662B2B3B = new global::System.Data.DataRelation("FK__Inspectio__Inspe__662B2B3B", new global::System.Data.DataColumn[] {
+            this.relationFK__Inspectio__Inspe__69FBBC1F = new global::System.Data.DataRelation("FK__Inspectio__Inspe__69FBBC1F", new global::System.Data.DataColumn[] {
                         this.tableInspectors.Inspector_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableInspections.Inspector_idColumn}, false);
-            this.Relations.Add(this.relationFK__Inspectio__Inspe__662B2B3B);
-            this.relationFK__Inspectio__Site___671F4F74 = new global::System.Data.DataRelation("FK__Inspectio__Site___671F4F74", new global::System.Data.DataColumn[] {
-                        this.tableSites.Site_idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableInspections.Site_idColumn}, false);
-            this.Relations.Add(this.relationFK__Inspectio__Site___671F4F74);
+                        this.tableInspection.Inspector_idColumn}, false);
+            this.Relations.Add(this.relationFK__Inspectio__Inspe__69FBBC1F);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private bool ShouldSerializeInspection() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeInspections() {
             return false;
         }
         
@@ -395,9 +349,6 @@ namespace Musk_Inspections {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void InspectionRowChangeEventHandler(object sender, InspectionRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void InspectionsRowChangeEventHandler(object sender, InspectionsRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void InspectorsRowChangeEventHandler(object sender, InspectorsRowChangeEvent e);
@@ -754,395 +705,6 @@ namespace Musk_Inspections {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "InspectionDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class InspectionsDataTable : global::System.Data.TypedTableBase<InspectionsRow> {
-            
-            private global::System.Data.DataColumn columnInpections_id;
-            
-            private global::System.Data.DataColumn columnDate;
-            
-            private global::System.Data.DataColumn columnSite_id;
-            
-            private global::System.Data.DataColumn columnWork_Area;
-            
-            private global::System.Data.DataColumn columnInspector_id;
-            
-            private global::System.Data.DataColumn columnInterventions;
-            
-            private global::System.Data.DataColumn columnOutstanding;
-            
-            private global::System.Data.DataColumn columnWord_file;
-            
-            private global::System.Data.DataColumn columnPDF_file;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public InspectionsDataTable() {
-                this.TableName = "Inspections";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal InspectionsDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected InspectionsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Inpections_idColumn {
-                get {
-                    return this.columnInpections_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn DateColumn {
-                get {
-                    return this.columnDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Site_idColumn {
-                get {
-                    return this.columnSite_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Work_AreaColumn {
-                get {
-                    return this.columnWork_Area;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Inspector_idColumn {
-                get {
-                    return this.columnInspector_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn InterventionsColumn {
-                get {
-                    return this.columnInterventions;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn OutstandingColumn {
-                get {
-                    return this.columnOutstanding;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Word_fileColumn {
-                get {
-                    return this.columnWord_file;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PDF_fileColumn {
-                get {
-                    return this.columnPDF_file;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public InspectionsRow this[int index] {
-                get {
-                    return ((InspectionsRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event InspectionsRowChangeEventHandler InspectionsRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event InspectionsRowChangeEventHandler InspectionsRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event InspectionsRowChangeEventHandler InspectionsRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event InspectionsRowChangeEventHandler InspectionsRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddInspectionsRow(InspectionsRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public InspectionsRow AddInspectionsRow(System.DateTime Date, SitesRow parentSitesRowByFK__Inspectio__Site___671F4F74, string Work_Area, InspectorsRow parentInspectorsRowByFK__Inspectio__Inspe__662B2B3B, int Interventions, bool Outstanding, string Word_file, string PDF_file) {
-                InspectionsRow rowInspectionsRow = ((InspectionsRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        Date,
-                        null,
-                        Work_Area,
-                        null,
-                        Interventions,
-                        Outstanding,
-                        Word_file,
-                        PDF_file};
-                if ((parentSitesRowByFK__Inspectio__Site___671F4F74 != null)) {
-                    columnValuesArray[2] = parentSitesRowByFK__Inspectio__Site___671F4F74[0];
-                }
-                if ((parentInspectorsRowByFK__Inspectio__Inspe__662B2B3B != null)) {
-                    columnValuesArray[4] = parentInspectorsRowByFK__Inspectio__Inspe__662B2B3B[0];
-                }
-                rowInspectionsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowInspectionsRow);
-                return rowInspectionsRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public InspectionsRow FindByInpections_id(int Inpections_id) {
-                return ((InspectionsRow)(this.Rows.Find(new object[] {
-                            Inpections_id})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                InspectionsDataTable cln = ((InspectionsDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new InspectionsDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal void InitVars() {
-                this.columnInpections_id = base.Columns["Inpections_id"];
-                this.columnDate = base.Columns["Date"];
-                this.columnSite_id = base.Columns["Site_id"];
-                this.columnWork_Area = base.Columns["Work_Area"];
-                this.columnInspector_id = base.Columns["Inspector_id"];
-                this.columnInterventions = base.Columns["Interventions"];
-                this.columnOutstanding = base.Columns["Outstanding"];
-                this.columnWord_file = base.Columns["Word_file"];
-                this.columnPDF_file = base.Columns["PDF_file"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            private void InitClass() {
-                this.columnInpections_id = new global::System.Data.DataColumn("Inpections_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnInpections_id);
-                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDate);
-                this.columnSite_id = new global::System.Data.DataColumn("Site_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSite_id);
-                this.columnWork_Area = new global::System.Data.DataColumn("Work_Area", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWork_Area);
-                this.columnInspector_id = new global::System.Data.DataColumn("Inspector_id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnInspector_id);
-                this.columnInterventions = new global::System.Data.DataColumn("Interventions", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnInterventions);
-                this.columnOutstanding = new global::System.Data.DataColumn("Outstanding", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOutstanding);
-                this.columnWord_file = new global::System.Data.DataColumn("Word_file", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWord_file);
-                this.columnPDF_file = new global::System.Data.DataColumn("PDF_file", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPDF_file);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnInpections_id}, true));
-                this.columnInpections_id.AutoIncrement = true;
-                this.columnInpections_id.AutoIncrementSeed = -1;
-                this.columnInpections_id.AutoIncrementStep = -1;
-                this.columnInpections_id.AllowDBNull = false;
-                this.columnInpections_id.ReadOnly = true;
-                this.columnInpections_id.Unique = true;
-                this.columnDate.AllowDBNull = false;
-                this.columnSite_id.AllowDBNull = false;
-                this.columnWork_Area.AllowDBNull = false;
-                this.columnWork_Area.MaxLength = 50;
-                this.columnInspector_id.AllowDBNull = false;
-                this.columnInterventions.AllowDBNull = false;
-                this.columnOutstanding.AllowDBNull = false;
-                this.columnWord_file.MaxLength = 50;
-                this.columnPDF_file.MaxLength = 50;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public InspectionsRow NewInspectionsRow() {
-                return ((InspectionsRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new InspectionsRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(InspectionsRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.InspectionsRowChanged != null)) {
-                    this.InspectionsRowChanged(this, new InspectionsRowChangeEvent(((InspectionsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.InspectionsRowChanging != null)) {
-                    this.InspectionsRowChanging(this, new InspectionsRowChangeEvent(((InspectionsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.InspectionsRowDeleted != null)) {
-                    this.InspectionsRowDeleted(this, new InspectionsRowChangeEvent(((InspectionsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.InspectionsRowDeleting != null)) {
-                    this.InspectionsRowDeleting(this, new InspectionsRowChangeEvent(((InspectionsRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveInspectionsRow(InspectionsRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Musk_DBDS ds = new Musk_DBDS();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "InspectionsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1896,23 +1458,23 @@ namespace Musk_Inspections {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public InspectorsRow InspectorsRow {
-                get {
-                    return ((InspectorsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Inspectio__Inspe__69FBBC1F"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Inspectio__Inspe__69FBBC1F"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public SitesRow SitesRow {
                 get {
                     return ((SitesRow)(this.GetParentRow(this.Table.ParentRelations["FK__Inspectio__Site___6AEFE058"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__Inspectio__Site___6AEFE058"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public InspectorsRow InspectorsRow {
+                get {
+                    return ((InspectorsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Inspectio__Inspe__69FBBC1F"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Inspectio__Inspe__69FBBC1F"]);
                 }
             }
             
@@ -1938,176 +1500,6 @@ namespace Musk_Inspections {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetPDF_fileNull() {
                 this[this.tableInspection.PDF_fileColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class InspectionsRow : global::System.Data.DataRow {
-            
-            private InspectionsDataTable tableInspections;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal InspectionsRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableInspections = ((InspectionsDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Inpections_id {
-                get {
-                    return ((int)(this[this.tableInspections.Inpections_idColumn]));
-                }
-                set {
-                    this[this.tableInspections.Inpections_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime Date {
-                get {
-                    return ((global::System.DateTime)(this[this.tableInspections.DateColumn]));
-                }
-                set {
-                    this[this.tableInspections.DateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Site_id {
-                get {
-                    return ((int)(this[this.tableInspections.Site_idColumn]));
-                }
-                set {
-                    this[this.tableInspections.Site_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Work_Area {
-                get {
-                    return ((string)(this[this.tableInspections.Work_AreaColumn]));
-                }
-                set {
-                    this[this.tableInspections.Work_AreaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Inspector_id {
-                get {
-                    return ((int)(this[this.tableInspections.Inspector_idColumn]));
-                }
-                set {
-                    this[this.tableInspections.Inspector_idColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int Interventions {
-                get {
-                    return ((int)(this[this.tableInspections.InterventionsColumn]));
-                }
-                set {
-                    this[this.tableInspections.InterventionsColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool Outstanding {
-                get {
-                    return ((bool)(this[this.tableInspections.OutstandingColumn]));
-                }
-                set {
-                    this[this.tableInspections.OutstandingColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Word_file {
-                get {
-                    try {
-                        return ((string)(this[this.tableInspections.Word_fileColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Word_file\' in table \'Inspections\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableInspections.Word_fileColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string PDF_file {
-                get {
-                    try {
-                        return ((string)(this[this.tableInspections.PDF_fileColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PDF_file\' in table \'Inspections\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableInspections.PDF_fileColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public InspectorsRow InspectorsRow {
-                get {
-                    return ((InspectorsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Inspectio__Inspe__662B2B3B"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Inspectio__Inspe__662B2B3B"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public SitesRow SitesRow {
-                get {
-                    return ((SitesRow)(this.GetParentRow(this.Table.ParentRelations["FK__Inspectio__Site___671F4F74"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Inspectio__Site___671F4F74"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsWord_fileNull() {
-                return this.IsNull(this.tableInspections.Word_fileColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetWord_fileNull() {
-                this[this.tableInspections.Word_fileColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsPDF_fileNull() {
-                return this.IsNull(this.tableInspections.PDF_fileColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetPDF_fileNull() {
-                this[this.tableInspections.PDF_fileColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2179,17 +1571,6 @@ namespace Musk_Inspections {
                     return ((InspectionRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Inspectio__Inspe__69FBBC1F"])));
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public InspectionsRow[] GetInspectionsRows() {
-                if ((this.Table.ChildRelations["FK__Inspectio__Inspe__662B2B3B"] == null)) {
-                    return new InspectionsRow[0];
-                }
-                else {
-                    return ((InspectionsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Inspectio__Inspe__662B2B3B"])));
-                }
-            }
         }
         
         /// <summary>
@@ -2238,17 +1619,6 @@ namespace Musk_Inspections {
                     return ((InspectionRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Inspectio__Site___6AEFE058"])));
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public InspectionsRow[] GetInspectionsRows() {
-                if ((this.Table.ChildRelations["FK__Inspectio__Site___671F4F74"] == null)) {
-                    return new InspectionsRow[0];
-                }
-                else {
-                    return ((InspectionsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Inspectio__Site___671F4F74"])));
-                }
-            }
         }
         
         /// <summary>
@@ -2271,40 +1641,6 @@ namespace Musk_Inspections {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public InspectionRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class InspectionsRowChangeEvent : global::System.EventArgs {
-            
-            private InspectionsRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public InspectionsRowChangeEvent(InspectionsRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public InspectionsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2587,12 +1923,18 @@ SELECT Inpections_id, Date, Site_id, Work_Area, Inspector_id, Interventions, Out
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Inpections_id, Date, Site_id, Work_Area, Inspector_id, Interventions, Outs" +
                 "tanding, Word_file, PDF_file FROM dbo.Inspection";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT Inspection.Inpections_id, Inspection.Date, Inspection.Site_id, Inspection.Work_Area, Inspection.Inspector_id, Inspection.Interventions, Inspection.Outstanding, Inspection.Word_file, Inspection.PDF_file
+FROM     Inspection INNER JOIN
+                  Sites ON Inspection.Site_id = Sites.Site_id";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2622,452 +1964,9 @@ SELECT Inpections_id, Date, Site_id, Work_Area, Inspector_id, Interventions, Out
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Musk_DBDS.InspectionDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Musk_DBDS dataSet) {
-            return this.Adapter.Update(dataSet, "Inspection");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Inpections_id, System.DateTime Original_Date, int Original_Site_id, string Original_Work_Area, int Original_Inspector_id, int Original_Interventions, bool Original_Outstanding, string Original_Word_file, string Original_PDF_file) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Inpections_id));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_Date));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Site_id));
-            if ((Original_Work_Area == null)) {
-                throw new global::System.ArgumentNullException("Original_Work_Area");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Work_Area));
-            }
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Inspector_id));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Interventions));
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((bool)(Original_Outstanding));
-            if ((Original_Word_file == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Word_file));
-            }
-            if ((Original_PDF_file == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_PDF_file));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(System.DateTime Date, int Site_id, string Work_Area, int Inspector_id, int Interventions, bool Outstanding, string Word_file, string PDF_file) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(Date));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Site_id));
-            if ((Work_Area == null)) {
-                throw new global::System.ArgumentNullException("Work_Area");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Work_Area));
-            }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Inspector_id));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Interventions));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((bool)(Outstanding));
-            if ((Word_file == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Word_file));
-            }
-            if ((PDF_file == null)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(PDF_file));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    System.DateTime Date, 
-                    int Site_id, 
-                    string Work_Area, 
-                    int Inspector_id, 
-                    int Interventions, 
-                    bool Outstanding, 
-                    string Word_file, 
-                    string PDF_file, 
-                    int Original_Inpections_id, 
-                    System.DateTime Original_Date, 
-                    int Original_Site_id, 
-                    string Original_Work_Area, 
-                    int Original_Inspector_id, 
-                    int Original_Interventions, 
-                    bool Original_Outstanding, 
-                    string Original_Word_file, 
-                    string Original_PDF_file, 
-                    int Inpections_id) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(Date));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Site_id));
-            if ((Work_Area == null)) {
-                throw new global::System.ArgumentNullException("Work_Area");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Work_Area));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Inspector_id));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Interventions));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((bool)(Outstanding));
-            if ((Word_file == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Word_file));
-            }
-            if ((PDF_file == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(PDF_file));
-            }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Inpections_id));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_Date));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Site_id));
-            if ((Original_Work_Area == null)) {
-                throw new global::System.ArgumentNullException("Original_Work_Area");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Work_Area));
-            }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Inspector_id));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Interventions));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((bool)(Original_Outstanding));
-            if ((Original_Word_file == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Word_file));
-            }
-            if ((Original_PDF_file == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_PDF_file));
-            }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Inpections_id));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    System.DateTime Date, 
-                    int Site_id, 
-                    string Work_Area, 
-                    int Inspector_id, 
-                    int Interventions, 
-                    bool Outstanding, 
-                    string Word_file, 
-                    string PDF_file, 
-                    int Original_Inpections_id, 
-                    System.DateTime Original_Date, 
-                    int Original_Site_id, 
-                    string Original_Work_Area, 
-                    int Original_Inspector_id, 
-                    int Original_Interventions, 
-                    bool Original_Outstanding, 
-                    string Original_Word_file, 
-                    string Original_PDF_file) {
-            return this.Update(Date, Site_id, Work_Area, Inspector_id, Interventions, Outstanding, Word_file, PDF_file, Original_Inpections_id, Original_Date, Original_Site_id, Original_Work_Area, Original_Inspector_id, Original_Interventions, Original_Outstanding, Original_Word_file, Original_PDF_file, Original_Inpections_id);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class InspectionsTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public InspectionsTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Inspections";
-            tableMapping.ColumnMappings.Add("Inpections_id", "Inpections_id");
-            tableMapping.ColumnMappings.Add("Date", "Date");
-            tableMapping.ColumnMappings.Add("Site_id", "Site_id");
-            tableMapping.ColumnMappings.Add("Work_Area", "Work_Area");
-            tableMapping.ColumnMappings.Add("Inspector_id", "Inspector_id");
-            tableMapping.ColumnMappings.Add("Interventions", "Interventions");
-            tableMapping.ColumnMappings.Add("Outstanding", "Outstanding");
-            tableMapping.ColumnMappings.Add("Word_file", "Word_file");
-            tableMapping.ColumnMappings.Add("PDF_file", "PDF_file");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Inspections] WHERE (([Inpections_id] = @Original_Inpections_id) AND ([Date] = @Original_Date) AND ([Site_id] = @Original_Site_id) AND ([Work_Area] = @Original_Work_Area) AND ([Inspector_id] = @Original_Inspector_id) AND ([Interventions] = @Original_Interventions) AND ([Outstanding] = @Original_Outstanding) AND ((@IsNull_Word_file = 1 AND [Word_file] IS NULL) OR ([Word_file] = @Original_Word_file)) AND ((@IsNull_PDF_file = 1 AND [PDF_file] IS NULL) OR ([PDF_file] = @Original_PDF_file)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Inpections_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inpections_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Site_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Site_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Work_Area", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Work_Area", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Inspector_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inspector_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Interventions", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Interventions", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Outstanding", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Outstanding", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Word_file", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Word_file", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Word_file", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Word_file", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PDF_file", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PDF_file", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PDF_file", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PDF_file", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Inspections] ([Date], [Site_id], [Work_Area], [Inspector_id], [Interventions], [Outstanding], [Word_file], [PDF_file]) VALUES (@Date, @Site_id, @Work_Area, @Inspector_id, @Interventions, @Outstanding, @Word_file, @PDF_file);
-SELECT Inpections_id, Date, Site_id, Work_Area, Inspector_id, Interventions, Outstanding, Word_file, PDF_file FROM Inspections WHERE (Inpections_id = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Site_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Site_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Work_Area", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Work_Area", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inspector_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inspector_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Interventions", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Interventions", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Outstanding", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Outstanding", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Word_file", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Word_file", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PDF_file", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PDF_file", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Inspections] SET [Date] = @Date, [Site_id] = @Site_id, [Work_Area] = @Work_Area, [Inspector_id] = @Inspector_id, [Interventions] = @Interventions, [Outstanding] = @Outstanding, [Word_file] = @Word_file, [PDF_file] = @PDF_file WHERE (([Inpections_id] = @Original_Inpections_id) AND ([Date] = @Original_Date) AND ([Site_id] = @Original_Site_id) AND ([Work_Area] = @Original_Work_Area) AND ([Inspector_id] = @Original_Inspector_id) AND ([Interventions] = @Original_Interventions) AND ([Outstanding] = @Original_Outstanding) AND ((@IsNull_Word_file = 1 AND [Word_file] IS NULL) OR ([Word_file] = @Original_Word_file)) AND ((@IsNull_PDF_file = 1 AND [PDF_file] IS NULL) OR ([PDF_file] = @Original_PDF_file)));
-SELECT Inpections_id, Date, Site_id, Work_Area, Inspector_id, Interventions, Outstanding, Word_file, PDF_file FROM Inspections WHERE (Inpections_id = @Inpections_id)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Site_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Site_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Work_Area", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Work_Area", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inspector_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inspector_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Interventions", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Interventions", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Outstanding", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Outstanding", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Word_file", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Word_file", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PDF_file", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PDF_file", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Inpections_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inpections_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Site_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Site_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Work_Area", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Work_Area", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Inspector_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Inspector_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Interventions", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Interventions", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Outstanding", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Outstanding", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Word_file", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Word_file", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Word_file", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Word_file", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PDF_file", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PDF_file", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PDF_file", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PDF_file", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Inpections_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Inpections_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Musk_Inspections.Properties.Settings.Default.Musk_DBConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Inpections_id, Date, Site_id, Work_Area, Inspector_id, Interventions, Outs" +
-                "tanding, Word_file, PDF_file FROM dbo.Inspections";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Musk_DBDS.InspectionsDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(Musk_DBDS.InspectionDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -3078,18 +1977,7 @@ SELECT Inpections_id, Date, Site_id, Work_Area, Inspector_id, Interventions, Out
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Musk_DBDS.InspectionsDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            Musk_DBDS.InspectionsDataTable dataTable = new Musk_DBDS.InspectionsDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Musk_DBDS.InspectionsDataTable dataTable) {
+        public virtual int Update(Musk_DBDS.InspectionDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -3097,7 +1985,7 @@ SELECT Inpections_id, Date, Site_id, Work_Area, Inspector_id, Interventions, Out
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(Musk_DBDS dataSet) {
-            return this.Adapter.Update(dataSet, "Inspections");
+            return this.Adapter.Update(dataSet, "Inspection");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4034,8 +2922,6 @@ SELECT Inspector_id, Pwd, FirstName, LastName FROM Inspectors WHERE (Inspector_i
         
         private InspectionTableAdapter _inspectionTableAdapter;
         
-        private InspectionsTableAdapter _inspectionsTableAdapter;
-        
         private InspectorsTableAdapter _inspectorsTableAdapter;
         
         private SitesTableAdapter _sitesTableAdapter;
@@ -4066,20 +2952,6 @@ SELECT Inspector_id, Pwd, FirstName, LastName FROM Inspectors WHERE (Inspector_i
             }
             set {
                 this._inspectionTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public InspectionsTableAdapter InspectionsTableAdapter {
-            get {
-                return this._inspectionsTableAdapter;
-            }
-            set {
-                this._inspectionsTableAdapter = value;
             }
         }
         
@@ -4134,10 +3006,6 @@ SELECT Inspector_id, Pwd, FirstName, LastName FROM Inspectors WHERE (Inspector_i
                             && (this._inspectionTableAdapter.Connection != null))) {
                     return this._inspectionTableAdapter.Connection;
                 }
-                if (((this._inspectionsTableAdapter != null) 
-                            && (this._inspectionsTableAdapter.Connection != null))) {
-                    return this._inspectionsTableAdapter.Connection;
-                }
                 if (((this._inspectorsTableAdapter != null) 
                             && (this._inspectorsTableAdapter.Connection != null))) {
                     return this._inspectorsTableAdapter.Connection;
@@ -4160,9 +3028,6 @@ SELECT Inspector_id, Pwd, FirstName, LastName FROM Inspectors WHERE (Inspector_i
             get {
                 int count = 0;
                 if ((this._inspectionTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._inspectionsTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._inspectorsTableAdapter != null)) {
@@ -4209,15 +3074,6 @@ SELECT Inspector_id, Pwd, FirstName, LastName FROM Inspectors WHERE (Inspector_i
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._inspectionsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Inspections.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._inspectionsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -4252,14 +3108,6 @@ SELECT Inspector_id, Pwd, FirstName, LastName FROM Inspectors WHERE (Inspector_i
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._inspectionsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Inspections.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._inspectionsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -4270,14 +3118,6 @@ SELECT Inspector_id, Pwd, FirstName, LastName FROM Inspectors WHERE (Inspector_i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(Musk_DBDS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._inspectionsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Inspections.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._inspectionsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._inspectionTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Inspection.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -4346,11 +3186,6 @@ SELECT Inspector_id, Pwd, FirstName, LastName FROM Inspectors WHERE (Inspector_i
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._inspectionsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._inspectionsTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             if (((this._inspectorsTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._inspectorsTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -4400,15 +3235,6 @@ SELECT Inspector_id, Pwd, FirstName, LastName FROM Inspectors WHERE (Inspector_i
                     if (this._inspectionTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._inspectionTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._inspectionTableAdapter.Adapter);
-                    }
-                }
-                if ((this._inspectionsTableAdapter != null)) {
-                    revertConnections.Add(this._inspectionsTableAdapter, this._inspectionsTableAdapter.Connection);
-                    this._inspectionsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._inspectionsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._inspectionsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._inspectionsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._inspectionsTableAdapter.Adapter);
                     }
                 }
                 if ((this._inspectorsTableAdapter != null)) {
@@ -4490,10 +3316,6 @@ SELECT Inspector_id, Pwd, FirstName, LastName FROM Inspectors WHERE (Inspector_i
                 if ((this._inspectionTableAdapter != null)) {
                     this._inspectionTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._inspectionTableAdapter]));
                     this._inspectionTableAdapter.Transaction = null;
-                }
-                if ((this._inspectionsTableAdapter != null)) {
-                    this._inspectionsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._inspectionsTableAdapter]));
-                    this._inspectionsTableAdapter.Transaction = null;
                 }
                 if ((this._inspectorsTableAdapter != null)) {
                     this._inspectorsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._inspectorsTableAdapter]));

@@ -18,6 +18,7 @@ namespace Musk_Inspections
             public static string dirPDFfile;
             public static string dirWordFile;
         }
+
         public Dashboard()
         {
             //Ignore and DO NOT REMOVE THIS GIBBERISH
@@ -101,6 +102,19 @@ namespace Musk_Inspections
 
                 }
             }
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.inspectionTableAdapter.FillBy(this.musk_DBDS.Inspection);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

@@ -34,6 +34,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnLogOff = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.InspetionLink = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.inspectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbMonths = new System.Windows.Forms.ComboBox();
             this.cbInspectors = new System.Windows.Forms.ComboBox();
             this.lblInspector = new System.Windows.Forms.Label();
@@ -42,12 +44,7 @@
             this.lblSite = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.musk_DBDS = new Musk_Inspections.Musk_DBDS();
-            this.muskDBDSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inspectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inspectionTableAdapter = new Musk_Inspections.Musk_DBDSTableAdapters.InspectionTableAdapter();
             this.inspectorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inspectorsTableAdapter = new Musk_Inspections.Musk_DBDSTableAdapters.InspectorsTableAdapter();
             this.inpectionsidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.siteidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,12 +54,15 @@
             this.outstandingDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.wordfileDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pDFfileDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InspetionLink = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.muskDBDSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.musk_DBDS = new Musk_Inspections.Musk_DBDS();
+            this.inspectionTableAdapter = new Musk_Inspections.Musk_DBDSTableAdapters.InspectionTableAdapter();
+            this.inspectorsTableAdapter = new Musk_Inspections.Musk_DBDSTableAdapters.InspectorsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.musk_DBDS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.muskDBDSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inspectionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inspectorsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.muskDBDSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.musk_DBDS)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHome
@@ -130,6 +130,19 @@
             this.dataGridView1.Size = new System.Drawing.Size(1032, 484);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // InspetionLink
+            // 
+            this.InspetionLink.HeaderText = "Inspection";
+            this.InspetionLink.Name = "InspetionLink";
+            this.InspetionLink.ReadOnly = true;
+            this.InspetionLink.Text = "View";
+            this.InspetionLink.UseColumnTextForLinkValue = true;
+            // 
+            // inspectionBindingSource
+            // 
+            this.inspectionBindingSource.DataMember = "Inspection";
+            this.inspectionBindingSource.DataSource = this.muskDBDSBindingSource;
             // 
             // cbMonths
             // 
@@ -211,33 +224,10 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(166, 22);
             this.dateTimePicker1.TabIndex = 12;
             // 
-            // musk_DBDS
-            // 
-            this.musk_DBDS.DataSetName = "Musk_DBDS";
-            this.musk_DBDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // muskDBDSBindingSource
-            // 
-            this.muskDBDSBindingSource.DataSource = this.musk_DBDS;
-            this.muskDBDSBindingSource.Position = 0;
-            // 
-            // inspectionBindingSource
-            // 
-            this.inspectionBindingSource.DataMember = "Inspection";
-            this.inspectionBindingSource.DataSource = this.muskDBDSBindingSource;
-            // 
-            // inspectionTableAdapter
-            // 
-            this.inspectionTableAdapter.ClearBeforeFill = true;
-            // 
             // inspectorsBindingSource
             // 
             this.inspectorsBindingSource.DataMember = "Inspectors";
             this.inspectorsBindingSource.DataSource = this.muskDBDSBindingSource;
-            // 
-            // inspectorsTableAdapter
-            // 
-            this.inspectorsTableAdapter.ClearBeforeFill = true;
             // 
             // inpectionsidDataGridViewTextBoxColumn
             // 
@@ -305,13 +295,23 @@
             this.pDFfileDataGridViewTextBoxColumn.ReadOnly = true;
             this.pDFfileDataGridViewTextBoxColumn.Visible = false;
             // 
-            // InspetionLink
+            // muskDBDSBindingSource
             // 
-            this.InspetionLink.HeaderText = "Inspection";
-            this.InspetionLink.Name = "InspetionLink";
-            this.InspetionLink.ReadOnly = true;
-            this.InspetionLink.Text = "View";
-            this.InspetionLink.UseColumnTextForLinkValue = true;
+            this.muskDBDSBindingSource.DataSource = this.musk_DBDS;
+            this.muskDBDSBindingSource.Position = 0;
+            // 
+            // musk_DBDS
+            // 
+            this.musk_DBDS.DataSetName = "Musk_DBDS";
+            this.musk_DBDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // inspectionTableAdapter
+            // 
+            this.inspectionTableAdapter.ClearBeforeFill = true;
+            // 
+            // inspectorsTableAdapter
+            // 
+            this.inspectorsTableAdapter.ClearBeforeFill = true;
             // 
             // Dashboard
             // 
@@ -335,10 +335,10 @@
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.musk_DBDS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.muskDBDSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inspectionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inspectorsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.muskDBDSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.musk_DBDS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

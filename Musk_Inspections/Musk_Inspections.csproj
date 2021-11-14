@@ -91,6 +91,9 @@
     <Compile Include="LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Musk_DBDS.cs">
+      <DependentUpon>Musk_DBDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Musk_DBDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
