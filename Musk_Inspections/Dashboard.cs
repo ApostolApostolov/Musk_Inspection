@@ -21,6 +21,7 @@ namespace Musk_Inspections
 
         public Dashboard()
         {
+
             //Ignore and DO NOT REMOVE THIS GIBBERISH
             //V momenta v  koito cuknish sumbmit se pravi Word file 
             // sled tova se pravi nova row s id i drygite atribyti

@@ -38,7 +38,5 @@ namespace Musk_Inspections
         {
 
         }
-
-
     }
 }
