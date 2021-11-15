@@ -16,5 +16,10 @@ namespace Musk_Inspections
         {
             InitializeComponent();
         }
+
+        private void tbUsername_TextChanged(object sender, EventArgs e)
+        {
+             
+        }
     }
 }

@@ -7,17 +7,88 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Reflection;
+using Word = Microsoft.Office.Interop.Word;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 namespace Musk_Inspections
 {
     public partial class inspectionHSQE : Form
     {
-        public inspectionHSQE()
+
+        private void FindAndReplace(Word.Application wordApp, object ToFindText, object replaceWithText)
         {
-            InitializeComponent();
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            object matchCase = true;
+            object matchWholeWord = true;
+            object matchWildCards = false;
+            object matchSoundLike = false;
+            object nmatchAllforms = false;
+            object forward = true;
+            object format = false;
+            object matchKashida = false;
+            object matchDiactitics = false;
+            object matchAlefHamza = false;
+            object matchControl = false;
+            object read_only = false;
+            object visible = true;
+            object replace = 2;
+            object wrap = 1;
+
+            wordApp.Selection.Find.Execute(ref ToFindText,
+                ref matchCase, ref matchWholeWord,
+                ref matchWildCards, ref matchSoundLike,
+                ref nmatchAllforms, ref forward,
+                ref wrap, ref format, ref replaceWithText,
+                ref replace, ref matchKashida,
+                ref matchDiactitics, ref matchAlefHamza,
+                ref matchControl);
         }
+
+        private void CreateWordDocument(object filename, object SaveAs)
+        {
+            Word.Application wordApp = new Word.Application();
+            object missing = Missing.Value;
+            Word.Document myWordDoc = null;
+
+            if (File.Exists((string)filename))
+            {
+                object readOnly = false;
+                object isVisible = false;
+                wordApp.Visible = false;
+
+                myWordDoc = wordApp.Documents.Open(ref filename, ref missing, ref readOnly,
+                                        ref missing, ref missing, ref missing,
+                                        ref missing, ref missing, ref missing,
+                                        ref missing, ref missing, ref missing,
+                                        ref missing, ref missing, ref missing, ref missing);
+                myWordDoc.Activate();
+
+                //find and replace
+                this.FindAndReplace(wordApp, "<site>", jobBox.Text);
+                this.FindAndReplace(wordApp, "<workArea>", workBox.Text);
+                this.FindAndReplace(wordApp, "<supervisorName>", supervisorBox.Text);
+                this.FindAndReplace(wordApp, "<jobDescription>", jobBox.Text);
+                this.FindAndReplace(wordApp, "<type>", typeBox.Text);
+                this.FindAndReplace(wordApp, "<date>", dateTimePicker1.Value.ToShortDateString());
+            }
+            else
+            {
+                MessageBox.Show("File not Found!");
+            }
+            myWordDoc.SaveAs2(ref SaveAs, ref missing, ref missing, ref missing,
+                           ref missing, ref missing, ref missing,
+                           ref missing, ref missing, ref missing,
+                           ref missing, ref missing, ref missing,
+                           ref missing, ref missing, ref missing);
+
+            myWordDoc.Close();
+            wordApp.Quit();
+            MessageBox.Show("File Created!");
+        }
+      
+
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
@@ -39,6 +110,9 @@ namespace Musk_Inspections
 
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CreateWordDocument(@"C:\Developement\Musk_Inspection\Temp.docx", @"C:\Developement\Musk_Inspection\MuskReport.docx");
+        }
     }
 }
