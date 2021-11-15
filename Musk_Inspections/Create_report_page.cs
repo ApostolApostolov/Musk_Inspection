@@ -83,7 +83,7 @@ namespace Musk_Inspections
         }
         private SqlConnection GetConnection()
         {
-            return new SqlConnection(@"Data Source=(localdb)\Local; Database=Musk_DB.mdf;Integrated Security= false;  ");
+            return new SqlConnection(@"Data Source=(localdb)\Local; Database=Musk_DB.mdf;Integrated Security= sspi;  ");
             
         }
 
