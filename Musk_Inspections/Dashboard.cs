@@ -32,6 +32,7 @@ namespace Musk_Inspections
             // 1 da pokazva iztegli vmesto linka kum failsa
             // nameri nachin da otvaeq faila sled kato cuknish na kletkata (VIEW) tova e samo za PDF
             // chujdite klychove da pokazvat value vmesto reference
+            //fynkciq za proverqvaneto dali e napisano neshto v HSQE (zasega samo purvite 3 reda) ako ne suobshenie che e ne e napisal nishto ili prosto go ignorira
 
             // YeeYee
             InitializeComponent();
