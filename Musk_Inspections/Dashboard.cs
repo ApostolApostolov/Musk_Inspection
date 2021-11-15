@@ -35,6 +35,7 @@ namespace Musk_Inspections
             //fynkciq za proverqvaneto dali e napisano neshto v HSQE (zasega samo purvite 3 reda) ako ne suobshenie che e ne e napisal nishto ili prosto go ignorira
 
             // YeeYee
+            //test
             InitializeComponent();
             //correct format for picking a date
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
