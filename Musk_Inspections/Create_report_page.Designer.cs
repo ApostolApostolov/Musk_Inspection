@@ -32,7 +32,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.openFormButton = new System.Windows.Forms.Button();
             this.pForms = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -86,7 +85,6 @@
             // 
             this.pForms.AutoScroll = true;
             this.pForms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pForms.Controls.Add(this.button2);
             this.pForms.Controls.Add(this.label7);
             this.pForms.Controls.Add(this.label6);
             this.pForms.Controls.Add(this.label5);
@@ -108,21 +106,6 @@
             this.pForms.Size = new System.Drawing.Size(1538, 904);
             this.pForms.TabIndex = 3;
             this.pForms.Paint += new System.Windows.Forms.PaintEventHandler(this.pForms_Paint);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(456, 395);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(180, 46);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Generate pdf";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label7
             // 
@@ -252,12 +235,12 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(254, 395);
+            this.button3.Location = new System.Drawing.Point(267, 390);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(179, 46);
             this.button3.TabIndex = 10;
-            this.button3.Text = "Generate docx";
+            this.button3.Text = "Save docx";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -318,6 +301,5 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
     }
 }

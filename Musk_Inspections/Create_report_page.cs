@@ -129,9 +129,6 @@ namespace Musk_Inspections
             CreateWordDocument(@"C:\Developement\Musk_Inspection\Temp.docx", @"C:\Developement\Musk_Inspection\MuskReport.docx");
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            CreateWordDocument(@"C:\Developement\Musk_Inspection\Temp.docx", @"C:\Developement\Musk_Inspection\MuskReport.pdf");
-        }
+       
     }
 }
