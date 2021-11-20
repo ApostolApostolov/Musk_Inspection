@@ -44,19 +44,17 @@ namespace Musk_Inspections
             
         }
 
+        // do not exist but remove them and it break the program
         private void Button2_Click(object sender, EventArgs e)
         {
-            HSQE.Hide();
-            HSQE2.TopLevel = false;
-            HSQE2.Show();
+            
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            HSQE2.Hide();
-            HSQE.Show();
+           
         }
-
+        ///
       
 
         private void SaveFile(string filePath)
@@ -104,6 +102,9 @@ namespace Musk_Inspections
             
         }
 
-       
+        private void Create_report_page_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
