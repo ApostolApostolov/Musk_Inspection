@@ -70,18 +70,19 @@ namespace Musk_Inspections
 
                 using (SqlConnection cn=GetConnection())
                 {
-                    
+                    cn.Open();
                     SqlCommand cmd = new SqlCommand(query, cn);
                     cmd.Parameters.Add("@data", SqlDbType.VarBinary).Value = buffer;
                     cmd.Parameters.Add("@extn", SqlDbType.Char).Value = extn;
-                    cn.Open();
+                    
                     cmd.ExecuteNonQuery();
                 }
             }
         }
         private SqlConnection GetConnection()
         {
-            return new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB; Database=db_Musk.mdf;Integrated Security= sspi;  ");
+            return new SqlConnection(Properties.Settings.Default.Musk_DBConnectionString);
+            //return new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB; Database=db_Musk.mdf;Integrated Security= sspi;  ");
             
         }
 
@@ -106,6 +107,14 @@ namespace Musk_Inspections
         private void Create_report_page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            string filePath = Dashboard.Directories.dirPDFfile;
+            filePath = Path.Combine(filePath, "test.pdf");
+            SaveFile(filePath);
+            MessageBox.Show("A Great Success");
         }
     }
 }
