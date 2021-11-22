@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 
-namespace SQL_Interface_Test._classes
+namespace Musk_Inspections
 {
     public static class clsDB
     {
@@ -27,13 +27,6 @@ namespace SQL_Interface_Test._classes
                 }
             }
         }
-
-        public enum ConnectionType {MySql, Local}
-
-        // DB names
-        public static string nm_DB_Local = "db_Local";
-        public static string nm_DB_MySQL = "msql_DB_1";
-        public static string nm_DB_Current = nm_DB_Local;
 
         public static DataTable Get_DataTable(string tableName)
         {
@@ -73,25 +66,37 @@ namespace SQL_Interface_Test._classes
             }
         }
 
-        
-        public static string Retrieve_Data(string SQL_Text)
+        public static DataRow Retrieve_Row(string tableName, int row)
         {
             using (SqlConnection cn = DBConnection.Connect())
             {
-                SqlCommand command = DBConnection.CreateCommand(SQL_Text);
-
-                DbDataReader reader1 = command.ExecuteReader();
-
-                DataTable table = new DataTable();
-                    table.Load(reader1);
+                DataTable table = Get_DataTable(tableName);
 
                 try
                 {
-                    return table.Rows.Find(0).Field<string>("bin");
+                    return table.Rows.Find(row);
                 }
                 catch (Exception e)
                 {
-                    return e.Message;
+                    return null;
+                }
+            }
+        }
+
+        public static T Retrieve_Field<T>(string tableName, string column, int row)
+        {
+            using (SqlConnection cn = DBConnection.Connect())
+            {
+                DataTable table = Get_DataTable(tableName);
+
+                try
+                {
+                    T data = table.Rows.Find(row).Field<T>(column);
+                    return data;
+                }
+                catch (Exception e)
+                {
+                    return default;
                 }
             }
         }
