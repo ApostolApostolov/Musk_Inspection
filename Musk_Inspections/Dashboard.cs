@@ -102,7 +102,11 @@ namespace Musk_Inspections
             using (SqlConnection sqlcon = new SqlConnection(Properties.Settings.Default.Musk_DBConnectionString))
             {
                 sqlcon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT Date, Site_id, Work_Area, Inspector_id, Interventions, Outstanding, PDF_file FROM Inspection  ", sqlcon);
+                SqlDataAdapter sqlDa = new SqlDataAdapter("" +
+                    "SELECT Ins.Date, s.SiteName, Ins.Work_Area, Ins.Inspector_id, Ins.Interventions, Ins.Outstanding, Ins.PDF_file " +
+                    "FROM Inspection AS Ins , Sites AS s " +
+                    "JOIN Inspection ON Inspection.Site_id  = s.Site_id", sqlcon);
+
                 DataTable dtb1 = new DataTable();
                 sqlDa.Fill(dtb1);
 
