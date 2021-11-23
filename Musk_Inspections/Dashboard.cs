@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Musk_Inspections
 {
@@ -17,6 +12,7 @@ namespace Musk_Inspections
         {
             public static string dirPDFfile;
             public static string dirWordFile;
+            public static string sqlConn;
         }
 
         public Dashboard()
@@ -42,6 +38,11 @@ namespace Musk_Inspections
             dateTimePicker1.CustomFormat = "yyyy";
             dateTimePicker1.ShowUpDown = true;
             gettingDirectories();
+            gettingSQLConnection();
+        }
+        public void gettingSQLConnection()
+        {
+
         }
         public void gettingDirectories()
         {
@@ -72,28 +73,16 @@ namespace Musk_Inspections
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'musk_DBDS.Inspectors' table. You can move, or remove it, as needed.
-           // this.inspectorsTableAdapter.Fill(this.musk_DBDS.Inspectors);
-            // TODO: This line of code loads data into the 'musk_DBDS.Inspection' table. You can move, or remove it, as needed.
-           // this.inspectionTableAdapter.Fill(this.musk_DBDS.Inspection);
-            // TODO: This line of code loads data into the 'musk_DBDataSet.Inspection' table. You can move, or remove it, as needed.
-           // this.inspectionTableAdapter.Fill(this.musk_DBDS.Inspection);
-            // TODO: This line of code loads data into the 'musk_DBDataSet.Inspections' table. You can move, or remove it, as needed.
-           //this.inspectionTableAdapter.Fill(this.musk_DBDS.Inspection);
-            // TODO: This line of code loads data into the 'musk_DBDataSet.Inspectors' table. You can move, or remove it, as needed.
-           // this.inspectorTableAdapter.Fill(this.musk_DBDS.Inspectors);
-            // TODO: This line of code loads data into the 'musk_DBDataSet.Inspections' table. You can move, or remove it, as needed.
-           // this.inspectionTableAdapter.Fill(this.musk_DBDS.Inspection);
 
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.CurrentCell.ColumnIndex.Equals(1) && e.RowIndex != -1)
+            if (dgv.CurrentCell.ColumnIndex.Equals(1) && e.RowIndex != -1)
             {
-                if (dataGridView1.CurrentCell != null && dataGridView1.CurrentCell.Value != null)
+                if (dgv.CurrentCell != null && dgv.CurrentCell.Value != null)
                 {
-                    MessageBox.Show(dataGridView1.CurrentCell.Value.ToString());
+                    MessageBox.Show(dgv.CurrentCell.Value.ToString());
                   
                     MessageBox.Show(Directories.dirPDFfile);
 
@@ -106,18 +95,33 @@ namespace Musk_Inspections
                 }
             }
         }
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
+ 
+        private void btnSearch_Click(object sender, EventArgs e)
+            
         {
-            try
+            using (SqlConnection sqlcon = new SqlConnection(Properties.Settings.Default.Musk_DBConnectionString))
             {
-                this.inspectionTableAdapter.FillBy(this.musk_DBDS.Inspection);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
+                sqlcon.Open();
+                SqlDataAdapter sqlDa = new SqlDataAdapter("SELECT Date, Site_id, Work_Area, Inspector_id, Interventions, Outstanding, PDF_file FROM Inspection  ", sqlcon);
+                DataTable dtb1 = new DataTable();
+                sqlDa.Fill(dtb1);
 
+                dgv.DataSource = dtb1;
+
+            }
         }
+
+        /* private void fillByToolStripButton_Click(object sender, EventArgs e)
+         {
+             try
+             {
+                 this.inspectionTableAdapter.FillBy(this.musk_DBDS.Inspection);
+             }
+             catch (System.Exception ex)
+             {
+                 System.Windows.Forms.MessageBox.Show(ex.Message);
+             }
+
+        }*/
     }
 }

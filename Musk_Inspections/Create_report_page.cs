@@ -82,8 +82,6 @@ namespace Musk_Inspections
         private SqlConnection GetConnection()
         {
             return new SqlConnection(Properties.Settings.Default.Musk_DBConnectionString);
-            //return new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB; Database=db_Musk.mdf;Integrated Security= sspi;  ");
-            
         }
 
         private void button4_Click_1(object sender, EventArgs e)
