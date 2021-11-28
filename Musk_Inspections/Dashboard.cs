@@ -121,36 +121,31 @@ namespace Musk_Inspections
             using (SqlConnection sqlcon = new SqlConnection(Properties.Settings.Default.DB_MUSK))
             {
                 sqlcon.Open();
-                /*
-                SqlDataAdapter sqlDa = new SqlDataAdapter(
-                    "SELECT Ins.Date, s.SiteName, Ins.Work_Area, inp.FirstName, Ins.Interventions, Ins.Outstanding, Ins.PDF_file " +
-                    "FROM Inspection AS Ins , Sites AS s , Inspector AS inp" +
-                    "JOIN Inspection ON Inspection.Site_id  = s.Site_id", sqlcon);
-                    */
+
                 SqlDataAdapter sqlDa = new SqlDataAdapter(
                     "SELECT Inpections_id, Date, SiteName, Work_Area, FirstName, Interventions, Outstanding, FileName  FROM Inspection " +
                     " INNER JOIN Sites ON Sites.Site_id = Inspection.Site_id" +
                     " INNER JOIN Inspector ON Inspector.Inspector_id = Inspection.Inspector_id " +
                     " INNER JOIN pdf_files ON pdf_files.ID = Inspection.PDF_file", sqlcon);
-                //INNER JOIN pdf_files ON pdf_files.ID = Inspection.PDF_file
                 DataTable dtb1 = new DataTable();
                 sqlDa.Fill(dtb1);
 
                 dgv.DataSource = dtb1;
-                // dgv.Columns["FilaName"].HeaderText = "PDF";
+                //proper names in the table displayed to the user
                 dgv.Columns["Inpections_id"].HeaderText = "Id";
-                
+                dgv.Columns["SiteName"].HeaderText = "Site";
+                dgv.Columns["Work_Area"].HeaderText = "Work Area";
+                dgv.Columns["FileName"].HeaderText = "Inspection";
 
 
 
             }
         }
+
         private SqlConnection GetConnection()
         {
 
             return new SqlConnection(Properties.Settings.Default.DB_MUSK);
-            // "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db_Musk.mdf;Integrated Security=True"
-            //(Properties.Settings.Default.db_Musk
         }
         private void LoadData()
         {
@@ -184,31 +179,6 @@ namespace Musk_Inspections
                 }
             }
         }
-
-
-
-
-
-        private void fill_up()
-        {
-            DataGridViewLinkColumn col = new DataGridViewLinkColumn();
-            col.DataPropertyName = "PDF_file";
-            col.Name = "PDF_file";
-           
-        }
-        
-
-        /* private void fillByToolStripButton_Click(object sender, EventArgs e)
-         {
-             try
-             {
-                 this.inspectionTableAdapter.FillBy(this.musk_DBDS.Inspection);
-             }
-             catch (System.Exception ex)
-             {
-                 System.Windows.Forms.MessageBox.Show(ex.Message);
-             }
-
-        }*/
+       
     }
 }
