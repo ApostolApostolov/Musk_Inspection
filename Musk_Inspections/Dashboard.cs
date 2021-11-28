@@ -128,10 +128,10 @@ namespace Musk_Inspections
                     "JOIN Inspection ON Inspection.Site_id  = s.Site_id", sqlcon);
                     */
                 SqlDataAdapter sqlDa = new SqlDataAdapter(
-                    "SELECT Inpections_id, Date, SiteName, Work_Area, FirstName, Interventions, Outstanding  FROM Inspection " +
+                    "SELECT Inpections_id, Date, SiteName, Work_Area, FirstName, Interventions, Outstanding, FileName  FROM Inspection " +
                     " INNER JOIN Sites ON Sites.Site_id = Inspection.Site_id" +
                     " INNER JOIN Inspector ON Inspector.Inspector_id = Inspection.Inspector_id " +
-                    " ", sqlcon);
+                    " INNER JOIN pdf_files ON pdf_files.ID = Inspection.PDF_file", sqlcon);
                 //INNER JOIN pdf_files ON pdf_files.ID = Inspection.PDF_file
                 DataTable dtb1 = new DataTable();
                 sqlDa.Fill(dtb1);
