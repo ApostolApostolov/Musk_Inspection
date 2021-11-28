@@ -49,6 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -91,14 +92,6 @@
     <Compile Include="LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Musk_DBDS.cs">
-      <DependentUpon>Musk_DBDS.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Musk_DBDS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Musk_DBDS.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Create_report_page.resx">
@@ -125,17 +118,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Musk_DBDS.xsc">
-      <DependentUpon>Musk_DBDS.xsd</DependentUpon>
-    </None>
-    <None Include="Musk_DBDS.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Musk_DBDS.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Musk_DBDS.xss">
-      <DependentUpon>Musk_DBDS.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -191,12 +173,12 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="db_Musk.mdf">
+    <Content Include="DB_MUSK.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="db_Musk_log.ldf">
+    <Content Include="DB_MUSK_log.ldf">
+      <DependentUpon>DB_MUSK.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>db_Musk.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

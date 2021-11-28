@@ -12,7 +12,7 @@ namespace Musk_Inspections
         {
             public static string dirPDFfile;
             public static string dirWordFile;
-            public static string sqlConn;
+            public static string databasePath;
         }
 
         public Dashboard()
@@ -38,16 +38,13 @@ namespace Musk_Inspections
             dateTimePicker1.CustomFormat = "yyyy";
             dateTimePicker1.ShowUpDown = true;
             gettingDirectories();
-            gettingSQLConnection();
-        }
-        public void gettingSQLConnection()
-        {
-
+           
         }
         public void gettingDirectories()
         {
             string directory = Directory.GetCurrentDirectory();
             directory = directory.Substring(0, directory.Length - 9); //remove the unneccesery parts of the current directory
+            Directories.databasePath = directory;
             Directories.dirPDFfile = Path.Combine(directory, "pdf_files");
             Directories.dirWordFile = Path.Combine(directory, "word_files");
 
@@ -86,8 +83,8 @@ namespace Musk_Inspections
                   
                     MessageBox.Show(Directories.dirPDFfile);
 
-                    string filename = Path.Combine(Directories.dirPDFfile, "5.pdf");
-                    System.Diagnostics.Process.Start(filename);
+                   // string filename = Path.Combine(Directories.dirPDFfile, "5.pdf");
+                   // System.Diagnostics.Process.Start(filename);
 
                     //SLED kato razgadaish kak da napravish fail s imeto koeto da e id-to 
                     //IMPORTANT THE FILE NAME HAS TO BE THE SAME AS THE ID
@@ -99,13 +96,19 @@ namespace Musk_Inspections
         private void btnSearch_Click(object sender, EventArgs e)
             
         {
-            using (SqlConnection sqlcon = new SqlConnection(Properties.Settings.Default.Musk_DBConnectionString))
+            using (SqlConnection sqlcon = new SqlConnection(Properties.Settings.Default.DB_MUSK))
             {
                 sqlcon.Open();
-                SqlDataAdapter sqlDa = new SqlDataAdapter("" +
-                    "SELECT Ins.Date, s.SiteName, Ins.Work_Area, Ins.Inspector_id, Ins.Interventions, Ins.Outstanding, Ins.PDF_file " +
-                    "FROM Inspection AS Ins , Sites AS s " +
+                /*
+                SqlDataAdapter sqlDa = new SqlDataAdapter(
+                    "SELECT Ins.Date, s.SiteName, Ins.Work_Area, inp.FirstName, Ins.Interventions, Ins.Outstanding, Ins.PDF_file " +
+                    "FROM Inspection AS Ins , Sites AS s , Inspector AS inp" +
                     "JOIN Inspection ON Inspection.Site_id  = s.Site_id", sqlcon);
+                    */
+                SqlDataAdapter sqlDa = new SqlDataAdapter(
+                    "SELECT Date, SiteName, Work_Area, FirstName, Interventions, Outstanding, PDF_file FROM Inspection " +
+                    " INNER JOIN Sites ON Sites.Site_id = Inspection.Site_id" +
+                    " INNER JOIN Inspector ON Inspector.Inspector_id = Inspection.Inspector_id", sqlcon);
 
                 DataTable dtb1 = new DataTable();
                 sqlDa.Fill(dtb1);
@@ -113,6 +116,11 @@ namespace Musk_Inspections
                 dgv.DataSource = dtb1;
 
             }
+        }
+
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         /* private void fillByToolStripButton_Click(object sender, EventArgs e)

@@ -159,7 +159,7 @@
             // tbSite
             // 
             this.tbSite.Location = new System.Drawing.Point(131, 143);
-            this.tbSite.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSite.Margin = new System.Windows.Forms.Padding(4);
             this.tbSite.Name = "tbSite";
             this.tbSite.Size = new System.Drawing.Size(233, 22);
             this.tbSite.TabIndex = 13;
@@ -167,7 +167,7 @@
             // tbInspector
             // 
             this.tbInspector.Location = new System.Drawing.Point(447, 144);
-            this.tbInspector.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbInspector.Margin = new System.Windows.Forms.Padding(4);
             this.tbInspector.Name = "tbInspector";
             this.tbInspector.Size = new System.Drawing.Size(261, 22);
             this.tbInspector.TabIndex = 14;
@@ -183,6 +183,7 @@
             this.dgv.RowTemplate.Height = 24;
             this.dgv.Size = new System.Drawing.Size(1177, 327);
             this.dgv.TabIndex = 15;
+            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
             // Dashboard
             // 
