@@ -73,15 +73,37 @@ namespace Musk_Inspections
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private int getRowIndex(string value)
         {
-            if (dgv.CurrentCell.ColumnIndex.Equals(1) && e.RowIndex != -1)
+            for(int i = 0; 1 < dgv.RowCount; i++)
+            {
+                if (dgv.Rows[i].Cells[6].Value.ToString() == value)
+                {
+                    return (int)dgv.Rows[i].Cells[0].Value;
+                }
+               
+            }
+            return -1;
+        }
+
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgv.CurrentCell.ColumnIndex.Equals(2) && e.RowIndex != -1) //7 or 8
             {
                 if (dgv.CurrentCell != null && dgv.CurrentCell.Value != null)
                 {
                     MessageBox.Show(dgv.CurrentCell.Value.ToString());
-                  
-                    MessageBox.Show(Directories.dirPDFfile);
+
+                    string fileId = dgv.CurrentCell.Value.ToString();
+                    MessageBox.Show(fileId);
+                    //OpenFile(fileId)
+                    OpenFile(2);
+                    var selectedRow = dgv.SelectedRows;
+                    foreach (var row in selectedRow)
+                    {
+                        int id = (int)((DataGridViewRow)row).Cells[0].Value;
+                        MessageBox.Show(id.ToString());
+                    }
 
                    // string filename = Path.Combine(Directories.dirPDFfile, "5.pdf");
                    // System.Diagnostics.Process.Start(filename);
@@ -106,22 +128,75 @@ namespace Musk_Inspections
                     "JOIN Inspection ON Inspection.Site_id  = s.Site_id", sqlcon);
                     */
                 SqlDataAdapter sqlDa = new SqlDataAdapter(
-                    "SELECT Date, SiteName, Work_Area, FirstName, Interventions, Outstanding, PDF_file FROM Inspection " +
+                    "SELECT Inpections_id, Date, SiteName, Work_Area, FirstName, Interventions, Outstanding  FROM Inspection " +
                     " INNER JOIN Sites ON Sites.Site_id = Inspection.Site_id" +
-                    " INNER JOIN Inspector ON Inspector.Inspector_id = Inspection.Inspector_id", sqlcon);
-
+                    " INNER JOIN Inspector ON Inspector.Inspector_id = Inspection.Inspector_id " +
+                    " ", sqlcon);
+                //INNER JOIN pdf_files ON pdf_files.ID = Inspection.PDF_file
                 DataTable dtb1 = new DataTable();
                 sqlDa.Fill(dtb1);
 
                 dgv.DataSource = dtb1;
+                // dgv.Columns["FilaName"].HeaderText = "PDF";
+                dgv.Columns["Inpections_id"].HeaderText = "Id";
+                
+
+
 
             }
         }
-
-        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private SqlConnection GetConnection()
         {
 
+            return new SqlConnection(Properties.Settings.Default.DB_MUSK);
+            // "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db_Musk.mdf;Integrated Security=True"
+            //(Properties.Settings.Default.db_Musk
         }
+        private void LoadData()
+        {
+            using(SqlConnection cn = GetConnection())
+            {
+                string query = "SELECT ID,FileName,Extension FROM pdf_files";
+                SqlDataAdapter adp = new SqlDataAdapter(query, cn);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+            }
+        }
+
+        private void OpenFile(int id)
+        {
+            using (SqlConnection cn = GetConnection())
+            {
+                string query = "SELECT Data,FileName,Extension FROM pdf_files WHERE ID=@id";
+                SqlCommand cmd = new SqlCommand(query, cn);
+                cmd.Parameters.Add("@id",SqlDbType.Int).Value=id;
+                cn.Open();
+                var reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    var name = reader["FIleName"].ToString();
+                    var data = (byte[])reader["data"];
+                    var extn = reader["Extension"].ToString();
+                    var newFileName = name.Replace(extn, DateTime.Now.ToString("ddMMyyyyhhmmss")) + extn;
+
+                    File.WriteAllBytes(newFileName, data);
+                    System.Diagnostics.Process.Start(newFileName);
+                }
+            }
+        }
+
+
+
+
+
+        private void fill_up()
+        {
+            DataGridViewLinkColumn col = new DataGridViewLinkColumn();
+            col.DataPropertyName = "PDF_file";
+            col.Name = "PDF_file";
+           
+        }
+        
 
         /* private void fillByToolStripButton_Click(object sender, EventArgs e)
          {

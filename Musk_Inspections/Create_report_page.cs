@@ -65,13 +65,16 @@ namespace Musk_Inspections
                 byte[] buffer = new byte[stream.Length];
                 stream.Read(buffer, 0, buffer.Length);
 
-                string extn = new FileInfo(filePath).Extension;
-                string query = "INSERT INTO WORD_FILES(Data,Extension)VALUES(@data,@extn)";
+                var fi = new FileInfo(filePath);
+                string extn = fi.Extension;
+                string name = fi.Name;
+                string query = "INSERT INTO pdf_files(FileName,Data,Extension)VALUES(@name,@data,@extn)";
 
                 using (SqlConnection cn=GetConnection())
                 {
                     
                     SqlCommand cmd = new SqlCommand(query, cn);
+                    cmd.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
                     cmd.Parameters.Add("@data", SqlDbType.VarBinary).Value = buffer;
                     cmd.Parameters.Add("@extn", SqlDbType.Char).Value = extn;
                     cn.Open();
@@ -79,7 +82,7 @@ namespace Musk_Inspections
                 }
             }
         }
-        private SqlConnection GetConnection()
+        public SqlConnection GetConnection()
         {
           
             return new SqlConnection(Properties.Settings.Default.DB_MUSK);
