@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,19 @@ namespace Musk_Inspections
         public LoginPage()
         {
             InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string query = "INSERT INTO pdf_files (Data,Extension)VALUES(@data,@extn) ";
+
+            using (SqlConnection cn = new SqlConnection(Properties.Settings.Default.Musk_DBConnectionString))
+            {
+                cn.Open();
+                SqlCommand cmd = new SqlCommand(query, cn);
+
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }
