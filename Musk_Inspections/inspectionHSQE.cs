@@ -93,6 +93,8 @@ namespace Musk_Inspections
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "dd-MM-yyyy";
         }
+      
+
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
