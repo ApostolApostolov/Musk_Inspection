@@ -48,12 +48,14 @@ namespace Musk_Inspections
         // do not exist but remove them and it break the program
         private void Button2_Click(object sender, EventArgs e)
         {
-            
+            this.pForms.Controls.Add(HSQE);
+            HSQE.Show();
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-           
+            this.pForms.Controls.Add(HSQE2);
+            HSQE2.Show();
         }
         ///
       

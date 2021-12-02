@@ -43,7 +43,7 @@ namespace Musk_Inspections
                 ref matchDiactitics, ref matchAlefHamza,
                 ref matchControl);
         }
-        //CreateWordDocument(@"C:\Developement\Musk_Inspection\Temp.docx", @"C:\Developement\Musk_Inspection\MuskReport.docx");
+       
         private void CreateWordDocument(object filename, object SaveAs)
         {
             Word.Application wordApp = new Word.Application();
@@ -136,7 +136,7 @@ namespace Musk_Inspections
                 
         private void button1_Click(object sender, EventArgs e)
         {
-            CreateWordDocument(@"C:\Developement\Musk_Inspection\Temp.docx", @"C:\Developement\Musk_Inspection\MuskReport.docx");
+            CreateWordDocument(@"C:\Users\Rui\source\repos\ApostolApostolov\Musk_Inspection\Temp.docx", @"C:\Users\Rui\source\repos\ApostolApostolov\Musk_Inspection\MuskReport.docx");
         }
         public inspectionHSQE()
         {
