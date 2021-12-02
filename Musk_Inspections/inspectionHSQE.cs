@@ -15,6 +15,7 @@ namespace Musk_Inspections
 {
     public partial class inspectionHSQE : Form
     {
+
         private void FindAndReplace(Word.Application wordApp, object ToFindText, object replaceWithText)
         {
             object matchCase = true;
@@ -63,13 +64,59 @@ namespace Musk_Inspections
                 myWordDoc.Activate();
 
                 //find and replace
-                this.FindAndReplace(wordApp, "<name>", textBox1.Text);
-                this.FindAndReplace(wordApp, "<workArea>", textBox2.Text);
-                this.FindAndReplace(wordApp, "<site>", textBox3.Text);
-                this.FindAndReplace(wordApp, "<jobDescription>", textBox4.Text);
-                this.FindAndReplace(wordApp, "<type>", textBox5.Text);
-                this.FindAndReplace(wordApp, "<feedback>", textBox6.Text);
+                this.FindAndReplace(wordApp, "<site>", siteBox.Text);
+                this.FindAndReplace(wordApp, "<workArea>", workBox.Text);
+                this.FindAndReplace(wordApp, "<supervisorName>", supervisorBox.Text);
+                this.FindAndReplace(wordApp, "<jobDescription>", jobBox.Text);
+                this.FindAndReplace(wordApp, "<type>", typeBox.Text);
                 this.FindAndReplace(wordApp, "<date>", DateTime.Now.ToShortDateString());
+                this.FindAndReplace(wordApp, "<upP1>", upP1.Text);
+                this.FindAndReplace(wordApp, "<upN1>", upN1.Text);
+                this.FindAndReplace(wordApp, "<comments1>", comments2.Text);
+                this.FindAndReplace(wordApp, "<upP2>", upP2.Text);
+                this.FindAndReplace(wordApp, "<upN2>", upN2.Text);
+                this.FindAndReplace(wordApp, "<comments2>", comments2.Text);
+                this.FindAndReplace(wordApp, "<upP3>", upP3.Text);
+                this.FindAndReplace(wordApp, "<upN3>", upN3.Text);
+                this.FindAndReplace(wordApp, "<comments3>", comments3.Text);
+                this.FindAndReplace(wordApp, "<upP4>", upP4.Text);
+                this.FindAndReplace(wordApp, "<upN4>", upN4.Text);
+                this.FindAndReplace(wordApp, "<comments4>", comments4.Text);
+                this.FindAndReplace(wordApp, "<upP5>", upP5.Text);
+                this.FindAndReplace(wordApp, "<upN5>", upN5.Text);
+                this.FindAndReplace(wordApp, "<comments5>", comments5.Text);
+                this.FindAndReplace(wordApp, "<upP6>", upP6.Text);
+                this.FindAndReplace(wordApp, "<upN6>", upN6.Text);
+                this.FindAndReplace(wordApp, "<comments6>", comments6.Text);
+                this.FindAndReplace(wordApp, "<upP7>", upP7.Text);
+                this.FindAndReplace(wordApp, "<upN7>", upN7.Text);
+                this.FindAndReplace(wordApp, "<comments7>", comments7.Text);
+                this.FindAndReplace(wordApp, "<upP8>", upP8.Text);
+                this.FindAndReplace(wordApp, "<upN8>", upN8.Text);
+                this.FindAndReplace(wordApp, "<comments8>", comments8.Text);
+                this.FindAndReplace(wordApp, "<upP9>", upP9.Text);
+                this.FindAndReplace(wordApp, "<upN9>", upN9.Text);
+                this.FindAndReplace(wordApp, "<comments9>", comments9.Text);
+                this.FindAndReplace(wordApp, "<upP10>", upP10.Text);
+                this.FindAndReplace(wordApp, "<upN10>", upN10.Text);
+                this.FindAndReplace(wordApp, "<comments10>", comments10.Text);
+                this.FindAndReplace(wordApp, "<upP11>", upP11.Text);
+                this.FindAndReplace(wordApp, "<upN11>", upN11.Text);
+                this.FindAndReplace(wordApp, "<comments11>", comments11.Text);
+                this.FindAndReplace(wordApp, "<upP12>", upP12.Text);
+                this.FindAndReplace(wordApp, "<upN12>", upN12.Text);
+                this.FindAndReplace(wordApp, "<comments12>", comments12.Text);
+                this.FindAndReplace(wordApp, "<upP13>", upP13.Text);
+                this.FindAndReplace(wordApp, "<upN13>", upN13.Text);
+                this.FindAndReplace(wordApp, "<comments13>", comments13.Text);
+                this.FindAndReplace(wordApp, "<upP14>", upP14.Text);
+                this.FindAndReplace(wordApp, "<upN14>", upN14.Text);
+                this.FindAndReplace(wordApp, "<comments14>", comments14.Text);
+                this.FindAndReplace(wordApp, "<upP15>", upP15.Text);
+                this.FindAndReplace(wordApp, "<upN15>", upN15.Text);
+                this.FindAndReplace(wordApp, "<comments15>", comments15.Text);
+
+
             }
             else
             {
@@ -86,15 +133,17 @@ namespace Musk_Inspections
             MessageBox.Show("File Created!");
         }
 
-
+                
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CreateWordDocument(@"C:\Developement\Musk_Inspection\Temp.docx", @"C:\Developement\Musk_Inspection\MuskReport.docx");
+        }
         public inspectionHSQE()
         {
             InitializeComponent();
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "dd-MM-yyyy";
         }
-      
-
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
@@ -115,5 +164,7 @@ namespace Musk_Inspections
         {
 
         }
+
+        
     }
 }
