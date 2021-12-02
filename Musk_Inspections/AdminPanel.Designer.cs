@@ -28,208 +28,98 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnHome = new System.Windows.Forms.Button();
-            this.btnOpenCreateReport = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnLogOff = new System.Windows.Forms.Button();
-            this.cbMonths = new System.Windows.Forms.ComboBox();
-            this.lblInspector = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblSite = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.tbSite = new System.Windows.Forms.TextBox();
-            this.tbInspector = new System.Windows.Forms.TextBox();
-            this.dgv = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            this.addUser = new System.Windows.Forms.Button();
+            this.removeUser = new System.Windows.Forms.Button();
+            this.editUser = new System.Windows.Forms.Button();
+            this.listReports = new System.Windows.Forms.Button();
+            this.viewDocx = new System.Windows.Forms.Button();
+            this.viewPdf = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnHome
+            // addUser
             // 
-            this.btnHome.Location = new System.Drawing.Point(20, 24);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(60, 23);
-            this.btnHome.TabIndex = 0;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            this.addUser.Location = new System.Drawing.Point(12, 12);
+            this.addUser.Name = "addUser";
+            this.addUser.Size = new System.Drawing.Size(247, 38);
+            this.addUser.TabIndex = 0;
+            this.addUser.Text = "Add User";
+            this.addUser.UseVisualStyleBackColor = true;
+            this.addUser.Click += new System.EventHandler(this.addUser_Click);
             // 
-            // btnOpenCreateReport
+            // removeUser
             // 
-            this.btnOpenCreateReport.Location = new System.Drawing.Point(96, 24);
-            this.btnOpenCreateReport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnOpenCreateReport.Name = "btnOpenCreateReport";
-            this.btnOpenCreateReport.Size = new System.Drawing.Size(56, 23);
-            this.btnOpenCreateReport.TabIndex = 1;
-            this.btnOpenCreateReport.Text = "Report";
-            this.btnOpenCreateReport.UseVisualStyleBackColor = true;
-            this.btnOpenCreateReport.Click += new System.EventHandler(this.btnOpenCreateReport_Click);
+            this.removeUser.Location = new System.Drawing.Point(12, 56);
+            this.removeUser.Name = "removeUser";
+            this.removeUser.Size = new System.Drawing.Size(247, 38);
+            this.removeUser.TabIndex = 1;
+            this.removeUser.Text = "Remove User";
+            this.removeUser.UseVisualStyleBackColor = true;
+            this.removeUser.Click += new System.EventHandler(this.removeUser_Click);
             // 
-            // button1
+            // editUser
             // 
-            this.button1.Location = new System.Drawing.Point(402, 123);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(6, 6);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.editUser.Location = new System.Drawing.Point(12, 100);
+            this.editUser.Name = "editUser";
+            this.editUser.Size = new System.Drawing.Size(247, 38);
+            this.editUser.TabIndex = 2;
+            this.editUser.Text = "Edit User";
+            this.editUser.UseVisualStyleBackColor = true;
+            this.editUser.Click += new System.EventHandler(this.editUser_Click);
             // 
-            // btnLogOff
+            // listReports
             // 
-            this.btnLogOff.Location = new System.Drawing.Point(866, 24);
-            this.btnLogOff.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnLogOff.Name = "btnLogOff";
-            this.btnLogOff.Size = new System.Drawing.Size(52, 23);
-            this.btnLogOff.TabIndex = 3;
-            this.btnLogOff.Text = "Log off";
-            this.btnLogOff.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnLogOff.UseVisualStyleBackColor = true;
-            this.btnLogOff.Click += new System.EventHandler(this.btnLogOff_Click);
+            this.listReports.Location = new System.Drawing.Point(12, 144);
+            this.listReports.Name = "listReports";
+            this.listReports.Size = new System.Drawing.Size(247, 38);
+            this.listReports.TabIndex = 3;
+            this.listReports.Text = "List Reports";
+            this.listReports.UseVisualStyleBackColor = true;
+            this.listReports.Click += new System.EventHandler(this.listReports_Click);
             // 
-            // cbMonths
+            // viewDocx
             // 
-            this.cbMonths.FormattingEnabled = true;
-            this.cbMonths.Items.AddRange(new object[] {
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"});
-            this.cbMonths.Location = new System.Drawing.Point(579, 117);
-            this.cbMonths.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cbMonths.Name = "cbMonths";
-            this.cbMonths.Size = new System.Drawing.Size(92, 21);
-            this.cbMonths.TabIndex = 5;
+            this.viewDocx.Location = new System.Drawing.Point(12, 188);
+            this.viewDocx.Name = "viewDocx";
+            this.viewDocx.Size = new System.Drawing.Size(247, 38);
+            this.viewDocx.TabIndex = 4;
+            this.viewDocx.Text = "View Docx";
+            this.viewDocx.UseVisualStyleBackColor = true;
+            this.viewDocx.Click += new System.EventHandler(this.viewDocx_Click);
             // 
-            // lblInspector
+            // viewPdf
             // 
-            this.lblInspector.AutoSize = true;
-            this.lblInspector.Location = new System.Drawing.Point(279, 118);
-            this.lblInspector.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblInspector.Name = "lblInspector";
-            this.lblInspector.Size = new System.Drawing.Size(51, 13);
-            this.lblInspector.TabIndex = 7;
-            this.lblInspector.Text = "Inspector";
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(546, 119);
-            this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(30, 13);
-            this.lblDate.TabIndex = 8;
-            this.lblDate.Text = "Date";
-            // 
-            // lblSite
-            // 
-            this.lblSite.AutoSize = true;
-            this.lblSite.Location = new System.Drawing.Point(68, 119);
-            this.lblSite.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSite.Name = "lblSite";
-            this.lblSite.Size = new System.Drawing.Size(25, 13);
-            this.lblSite.TabIndex = 10;
-            this.lblSite.Text = "Site";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(813, 118);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(56, 19);
-            this.btnSearch.TabIndex = 11;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(684, 119);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(126, 20);
-            this.dateTimePicker1.TabIndex = 12;
-            // 
-            // tbSite
-            // 
-            this.tbSite.Location = new System.Drawing.Point(98, 116);
-            this.tbSite.Name = "tbSite";
-            this.tbSite.Size = new System.Drawing.Size(176, 20);
-            this.tbSite.TabIndex = 13;
-            // 
-            // tbInspector
-            // 
-            this.tbInspector.Location = new System.Drawing.Point(335, 117);
-            this.tbInspector.Name = "tbInspector";
-            this.tbInspector.Size = new System.Drawing.Size(197, 20);
-            this.tbInspector.TabIndex = 14;
-            // 
-            // dgv
-            // 
-            this.dgv.AllowUserToAddRows = false;
-            this.dgv.AllowUserToDeleteRows = false;
-            this.dgv.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(20, 150);
-            this.dgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dgv.Name = "dgv";
-            this.dgv.ReadOnly = true;
-            this.dgv.RowTemplate.Height = 24;
-            this.dgv.Size = new System.Drawing.Size(883, 266);
-            this.dgv.TabIndex = 15;
-            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
+            this.viewPdf.Location = new System.Drawing.Point(12, 232);
+            this.viewPdf.Name = "viewPdf";
+            this.viewPdf.Size = new System.Drawing.Size(247, 38);
+            this.viewPdf.TabIndex = 5;
+            this.viewPdf.Text = "View PDF";
+            this.viewPdf.UseVisualStyleBackColor = true;
+            this.viewPdf.Click += new System.EventHandler(this.viewPdf_Click);
             // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 558);
-            this.Controls.Add(this.dgv);
-            this.Controls.Add(this.tbInspector);
-            this.Controls.Add(this.tbSite);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.lblSite);
-            this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.lblInspector);
-            this.Controls.Add(this.cbMonths);
-            this.Controls.Add(this.btnLogOff);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnOpenCreateReport);
-            this.Controls.Add(this.btnHome);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClientSize = new System.Drawing.Size(271, 284);
+            this.Controls.Add(this.viewPdf);
+            this.Controls.Add(this.viewDocx);
+            this.Controls.Add(this.listReports);
+            this.Controls.Add(this.editUser);
+            this.Controls.Add(this.removeUser);
+            this.Controls.Add(this.addUser);
             this.Name = "AdminPanel";
             this.Text = "Admin Panel";
-            this.Load += new System.EventHandler(this.Dashboard_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button btnOpenCreateReport;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnLogOff;
-        private System.Windows.Forms.ComboBox cbMonths;
-        private System.Windows.Forms.Label lblInspector;
-        private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Label lblSite;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox tbSite;
-        private System.Windows.Forms.TextBox tbInspector;
-        private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.Button addUser;
+        private System.Windows.Forms.Button removeUser;
+        private System.Windows.Forms.Button editUser;
+        private System.Windows.Forms.Button listReports;
+        private System.Windows.Forms.Button viewDocx;
+        private System.Windows.Forms.Button viewPdf;
     }
 }

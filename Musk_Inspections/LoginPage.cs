@@ -24,64 +24,53 @@ namespace Musk_Inspections
             cn.Open();
         }
 
-        private static int CheckLogin(string username, string password)
+        private static char CheckLogin(string username, string password)
         {
             using (SqlConnection cn = new SqlConnection(Properties.Settings.Default.DB_MUSK))
             {
                 cn.Open();
 
-                try
-                {
                     SqlDataAdapter data = new SqlDataAdapter();
                     DataTable table = new DataTable();
 
-                    int role = 0; // 0 = N/A, 1 = Inspector, 2 = Admin
+                    char role = username[0]; // First character is role identifier -> i = Inspector, a = Admin
+                    string u = username.Substring(1); // The rest is ID in the tables
 
                     try
                     {
-                        data = GetPassword(cn, "Inspector", username, password);
-
-                        Reconnect(cn);
-                        data.Fill(table);
-                        if (table.Rows.Count < 1)
+                        if (role == 'i')
                         {
-                            throw new Exception();
-                        }
-
-                        role = 1;
-
-                    }
-                    catch (Exception f)
-                    {
-                        try
-                        {
-                            data = GetPassword(cn, "Administrator", username, password);
+                            data = GetUser(cn, "Inspector", u, password);
 
                             Reconnect(cn);
                             data.Fill(table);
-                            if (table.Rows.Count < 1)
+                            if (table.Rows.Count != 1)
                             {
                                 throw new Exception();
                             }
-
-                            role = 2;
                         }
-                        catch (Exception g)
+                        else if (role == 'a')
                         {
-                            LoginFail fail = new LoginFail();
-                            fail.Show();
+                                data = GetUser(cn, "Administrator", u, password);
 
-                            role = 0;
+                                Reconnect(cn);
+                                data.Fill(table);
+                                if (table.Rows.Count != 1)
+                                {
+                                    throw new Exception();
+                                }
                         }
-                    }
 
-                    return role;
-                }
-                catch (Exception e) { MessageBox.Show("Error!"); return 0; }
+                        return role;
+                    }
+                    catch (Exception g)
+                    {
+                        return role = 'n';
+                    }
             }
         }
 
-        private static SqlDataAdapter GetPassword(SqlConnection cn, string table, string username, string password)
+        private static SqlDataAdapter GetUser(SqlConnection cn, string table, string username, string password)
         {
             using (cn)
             {
@@ -98,12 +87,11 @@ namespace Musk_Inspections
                         }
                     case "Administrator":
                         {
-                            column = "Username";
-                            username = "'" + username + "'";
+                            column = "Admin_id";
                             break;
                         }
                 }
-                    data.SelectCommand = new SqlCommand("SELECT Pwd FROM " + table + " WHERE " + column + " = " + username + " AND Pwd = '" + password + "';", cn);
+                    data.SelectCommand = new SqlCommand("SELECT * FROM " + table + " WHERE " + column + " = " + username + " AND Pwd = '" + password + "';", cn);
 
                 return data;
             }
@@ -113,7 +101,7 @@ namespace Musk_Inspections
         {
             switch (CheckLogin(tbUsername.Text, tbPassword.Text))
             {
-                case 1:
+                case 'i':
                     {
                         this.Hide();
                         Dashboard dash = new Dashboard();
@@ -121,7 +109,7 @@ namespace Musk_Inspections
                         this.Close();
                         break;
                     }
-                case 2:
+                case 'a':
                     {
                         this.Hide();
                         AdminPanel adPan = new AdminPanel();
@@ -129,6 +117,13 @@ namespace Musk_Inspections
                         this.Close();
                         break;
                     }
+                default:
+                case 'n':
+                {
+                        LoginFail fail = new LoginFail();
+                        fail.Show();
+                        break;
+                }
             }
         }
     }

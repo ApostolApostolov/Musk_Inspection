@@ -48,7 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -62,11 +64,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminPanel.cs">
+    <Compile Include="Admin Functions\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminPanel.Designer.cs">
-      <DependentUpon>AdminPanel.cs</DependentUpon>
+    <Compile Include="Admin Functions\AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Functions\EditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Functions\EditUser.Designer.cs">
+      <DependentUpon>EditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Functions\ListReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Functions\ListReports.Designer.cs">
+      <DependentUpon>ListReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Functions\RemoveUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Functions\RemoveUser.Designer.cs">
+      <DependentUpon>RemoveUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Functions\ViewDocx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Functions\ViewDocx.Designer.cs">
+      <DependentUpon>ViewDocx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Functions\ViewPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Functions\ViewPDF.Designer.cs">
+      <DependentUpon>ViewPDF.cs</DependentUpon>
     </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
@@ -79,6 +111,12 @@
     </Compile>
     <Compile Include="Create_report_page.Designer.cs">
       <DependentUpon>Create_report_page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPanel.Designer.cs">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginFail.cs">
       <SubType>Form</SubType>
@@ -106,14 +144,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin Functions\AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Functions\RemoveUser.resx">
+      <DependentUpon>RemoveUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Create_report_page.resx">
       <DependentUpon>Create_report_page.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminPanel.resx">
-      <DependentUpon>AdminPanel.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanel.resx">
+      <DependentUpon>AdminPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inspectionHSQE.resx">
       <DependentUpon>inspectionHSQE.cs</DependentUpon>
