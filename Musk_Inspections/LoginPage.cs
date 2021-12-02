@@ -24,7 +24,7 @@ namespace Musk_Inspections
             cn.Open();
         }
 
-        private static Boolean CheckLogin(string username, string password)
+        private static int CheckLogin(string username, string password)
         {
             using (SqlConnection cn = new SqlConnection(Properties.Settings.Default.DB_MUSK))
             {
@@ -34,6 +34,8 @@ namespace Musk_Inspections
                 {
                     SqlDataAdapter data = new SqlDataAdapter();
                     DataTable table = new DataTable();
+
+                    int role = 0; // 0 = N/A, 1 = Inspector, 2 = Admin
 
                     try
                     {
@@ -45,11 +47,12 @@ namespace Musk_Inspections
                         {
                             throw new Exception();
                         }
+
+                        role = 1;
+
                     }
                     catch (Exception f)
                     {
-                        //MessageBox.Show("f");
-
                         try
                         {
                             data = GetPassword(cn, "Administrator", username, password);
@@ -60,19 +63,21 @@ namespace Musk_Inspections
                             {
                                 throw new Exception();
                             }
+
+                            role = 2;
                         }
                         catch (Exception g)
                         {
                             LoginFail fail = new LoginFail();
                             fail.Show();
 
-                           // MessageBox.Show("g");
+                            role = 0;
                         }
                     }
 
-                    return table.Rows.Count > 0 ? true : false;
+                    return role;
                 }
-                catch (Exception e) { MessageBox.Show("Error!"); return false; }
+                catch (Exception e) { MessageBox.Show("Error!"); return 0; }
             }
         }
 
@@ -106,14 +111,25 @@ namespace Musk_Inspections
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if (CheckLogin(tbUsername.Text, tbPassword.Text))
+            switch (CheckLogin(tbUsername.Text, tbPassword.Text))
             {
-                this.Hide();
-                Dashboard dash = new Dashboard();
-                dash.ShowDialog();
-                this.Close();
+                case 1:
+                    {
+                        this.Hide();
+                        Dashboard dash = new Dashboard();
+                        dash.ShowDialog();
+                        this.Close();
+                        break;
+                    }
+                case 2:
+                    {
+                        this.Hide();
+                        AdminPanel adPan = new AdminPanel();
+                        adPan.ShowDialog();
+                        this.Close();
+                        break;
+                    }
             }
-
         }
     }
 }
