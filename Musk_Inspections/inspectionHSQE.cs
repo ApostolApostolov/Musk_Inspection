@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 using System.IO;
 using System.Reflection;
+using GemBox.Document;
 
 namespace Musk_Inspections
 {
@@ -131,9 +132,21 @@ namespace Musk_Inspections
             myWordDoc.Close();
             wordApp.Quit();
             MessageBox.Show("File Created!");
+
+            CreatePDF((string)SaveAs, @"C:\Developement\TestPDF.pdf");
         }
 
-                
+        private void CreatePDF(string fileName, string saveAs)
+        {
+            ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
+            var doc = new DocumentModel();
+
+            doc = DocumentModel.Load(fileName);
+            doc.Save(saveAs);
+        }
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             CreateWordDocument(@"C:\Users\Rui\source\repos\ApostolApostolov\Musk_Inspection\Temp.docx", @"C:\Users\Rui\source\repos\ApostolApostolov\Musk_Inspection\MuskReport.docx");
