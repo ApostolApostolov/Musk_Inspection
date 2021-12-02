@@ -66,6 +66,8 @@ namespace Musk_Inspections
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Refresh();
+            LoginPage lp = new LoginPage();
+            lp.Show();
         }
 
         private void Dashboard_Load(object sender, EventArgs e)

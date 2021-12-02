@@ -63,8 +63,8 @@ namespace Musk_Inspections
                 myWordDoc.Activate();
 
                 //find and replace
-                this.FindAndReplace(wordApp, "<name>", textBox1.Text);
-                this.FindAndReplace(wordApp, "<workArea>", textBox2.Text);
+                //this.FindAndReplace(wordApp, "<name>", textBox1.Text);
+                //this.FindAndReplace(wordApp, "<workArea>", textBox2.Text);
                 this.FindAndReplace(wordApp, "<site>", textBox3.Text);
                 this.FindAndReplace(wordApp, "<jobDescription>", textBox4.Text);
                 this.FindAndReplace(wordApp, "<type>", textBox5.Text);

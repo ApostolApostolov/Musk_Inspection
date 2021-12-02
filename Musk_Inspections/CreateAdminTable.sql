@@ -1,0 +1,2 @@
+﻿CREATE TABLE Administrator (Id int NOT NULL PRIMARY KEY IDENTITY(0, 1), Username varchar(20), Pwd varchar(20), FirstName varchar(20), LastName varchar(20));
+INSERT INTO Administrator VALUES ('AdminDer', 'Admin123', 'Derek', 'Kennedy');
