@@ -48,6 +48,7 @@ namespace Musk_Inspections.Admin_Functions
                     if (cmd.ExecuteNonQuery() == 1)
                     {
                         MessageBox.Show("User Created!");
+                        this.Close();
                     }
                     else
                         MessageBox.Show("User Was Not Created!");
@@ -57,6 +58,25 @@ namespace Musk_Inspections.Admin_Functions
                 {
                     MessageBox.Show(f.Message);
                 }
+            }
+
+            this.Close();
+        }
+
+        private void showPw_CheckStateChanged(object sender, EventArgs e)
+        {
+            switch(showPw.Checked)
+            {
+                case true:
+                    {
+                        pwText.PasswordChar = '\0';
+                        break;
+                    }
+                case false:
+                    {
+                        pwText.PasswordChar = '*';
+                        break;
+                    }
             }
         }
     }

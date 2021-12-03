@@ -30,14 +30,15 @@
         {
             this.Header = new System.Windows.Forms.Label();
             this.fn = new System.Windows.Forms.Label();
-            this.ln = new System.Windows.Forms.Label();
-            this.pw = new System.Windows.Forms.Label();
             this.fnText = new System.Windows.Forms.TextBox();
-            this.lnText = new System.Windows.Forms.TextBox();
-            this.pwText = new System.Windows.Forms.TextBox();
             this.cancel = new System.Windows.Forms.Button();
             this.accept = new System.Windows.Forms.Button();
             this.adminCheck = new System.Windows.Forms.CheckBox();
+            this.pwText = new System.Windows.Forms.TextBox();
+            this.lnText = new System.Windows.Forms.TextBox();
+            this.ln = new System.Windows.Forms.Label();
+            this.pw = new System.Windows.Forms.Label();
+            this.showPw = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // Header
@@ -60,26 +61,6 @@
             this.fn.TabIndex = 1;
             this.fn.Text = "First Name:";
             // 
-            // ln
-            // 
-            this.ln.AutoSize = true;
-            this.ln.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ln.Location = new System.Drawing.Point(14, 97);
-            this.ln.Name = "ln";
-            this.ln.Size = new System.Drawing.Size(121, 25);
-            this.ln.TabIndex = 2;
-            this.ln.Text = "Last Name:";
-            // 
-            // pw
-            // 
-            this.pw.AutoSize = true;
-            this.pw.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pw.Location = new System.Drawing.Point(14, 134);
-            this.pw.Name = "pw";
-            this.pw.Size = new System.Drawing.Size(112, 25);
-            this.pw.TabIndex = 3;
-            this.pw.Text = "Password:";
-            // 
             // fnText
             // 
             this.fnText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -87,22 +68,6 @@
             this.fnText.Name = "fnText";
             this.fnText.Size = new System.Drawing.Size(169, 26);
             this.fnText.TabIndex = 4;
-            // 
-            // lnText
-            // 
-            this.lnText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnText.Location = new System.Drawing.Point(142, 98);
-            this.lnText.Name = "lnText";
-            this.lnText.Size = new System.Drawing.Size(169, 26);
-            this.lnText.TabIndex = 5;
-            // 
-            // pwText
-            // 
-            this.pwText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pwText.Location = new System.Drawing.Point(142, 135);
-            this.pwText.Name = "pwText";
-            this.pwText.Size = new System.Drawing.Size(169, 26);
-            this.pwText.TabIndex = 6;
             // 
             // cancel
             // 
@@ -135,11 +100,60 @@
             this.adminCheck.Text = "Is this User an Admin?";
             this.adminCheck.UseVisualStyleBackColor = true;
             // 
+            // pwText
+            // 
+            this.pwText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pwText.Location = new System.Drawing.Point(142, 135);
+            this.pwText.Name = "pwText";
+            this.pwText.PasswordChar = '*';
+            this.pwText.Size = new System.Drawing.Size(169, 26);
+            this.pwText.TabIndex = 6;
+            // 
+            // lnText
+            // 
+            this.lnText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnText.Location = new System.Drawing.Point(142, 98);
+            this.lnText.Name = "lnText";
+            this.lnText.Size = new System.Drawing.Size(169, 26);
+            this.lnText.TabIndex = 5;
+            // 
+            // ln
+            // 
+            this.ln.AutoSize = true;
+            this.ln.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ln.Location = new System.Drawing.Point(14, 97);
+            this.ln.Name = "ln";
+            this.ln.Size = new System.Drawing.Size(121, 25);
+            this.ln.TabIndex = 2;
+            this.ln.Text = "Last Name:";
+            // 
+            // pw
+            // 
+            this.pw.AutoSize = true;
+            this.pw.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pw.Location = new System.Drawing.Point(14, 134);
+            this.pw.Name = "pw";
+            this.pw.Size = new System.Drawing.Size(112, 25);
+            this.pw.TabIndex = 3;
+            this.pw.Text = "Password:";
+            // 
+            // showPw
+            // 
+            this.showPw.AutoSize = true;
+            this.showPw.Location = new System.Drawing.Point(142, 167);
+            this.showPw.Name = "showPw";
+            this.showPw.Size = new System.Drawing.Size(102, 17);
+            this.showPw.TabIndex = 10;
+            this.showPw.Text = "Show Password";
+            this.showPw.UseVisualStyleBackColor = true;
+            this.showPw.CheckStateChanged += new System.EventHandler(this.showPw_CheckStateChanged);
+            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 219);
+            this.Controls.Add(this.showPw);
             this.Controls.Add(this.adminCheck);
             this.Controls.Add(this.accept);
             this.Controls.Add(this.cancel);
@@ -151,7 +165,7 @@
             this.Controls.Add(this.fn);
             this.Controls.Add(this.Header);
             this.Name = "AddUser";
-            this.Text = "Form1";
+            this.Text = "Add User";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,13 +175,14 @@
 
         private System.Windows.Forms.Label Header;
         private System.Windows.Forms.Label fn;
-        private System.Windows.Forms.Label ln;
-        private System.Windows.Forms.Label pw;
         private System.Windows.Forms.TextBox fnText;
-        private System.Windows.Forms.TextBox lnText;
-        private System.Windows.Forms.TextBox pwText;
         private System.Windows.Forms.Button cancel;
         private System.Windows.Forms.Button accept;
         private System.Windows.Forms.CheckBox adminCheck;
+        private System.Windows.Forms.TextBox pwText;
+        private System.Windows.Forms.TextBox lnText;
+        private System.Windows.Forms.Label ln;
+        private System.Windows.Forms.Label pw;
+        private System.Windows.Forms.CheckBox showPw;
     }
 }

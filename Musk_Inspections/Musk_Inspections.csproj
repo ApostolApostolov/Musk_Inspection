@@ -147,6 +147,9 @@
     <EmbeddedResource Include="Admin Functions\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin Functions\EditUser.resx">
+      <DependentUpon>EditUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin Functions\RemoveUser.resx">
       <DependentUpon>RemoveUser.cs</DependentUpon>
     </EmbeddedResource>
