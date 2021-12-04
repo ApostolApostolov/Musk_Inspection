@@ -11,6 +11,7 @@ using Word = Microsoft.Office.Interop.Word;
 using System.IO;
 using System.Reflection;
 using GemBox.Document;
+using System.Data.SqlClient;
 
 namespace Musk_Inspections
 {
@@ -156,6 +157,7 @@ namespace Musk_Inspections
             InitializeComponent();
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            getSites();
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -178,6 +180,34 @@ namespace Musk_Inspections
 
         }
 
-        
+        private void cb1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+       
+          
+        }
+        private void getSites()
+        {
+            using (SqlConnection sqlcon = new SqlConnection(Properties.Settings.Default.DB_MUSK))
+            {
+                sqlcon.Open();
+                SqlCommand cmd = new SqlCommand("select SiteName From Sites", sqlcon);
+                SqlDataReader Sdr = cmd.ExecuteReader();
+                while (Sdr.Read())
+                {
+                    for (int i = 0; i < Sdr.FieldCount; i++)
+                    {
+                        cb1.Items.Add(Sdr.GetString(i));
+
+                    }
+                }
+                Sdr.Close();
+                sqlcon.Close();
+
+            }
+        }
+        private SqlConnection GetConnection()
+        {
+            return new SqlConnection(Properties.Settings.Default.DB_MUSK);
+        }
     }
 }

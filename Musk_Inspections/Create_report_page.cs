@@ -97,9 +97,16 @@ namespace Musk_Inspections
             string filePath = Dashboard.Directories.dirPDFfile;
             filePath = Path.Combine(filePath, "test.pdf");
             SaveFile(filePath);
+            //insert into inspection
             MessageBox.Show("A Great Success");
         }
+        private void intoDatabase()
+        {
+            //we have the inspector
+            //site 
+            //and pfd file (id + 1) resetni countera i da pochava ot 0
 
+        }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 

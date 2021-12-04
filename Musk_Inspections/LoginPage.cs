@@ -10,9 +10,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Musk_Inspections
+
 {
     public partial class LoginPage : Form
+
     {
+        public static class userid
+        {
+            public static string currentInspectorId;
+
+        }
+
         public LoginPage()
         {
             InitializeComponent();
@@ -42,6 +50,7 @@ namespace Musk_Inspections
         {
             if (CheckLogin(tbUsername.Text, tbPassword.Text))
             {
+                userid.currentInspectorId = tbUsername.Text;
                 this.Hide();
                 Dashboard dash = new Dashboard();
                 dash.ShowDialog();
