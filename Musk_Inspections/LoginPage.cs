@@ -30,17 +30,33 @@ namespace Musk_Inspections
             {
                 cn.Open();
 
-                    SqlDataAdapter data = new SqlDataAdapter();
-                    DataTable table = new DataTable();
+                SqlDataAdapter data = new SqlDataAdapter();
+                DataTable table = new DataTable();
+                char role = char.MinValue;
+                string u = string.Empty;
 
-                    char role = username[0]; // First character is role identifier -> i = Inspector, a = Admin
-                    string u = username.Substring(1); // The rest is ID in the tables
+                if (username != "")
+                {
+                    role = username[0]; // First character is role identifier -> i = Inspector, a = Admin
+                    u = username.Substring(1); // The rest is ID in the tables
+                }
 
-                    try
+                try
+                {
+                    if (role == 'i')
                     {
-                        if (role == 'i')
+                        data = GetUser(cn, "Inspector", u, password);
+
+                        Reconnect(cn);
+                        data.Fill(table);
+                        if (table.Rows.Count != 1)
                         {
-                            data = GetUser(cn, "Inspector", u, password);
+                            throw new Exception();
+                        }
+                    }
+                    else if (role == 'a')
+                    {
+                            data = GetUser(cn, "Administrator", u, password);
 
                             Reconnect(cn);
                             data.Fill(table);
@@ -48,25 +64,14 @@ namespace Musk_Inspections
                             {
                                 throw new Exception();
                             }
-                        }
-                        else if (role == 'a')
-                        {
-                                data = GetUser(cn, "Administrator", u, password);
-
-                                Reconnect(cn);
-                                data.Fill(table);
-                                if (table.Rows.Count != 1)
-                                {
-                                    throw new Exception();
-                                }
-                        }
-
-                        return role;
                     }
-                    catch (Exception g)
-                    {
-                        return role = 'n';
-                    }
+
+                    return role;
+                }
+                catch (Exception g)
+                {
+                    return role = 'n';
+                }
             }
         }
 
@@ -119,11 +124,10 @@ namespace Musk_Inspections
                     }
                 default:
                 case 'n':
-                {
-                        LoginFail fail = new LoginFail();
-                        fail.Show();
-                        break;
-                }
+                    {
+                        MessageBox.Show("The Username or Password you entered were incorrect. Try Again.", "Invalid Login");
+                        break;  
+                    }
             }
         }
     }

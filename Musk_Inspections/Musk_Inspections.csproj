@@ -76,12 +76,6 @@
     <Compile Include="Admin Functions\EditUser.Designer.cs">
       <DependentUpon>EditUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin Functions\ListReports.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin Functions\ListReports.Designer.cs">
-      <DependentUpon>ListReports.cs</DependentUpon>
-    </Compile>
     <Compile Include="Admin Functions\RemoveUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,12 +112,6 @@
     <Compile Include="AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginFail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LoginFail.Designer.cs">
-      <DependentUpon>LoginFail.cs</DependentUpon>
-    </Compile>
     <Compile Include="inspectionHSQE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +141,9 @@
     <EmbeddedResource Include="Admin Functions\RemoveUser.resx">
       <DependentUpon>RemoveUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin Functions\ViewDocx.resx">
+      <DependentUpon>ViewDocx.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Create_report_page.resx">
       <DependentUpon>Create_report_page.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,9 +159,6 @@
     <EmbeddedResource Include="inspectionHSQE2.resx">
       <DependentUpon>inspectionHSQE2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginFail.resx">
-      <DependentUpon>LoginFail.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +170,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -245,6 +234,7 @@
       <DependentUpon>DB_MUSK.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Musk_Logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

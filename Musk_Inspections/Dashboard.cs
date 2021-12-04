@@ -38,7 +38,6 @@ namespace Musk_Inspections
             dateTimePicker1.CustomFormat = "yyyy";
             dateTimePicker1.ShowUpDown = true;
             gettingDirectories();
-           
         }
         public void gettingDirectories()
         {
@@ -60,19 +59,15 @@ namespace Musk_Inspections
 
         private void btnLogOff_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
+            LoginPage lp = new LoginPage();
+            lp.ShowDialog();
+            this.Close();
         }
 
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Refresh();
-            LoginPage lp = new LoginPage();
-            lp.Show();
-        }
-
-        private void Dashboard_Load(object sender, EventArgs e)
-        {
-
         }
 
         private int getRowIndex(string value)

@@ -31,85 +31,130 @@
             this.addUser = new System.Windows.Forms.Button();
             this.removeUser = new System.Windows.Forms.Button();
             this.editUser = new System.Windows.Forms.Button();
-            this.listReports = new System.Windows.Forms.Button();
             this.viewDocx = new System.Windows.Forms.Button();
             this.viewPdf = new System.Windows.Forms.Button();
+            this.logout = new System.Windows.Forms.Button();
+            this.Header = new System.Windows.Forms.Label();
+            this.HeaderUsers = new System.Windows.Forms.Label();
+            this.HeaderDocs = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // addUser
             // 
-            this.addUser.Location = new System.Drawing.Point(12, 12);
+            this.addUser.BackColor = System.Drawing.Color.IndianRed;
+            this.addUser.Location = new System.Drawing.Point(12, 90);
             this.addUser.Name = "addUser";
             this.addUser.Size = new System.Drawing.Size(247, 38);
             this.addUser.TabIndex = 0;
             this.addUser.Text = "Add User";
-            this.addUser.UseVisualStyleBackColor = true;
+            this.addUser.UseVisualStyleBackColor = false;
             this.addUser.Click += new System.EventHandler(this.addUser_Click);
             // 
             // removeUser
             // 
-            this.removeUser.Location = new System.Drawing.Point(12, 56);
+            this.removeUser.BackColor = System.Drawing.Color.IndianRed;
+            this.removeUser.Location = new System.Drawing.Point(12, 134);
             this.removeUser.Name = "removeUser";
             this.removeUser.Size = new System.Drawing.Size(247, 38);
             this.removeUser.TabIndex = 1;
             this.removeUser.Text = "Remove User";
-            this.removeUser.UseVisualStyleBackColor = true;
+            this.removeUser.UseVisualStyleBackColor = false;
             this.removeUser.Click += new System.EventHandler(this.removeUser_Click);
             // 
             // editUser
             // 
-            this.editUser.Location = new System.Drawing.Point(12, 100);
+            this.editUser.BackColor = System.Drawing.Color.IndianRed;
+            this.editUser.Location = new System.Drawing.Point(12, 178);
             this.editUser.Name = "editUser";
             this.editUser.Size = new System.Drawing.Size(247, 38);
             this.editUser.TabIndex = 2;
             this.editUser.Text = "Edit User";
-            this.editUser.UseVisualStyleBackColor = true;
+            this.editUser.UseVisualStyleBackColor = false;
             this.editUser.Click += new System.EventHandler(this.editUser_Click);
-            // 
-            // listReports
-            // 
-            this.listReports.Location = new System.Drawing.Point(12, 144);
-            this.listReports.Name = "listReports";
-            this.listReports.Size = new System.Drawing.Size(247, 38);
-            this.listReports.TabIndex = 3;
-            this.listReports.Text = "List Reports";
-            this.listReports.UseVisualStyleBackColor = true;
-            this.listReports.Click += new System.EventHandler(this.listReports_Click);
             // 
             // viewDocx
             // 
-            this.viewDocx.Location = new System.Drawing.Point(12, 188);
+            this.viewDocx.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.viewDocx.Location = new System.Drawing.Point(12, 272);
             this.viewDocx.Name = "viewDocx";
             this.viewDocx.Size = new System.Drawing.Size(247, 38);
             this.viewDocx.TabIndex = 4;
             this.viewDocx.Text = "View Docx";
-            this.viewDocx.UseVisualStyleBackColor = true;
+            this.viewDocx.UseVisualStyleBackColor = false;
             this.viewDocx.Click += new System.EventHandler(this.viewDocx_Click);
             // 
             // viewPdf
             // 
-            this.viewPdf.Location = new System.Drawing.Point(12, 232);
+            this.viewPdf.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.viewPdf.Location = new System.Drawing.Point(12, 316);
             this.viewPdf.Name = "viewPdf";
             this.viewPdf.Size = new System.Drawing.Size(247, 38);
             this.viewPdf.TabIndex = 5;
             this.viewPdf.Text = "View PDF";
-            this.viewPdf.UseVisualStyleBackColor = true;
+            this.viewPdf.UseVisualStyleBackColor = false;
             this.viewPdf.Click += new System.EventHandler(this.viewPdf_Click);
+            // 
+            // logout
+            // 
+            this.logout.Location = new System.Drawing.Point(162, 360);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(96, 25);
+            this.logout.TabIndex = 6;
+            this.logout.Text = "Log out";
+            this.logout.UseVisualStyleBackColor = true;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
+            // 
+            // Header
+            // 
+            this.Header.AutoSize = true;
+            this.Header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Header.Location = new System.Drawing.Point(75, 9);
+            this.Header.Name = "Header";
+            this.Header.Size = new System.Drawing.Size(118, 24);
+            this.Header.TabIndex = 7;
+            this.Header.Text = "Admin Panel";
+            this.Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // HeaderUsers
+            // 
+            this.HeaderUsers.AutoSize = true;
+            this.HeaderUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HeaderUsers.Location = new System.Drawing.Point(12, 63);
+            this.HeaderUsers.Name = "HeaderUsers";
+            this.HeaderUsers.Size = new System.Drawing.Size(63, 24);
+            this.HeaderUsers.TabIndex = 8;
+            this.HeaderUsers.Text = "Users:";
+            this.HeaderUsers.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // HeaderDocs
+            // 
+            this.HeaderDocs.AutoSize = true;
+            this.HeaderDocs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HeaderDocs.Location = new System.Drawing.Point(12, 245);
+            this.HeaderDocs.Name = "HeaderDocs";
+            this.HeaderDocs.Size = new System.Drawing.Size(111, 24);
+            this.HeaderDocs.TabIndex = 9;
+            this.HeaderDocs.Text = "Documents:";
+            this.HeaderDocs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(271, 284);
+            this.ClientSize = new System.Drawing.Size(270, 397);
+            this.Controls.Add(this.HeaderDocs);
+            this.Controls.Add(this.HeaderUsers);
+            this.Controls.Add(this.Header);
+            this.Controls.Add(this.logout);
             this.Controls.Add(this.viewPdf);
             this.Controls.Add(this.viewDocx);
-            this.Controls.Add(this.listReports);
             this.Controls.Add(this.editUser);
             this.Controls.Add(this.removeUser);
             this.Controls.Add(this.addUser);
             this.Name = "AdminPanel";
             this.Text = "Admin Panel";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -118,8 +163,11 @@
         private System.Windows.Forms.Button addUser;
         private System.Windows.Forms.Button removeUser;
         private System.Windows.Forms.Button editUser;
-        private System.Windows.Forms.Button listReports;
         private System.Windows.Forms.Button viewDocx;
         private System.Windows.Forms.Button viewPdf;
+        private System.Windows.Forms.Button logout;
+        private System.Windows.Forms.Label Header;
+        private System.Windows.Forms.Label HeaderUsers;
+        private System.Windows.Forms.Label HeaderDocs;
     }
 }

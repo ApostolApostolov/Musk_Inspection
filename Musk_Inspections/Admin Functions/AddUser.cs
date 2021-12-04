@@ -27,9 +27,15 @@ namespace Musk_Inspections.Admin_Functions
         {
             string fn = fnText.Text;
             string ln = lnText.Text;
-            string pwd = pwText.Text;
+            string pw = pwText.Text;
             string table;
             
+            if(fn == "" || ln == "" || pw == "")
+            {
+                MessageBox.Show("All fields must be filled.");
+                return;
+            }
+
             using (SqlConnection cn = new SqlConnection(Properties.Settings.Default.DB_MUSK))
             {
                 cn.Open();
@@ -41,7 +47,7 @@ namespace Musk_Inspections.Admin_Functions
                     table = "Inspector";
 
                 cmd = new SqlCommand("INSERT INTO " + table + " VALUES " +
-                                     "('" + pwd + "', '" + fn + "', '" + ln + "');", cn);
+                                     "('" + pw + "', '" + fn + "', '" + ln + "');", cn);
 
                 try
                 {
