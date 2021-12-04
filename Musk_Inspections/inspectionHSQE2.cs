@@ -16,7 +16,7 @@ namespace Musk_Inspections
         {
             InitializeComponent();
             //removes the arrows
-            total.Controls.RemoveAt(0);
+            totalInterventions.Controls.RemoveAt(0);
         }
     }
 }

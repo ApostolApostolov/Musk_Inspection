@@ -66,7 +66,7 @@ namespace Musk_Inspections
                 myWordDoc.Activate();
 
                 //find and replace
-                this.FindAndReplace(wordApp, "<site>", siteBox.Text);
+                this.FindAndReplace(wordApp, "<site>", cb1.Text);
                 this.FindAndReplace(wordApp, "<workArea>", workBox.Text);
                 this.FindAndReplace(wordApp, "<supervisorName>", supervisorBox.Text);
                 this.FindAndReplace(wordApp, "<jobDescription>", jobBox.Text);
@@ -185,6 +185,28 @@ namespace Musk_Inspections
        
           
         }
+        private void intoDatabase()
+        {
+            using (SqlConnection cn = GetConnection())
+            {
+                //query da vzeme id-to and segashnata inspeciq
+               
+                SqlCommand cmd = new SqlCommand("sp_insert", cn);
+
+                cmd.CommandText = "SELECT IDENT_CURRENT('Inspection')";
+                int inspectionId = Convert.ToInt32(cmd.ExecuteScalar());
+
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Date",dateTimePicker1.Value);
+                cmd.Parameters.AddWithValue("@Site_id", cb1.SelectedIndex.ToString());
+                cmd.Parameters.AddWithValue("@Work_Area", workBox.Text);
+                cmd.Parameters.AddWithValue("@Inspector_id", LoginPage.userid.currentInspectorId);
+               // cmd.Parameters.AddWithValue("@Interventions",);
+               // cmd.Parameters.AddWithValue("@Outsanding",);
+               cmd.Parameters.AddWithValue("@PDF_file",inspectionId + 2);
+            }
+        }
         private void getSites()
         {
             using (SqlConnection sqlcon = new SqlConnection(Properties.Settings.Default.DB_MUSK))
@@ -208,6 +230,14 @@ namespace Musk_Inspections
         private SqlConnection GetConnection()
         {
             return new SqlConnection(Properties.Settings.Default.DB_MUSK);
+        }
+
+
+        //delet after use
+        private void button2_Click(object sender, EventArgs e)
+        {
+           string index = cb1.SelectedIndex.ToString();
+            MessageBox.Show(index);
         }
     }
 }

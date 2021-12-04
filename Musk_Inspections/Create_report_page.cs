@@ -102,9 +102,7 @@ namespace Musk_Inspections
         }
         private void intoDatabase()
         {
-            //we have the inspector
-            //site 
-            //and pfd file (id + 1) resetni countera i da pochava ot 0
+ 
 
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
