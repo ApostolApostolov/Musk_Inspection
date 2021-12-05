@@ -14,6 +14,7 @@ namespace Musk_Inspections
             public static string dirWordFile;
             public static string databasePath;
         }
+       
 
         public Dashboard()
         {
@@ -85,7 +86,7 @@ namespace Musk_Inspections
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgv.CurrentCell.ColumnIndex.Equals(2) && e.RowIndex != -1) //7 or 8
+            if (dgv.CurrentCell.ColumnIndex.Equals(7) && e.RowIndex != -1) //7 or 8
             {
                 if (dgv.CurrentCell != null && dgv.CurrentCell.Value != null)
                 {
@@ -93,7 +94,7 @@ namespace Musk_Inspections
 
                     string fileId = dgv.CurrentCell.Value.ToString();
                     MessageBox.Show(fileId);
-                    //OpenFile(fileId)
+                    
                     OpenFile(2);
                     var selectedRow = dgv.SelectedRows;
                     foreach (var row in selectedRow)
@@ -101,11 +102,6 @@ namespace Musk_Inspections
                         int id = (int)((DataGridViewRow)row).Cells[0].Value;
                         MessageBox.Show(id.ToString());
                     }
-
-                   // string filename = Path.Combine(Directories.dirPDFfile, "5.pdf");
-                   // System.Diagnostics.Process.Start(filename);
-
-                    //SLED kato razgadaish kak da napravish fail s imeto koeto da e id-to 
                     //IMPORTANT THE FILE NAME HAS TO BE THE SAME AS THE ID
 
                 }
@@ -133,15 +129,11 @@ namespace Musk_Inspections
                 dgv.Columns["SiteName"].HeaderText = "Site";
                 dgv.Columns["Work_Area"].HeaderText = "Work Area";
                 dgv.Columns["FileName"].HeaderText = "Inspection";
-
-
-
             }
         }
 
         private SqlConnection GetConnection()
         {
-
             return new SqlConnection(Properties.Settings.Default.DB_MUSK);
         }
         private void LoadData()

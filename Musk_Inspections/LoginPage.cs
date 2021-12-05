@@ -10,9 +10,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Musk_Inspections
+
 {
     public partial class LoginPage : Form
+
     {
+        public static class userid
+        {
+            public static string currentInspectorId;
+
+        }
+
         public LoginPage()
         {
             InitializeComponent();

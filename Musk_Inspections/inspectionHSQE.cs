@@ -10,11 +10,14 @@ using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 using System.IO;
 using System.Reflection;
+using GemBox.Document;
+using System.Data.SqlClient;
 
 namespace Musk_Inspections
 {
     public partial class inspectionHSQE : Form
     {
+        public static int sumInterventions;
         private void FindAndReplace(Word.Application wordApp, object ToFindText, object replaceWithText)
         {
             object matchCase = true;
@@ -42,7 +45,7 @@ namespace Musk_Inspections
                 ref matchDiactitics, ref matchAlefHamza,
                 ref matchControl);
         }
-        //CreateWordDocument(@"C:\Developement\Musk_Inspection\Temp.docx", @"C:\Developement\Musk_Inspection\MuskReport.docx");
+       
         private void CreateWordDocument(object filename, object SaveAs)
         {
             Word.Application wordApp = new Word.Application();
@@ -63,13 +66,59 @@ namespace Musk_Inspections
                 myWordDoc.Activate();
 
                 //find and replace
-                //this.FindAndReplace(wordApp, "<name>", textBox1.Text);
-                //this.FindAndReplace(wordApp, "<workArea>", textBox2.Text);
-                this.FindAndReplace(wordApp, "<site>", textBox3.Text);
-                this.FindAndReplace(wordApp, "<jobDescription>", textBox4.Text);
-                this.FindAndReplace(wordApp, "<type>", textBox5.Text);
-                this.FindAndReplace(wordApp, "<feedback>", textBox6.Text);
+                this.FindAndReplace(wordApp, "<site>", cb1.Text);
+                this.FindAndReplace(wordApp, "<workArea>", workBox.Text);
+                this.FindAndReplace(wordApp, "<supervisorName>", supervisorBox.Text);
+                this.FindAndReplace(wordApp, "<jobDescription>", jobBox.Text);
+                this.FindAndReplace(wordApp, "<type>", typeBox.Text);
                 this.FindAndReplace(wordApp, "<date>", DateTime.Now.ToShortDateString());
+                this.FindAndReplace(wordApp, "<upP1>", upP1.Text);
+                this.FindAndReplace(wordApp, "<upN1>", upN1.Text);
+                this.FindAndReplace(wordApp, "<comments1>", comments2.Text);
+                this.FindAndReplace(wordApp, "<upP2>", upP2.Text);
+                this.FindAndReplace(wordApp, "<upN2>", upN2.Text);
+                this.FindAndReplace(wordApp, "<comments2>", comments2.Text);
+                this.FindAndReplace(wordApp, "<upP3>", upP3.Text);
+                this.FindAndReplace(wordApp, "<upN3>", upN3.Text);
+                this.FindAndReplace(wordApp, "<comments3>", comments3.Text);
+                this.FindAndReplace(wordApp, "<upP4>", upP4.Text);
+                this.FindAndReplace(wordApp, "<upN4>", upN4.Text);
+                this.FindAndReplace(wordApp, "<comments4>", comments4.Text);
+                this.FindAndReplace(wordApp, "<upP5>", upP5.Text);
+                this.FindAndReplace(wordApp, "<upN5>", upN5.Text);
+                this.FindAndReplace(wordApp, "<comments5>", comments5.Text);
+                this.FindAndReplace(wordApp, "<upP6>", upP6.Text);
+                this.FindAndReplace(wordApp, "<upN6>", upN6.Text);
+                this.FindAndReplace(wordApp, "<comments6>", comments6.Text);
+                this.FindAndReplace(wordApp, "<upP7>", upP7.Text);
+                this.FindAndReplace(wordApp, "<upN7>", upN7.Text);
+                this.FindAndReplace(wordApp, "<comments7>", comments7.Text);
+                this.FindAndReplace(wordApp, "<upP8>", upP8.Text);
+                this.FindAndReplace(wordApp, "<upN8>", upN8.Text);
+                this.FindAndReplace(wordApp, "<comments8>", comments8.Text);
+                this.FindAndReplace(wordApp, "<upP9>", upP9.Text);
+                this.FindAndReplace(wordApp, "<upN9>", upN9.Text);
+                this.FindAndReplace(wordApp, "<comments9>", comments9.Text);
+                this.FindAndReplace(wordApp, "<upP10>", upP10.Text);
+                this.FindAndReplace(wordApp, "<upN10>", upN10.Text);
+                this.FindAndReplace(wordApp, "<comments10>", comments10.Text);
+                this.FindAndReplace(wordApp, "<upP11>", upP11.Text);
+                this.FindAndReplace(wordApp, "<upN11>", upN11.Text);
+                this.FindAndReplace(wordApp, "<comments11>", comments11.Text);
+                this.FindAndReplace(wordApp, "<upP12>", upP12.Text);
+                this.FindAndReplace(wordApp, "<upN12>", upN12.Text);
+                this.FindAndReplace(wordApp, "<comments12>", comments12.Text);
+                this.FindAndReplace(wordApp, "<upP13>", upP13.Text);
+                this.FindAndReplace(wordApp, "<upN13>", upN13.Text);
+                this.FindAndReplace(wordApp, "<comments13>", comments13.Text);
+                this.FindAndReplace(wordApp, "<upP14>", upP14.Text);
+                this.FindAndReplace(wordApp, "<upN14>", upN14.Text);
+                this.FindAndReplace(wordApp, "<comments14>", comments14.Text);
+                this.FindAndReplace(wordApp, "<upP15>", upP15.Text);
+                this.FindAndReplace(wordApp, "<upN15>", upN15.Text);
+                this.FindAndReplace(wordApp, "<comments15>", comments15.Text);
+
+
             }
             else
             {
@@ -84,17 +133,32 @@ namespace Musk_Inspections
             myWordDoc.Close();
             wordApp.Quit();
             MessageBox.Show("File Created!");
+
+            CreatePDF((string)SaveAs, @"C:\Developement\TestPDF.pdf");
+        }
+
+        private void CreatePDF(string fileName, string saveAs)
+        {
+            ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+
+            var doc = new DocumentModel();
+
+            doc = DocumentModel.Load(fileName);
+            doc.Save(saveAs);
         }
 
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CreateWordDocument(@"C:\Users\Rui\source\repos\ApostolApostolov\Musk_Inspection\Temp.docx", @"C:\Users\Rui\source\repos\ApostolApostolov\Musk_Inspection\MuskReport.docx");
+        }
         public inspectionHSQE()
         {
             InitializeComponent();
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+            getSites();
         }
-      
-
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
@@ -114,6 +178,102 @@ namespace Musk_Inspections
         private void label14_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cb1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+       
+          
+        }
+        private void intoDatabase()
+        {
+            using (SqlConnection cn = GetConnection())
+            {
+                //query da vzeme id-to and segashnata inspeciq
+               
+                SqlCommand cmd = new SqlCommand("sp_insert", cn);
+
+                cmd.CommandText = "SELECT IDENT_CURRENT('Inspection')";
+                int inspectionId = Convert.ToInt32(cmd.ExecuteScalar());
+
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Date",dateTimePicker1.Value);
+                cmd.Parameters.AddWithValue("@Site_id", cb1.SelectedIndex.ToString());
+                cmd.Parameters.AddWithValue("@Work_Area", workBox.Text);
+                cmd.Parameters.AddWithValue("@Inspector_id", LoginPage.userid.currentInspectorId);
+               // cmd.Parameters.AddWithValue("@Interventions",);
+               // cmd.Parameters.AddWithValue("@Outsanding",);
+               cmd.Parameters.AddWithValue("@PDF_file",inspectionId + 2);
+            }
+        }
+        private void getSites()
+        {
+            using (SqlConnection sqlcon = new SqlConnection(Properties.Settings.Default.DB_MUSK))
+            {
+                sqlcon.Open();
+                SqlCommand cmd = new SqlCommand("select SiteName From Sites", sqlcon);
+                SqlDataReader Sdr = cmd.ExecuteReader();
+                while (Sdr.Read())
+                {
+                    for (int i = 0; i < Sdr.FieldCount; i++)
+                    {
+                        cb1.Items.Add(Sdr.GetString(i));
+
+                    }
+                }
+                Sdr.Close();
+                sqlcon.Close();
+
+            }
+        }
+        private SqlConnection GetConnection()
+        {
+            return new SqlConnection(Properties.Settings.Default.DB_MUSK);
+        }
+
+
+        //delet after use
+        private void button2_Click(object sender, EventArgs e)
+        {
+           string index = cb1.SelectedIndex.ToString();
+            MessageBox.Show(index);
+        }
+
+      //  public static int InspectionHSQEIntevention()
+       // {
+           // inspectionHSQE HSQE = new inspectionHSQE();
+        //   int kiro = inspectionHSQE.upN4
+        //     int total = Convert.ToInt32(inspectionHSQE.upN1.Value + HSQE.upN2.Value + HSQE.upN3.Value + HSQE.upN4.Value + HSQE.upN5.Value + HSQE.upN6.Value + HSQE.upN7.Value + HSQE.upN8.Value + HSQE.upN9.Value + HSQE.upN10.Value +
+        //        HSQE.upN10.Value + HSQE.upN11.Value + HSQE.upN12.Value + HSQE.upN13.Value + HSQE.upN14.Value + HSQE.upN15.Value);
+        //    return total;
+       // }
+        
+        
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Create_report_page cpr = new Create_report_page();
+            inspectionHSQE2 HSQE2 = new inspectionHSQE2();
+            HSQE2.TopLevel = false;
+            cpr.pForms.Controls.Add(HSQE2);
+            HSQE2.Show();
+            this.Hide();
+           
+        }
+        
+        private void upN1_ValueChanged(Object sender, EventArgs e)
+        {
+
+            MessageBox.Show("You are in the NumericUpDown.ValueChanged event.");
+        }
+        private void upP1_ValueChanged(Object sender, EventArgs e)
+        {
+
+            MessageBox.Show("You are in the NumericUpDown.ValueChanged event.");
+        }
+        private void upN1_KeyUp(object sender, KeyEventArgs e)
+        {
+            MessageBox.Show("You are in the NumericUpDown.ValueChanged event.");
         }
     }
 }
