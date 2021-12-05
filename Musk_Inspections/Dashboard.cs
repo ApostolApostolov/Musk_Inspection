@@ -14,6 +14,7 @@ namespace Musk_Inspections
             public static string dirWordFile;
             public static string databasePath;
         }
+       
 
         public Dashboard()
         {

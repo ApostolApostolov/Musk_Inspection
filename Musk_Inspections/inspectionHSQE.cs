@@ -17,7 +17,7 @@ namespace Musk_Inspections
 {
     public partial class inspectionHSQE : Form
     {
-
+        public static int sumInterventions;
         private void FindAndReplace(Word.Application wordApp, object ToFindText, object replaceWithText)
         {
             object matchCase = true;
@@ -238,6 +238,42 @@ namespace Musk_Inspections
         {
            string index = cb1.SelectedIndex.ToString();
             MessageBox.Show(index);
+        }
+
+      //  public static int InspectionHSQEIntevention()
+       // {
+           // inspectionHSQE HSQE = new inspectionHSQE();
+        //   int kiro = inspectionHSQE.upN4
+        //     int total = Convert.ToInt32(inspectionHSQE.upN1.Value + HSQE.upN2.Value + HSQE.upN3.Value + HSQE.upN4.Value + HSQE.upN5.Value + HSQE.upN6.Value + HSQE.upN7.Value + HSQE.upN8.Value + HSQE.upN9.Value + HSQE.upN10.Value +
+        //        HSQE.upN10.Value + HSQE.upN11.Value + HSQE.upN12.Value + HSQE.upN13.Value + HSQE.upN14.Value + HSQE.upN15.Value);
+        //    return total;
+       // }
+        
+        
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Create_report_page cpr = new Create_report_page();
+            inspectionHSQE2 HSQE2 = new inspectionHSQE2();
+            HSQE2.TopLevel = false;
+            cpr.pForms.Controls.Add(HSQE2);
+            HSQE2.Show();
+            this.Hide();
+           
+        }
+        
+        private void upN1_ValueChanged(Object sender, EventArgs e)
+        {
+
+            MessageBox.Show("You are in the NumericUpDown.ValueChanged event.");
+        }
+        private void upP1_ValueChanged(Object sender, EventArgs e)
+        {
+
+            MessageBox.Show("You are in the NumericUpDown.ValueChanged event.");
+        }
+        private void upN1_KeyUp(object sender, KeyEventArgs e)
+        {
+            MessageBox.Show("You are in the NumericUpDown.ValueChanged event.");
         }
     }
 }
