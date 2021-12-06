@@ -153,7 +153,11 @@ namespace Musk_Inspections
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CreateWordDocument(@"C:\Users\Rui\source\repos\ApostolApostolov\Musk_Inspection\Temp.docx", @"C:\Users\Rui\source\repos\ApostolApostolov\Musk_Inspection\MuskReport.docx");
+            string filePathWord = Dashboard.Directories.mainDirectory;
+            filePathWord = Path.Combine(filePathWord, "Temp.docx");
+            string newWordFilePath = Dashboard.Directories.dirWordFile;
+            newWordFilePath = Path.Combine(filePathWord, "MuskReport.docx");
+            CreateWordDocument(filePathWord, newWordFilePath);
         }
         public inspectionHSQE()
         {
