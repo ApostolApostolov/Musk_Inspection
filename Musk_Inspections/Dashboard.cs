@@ -10,6 +10,7 @@ namespace Musk_Inspections
     {
         public static class Directories
         {
+            public static string mainDirectory;
             public static string dirPDFfile;
             public static string dirWordFile;
             public static string databasePath;
@@ -49,6 +50,7 @@ namespace Musk_Inspections
         {
             string directory = Directory.GetCurrentDirectory();
             directory = directory.Substring(0, directory.Length - 9); //remove the unneccesery parts of the current directory
+            Directories.mainDirectory = directory;
             Directories.databasePath = directory;
             Directories.dirPDFfile = Path.Combine(directory, "pdf_files");
             Directories.dirWordFile = Path.Combine(directory, "word_files");

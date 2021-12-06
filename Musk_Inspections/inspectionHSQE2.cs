@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,15 +35,42 @@ namespace Musk_Inspections
                 return;
             }
 
-            //remove if everything works
-            MessageBox.Show("interventions  " + SumInterventions.ToString());
-            MessageBox.Show("interventions 1  " + inspectionHSQE.sumInterventions.ToString());
-            MessageBox.Show("Work area  " + inspectionHSQE.workArea.ToString());
-            MessageBox.Show("site index " + inspectionHSQE.siteIndex.ToString());
-            MessageBox.Show("date " + inspectionHSQE.datePicked.ToString());
-            MessageBox.Show("outstanding " + cbOutstanding.Checked.ToString());
-            inspectionHSQE.sumInterventions = 0;
 
+            string filePath = Dashboard.Directories.dirPDFfile;
+            filePath = Path.Combine(filePath, "test.pdf");
+            SaveFile(filePath);
+            intoDatabase();
+
+            MessageBox.Show("A Great Success");
+
+            
+
+        }
+
+
+        private void SaveFile(string filePath)
+        {
+            using (Stream stream = File.OpenRead(filePath))
+            {
+                byte[] buffer = new byte[stream.Length];
+                stream.Read(buffer, 0, buffer.Length);
+
+                var fi = new FileInfo(filePath);
+                string extn = fi.Extension;
+                string name = fi.Name;
+                string query = "INSERT INTO pdf_files(FileName,Data,Extension)VALUES(@name,@data,@extn)";
+
+                using (SqlConnection cn = GetConnection())
+                {
+
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cmd.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
+                    cmd.Parameters.Add("@data", SqlDbType.VarBinary).Value = buffer;
+                    cmd.Parameters.Add("@extn", SqlDbType.Char).Value = extn;
+                    cn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
         private int InsepctionHSQE2Interventions()
         {
