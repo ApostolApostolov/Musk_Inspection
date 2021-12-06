@@ -19,6 +19,11 @@ namespace Musk_Inspections
         public Dashboard()
         {
 
+            //things to talk about 
+            //where the pdf file is created
+
+
+
             //Ignore and DO NOT REMOVE THIS GIBBERISH
             //V momenta v  koito cuknish sumbmit se pravi Word file 
             // sled tova se pravi nova row s id i drygite atribyti

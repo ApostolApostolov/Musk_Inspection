@@ -17,7 +17,10 @@ namespace Musk_Inspections
 {
     public partial class inspectionHSQE : Form
     {
-        public static int sumInterventions;
+        public static string workArea;
+        public static int sumInterventions = 0;
+        public static int siteIndex;
+        public static string datePicked = null;
         private void FindAndReplace(Word.Application wordApp, object ToFindText, object replaceWithText)
         {
             object matchCase = true;
@@ -162,7 +165,7 @@ namespace Musk_Inspections
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -182,31 +185,12 @@ namespace Musk_Inspections
 
         private void cb1_SelectedIndexChanged(object sender, EventArgs e)
         {
-       
+            siteIndex = cb1.SelectedIndex;
+            datePicked = dateTimePicker1.Value.ToString("dd-MM-yyyy");
           
         }
-        private void intoDatabase()
-        {
-            using (SqlConnection cn = GetConnection())
-            {
-                //query da vzeme id-to and segashnata inspeciq
-               
-                SqlCommand cmd = new SqlCommand("sp_insert", cn);
-
-                cmd.CommandText = "SELECT IDENT_CURRENT('Inspection')";
-                int inspectionId = Convert.ToInt32(cmd.ExecuteScalar());
-
-
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Date",dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@Site_id", cb1.SelectedIndex.ToString());
-                cmd.Parameters.AddWithValue("@Work_Area", workBox.Text);
-                cmd.Parameters.AddWithValue("@Inspector_id", LoginPage.userid.currentInspectorId);
-               // cmd.Parameters.AddWithValue("@Interventions",);
-               // cmd.Parameters.AddWithValue("@Outsanding",);
-               cmd.Parameters.AddWithValue("@PDF_file",inspectionId + 2);
-            }
-        }
+       
+ 
         private void getSites()
         {
             using (SqlConnection sqlcon = new SqlConnection(Properties.Settings.Default.DB_MUSK))
@@ -240,14 +224,12 @@ namespace Musk_Inspections
             MessageBox.Show(index);
         }
 
-      //  public static int InspectionHSQEIntevention()
-       // {
-           // inspectionHSQE HSQE = new inspectionHSQE();
-        //   int kiro = inspectionHSQE.upN4
-        //     int total = Convert.ToInt32(inspectionHSQE.upN1.Value + HSQE.upN2.Value + HSQE.upN3.Value + HSQE.upN4.Value + HSQE.upN5.Value + HSQE.upN6.Value + HSQE.upN7.Value + HSQE.upN8.Value + HSQE.upN9.Value + HSQE.upN10.Value +
-        //        HSQE.upN10.Value + HSQE.upN11.Value + HSQE.upN12.Value + HSQE.upN13.Value + HSQE.upN14.Value + HSQE.upN15.Value);
-        //    return total;
-       // }
+        public void InspectionHSQEIntevention()
+        {
+             int total = Convert.ToInt32(upN1.Value + upN2.Value + upN3.Value +upN4.Value +upN5.Value + upN6.Value + upN7.Value + upN8.Value + upN9.Value +upN10.Value +
+                upN10.Value + upN11.Value + upN12.Value + upN13.Value + upN14.Value + upN15.Value);
+            sumInterventions = total;
+        }
         
         
         private void button3_Click(object sender, EventArgs e)
@@ -261,19 +243,77 @@ namespace Musk_Inspections
            
         }
         
-        private void upN1_ValueChanged(Object sender, EventArgs e)
+        private void upN1_ValueChanged_1(object sender, EventArgs e)
         {
-
-            MessageBox.Show("You are in the NumericUpDown.ValueChanged event.");
+            InspectionHSQEIntevention();
         }
-        private void upP1_ValueChanged(Object sender, EventArgs e)
-        {
 
-            MessageBox.Show("You are in the NumericUpDown.ValueChanged event.");
-        }
-        private void upN1_KeyUp(object sender, KeyEventArgs e)
+        private void upN2_ValueChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("You are in the NumericUpDown.ValueChanged event.");
+            InspectionHSQEIntevention();
+           
+        }
+
+        private void upN3_ValueChanged(object sender, EventArgs e)
+        {
+            InspectionHSQEIntevention();
+        }
+        private void upN4_ValueChanged(object sender, EventArgs e)
+        {
+            InspectionHSQEIntevention();
+        }
+
+        private void upN5_ValueChanged(object sender, EventArgs e)
+        {
+            InspectionHSQEIntevention();
+        }
+
+        private void upN6_ValueChanged(object sender, EventArgs e)
+        {
+            InspectionHSQEIntevention();
+        }
+
+        private void upN7_ValueChanged(object sender, EventArgs e)
+        {
+            InspectionHSQEIntevention();
+        }
+
+        private void upN8_ValueChanged(object sender, EventArgs e)
+        {
+            InspectionHSQEIntevention();
+        }
+
+        private void upN9_ValueChanged(object sender, EventArgs e)
+        {
+            InspectionHSQEIntevention();
+        }
+
+        private void upN10_ValueChanged(object sender, EventArgs e)
+        {
+            InspectionHSQEIntevention();
+        }
+
+        private void upN11_ValueChanged(object sender, EventArgs e)
+        {
+            InspectionHSQEIntevention();
+        }
+
+        private void upN12_ValueChanged(object sender, EventArgs e)
+        {
+            InspectionHSQEIntevention();
+        }
+        private void upN13_ValueChanged(object sender, EventArgs e)
+        {
+            InspectionHSQEIntevention();
+        }
+        private void upN14_ValueChanged(object sender, EventArgs e)
+        {
+            InspectionHSQEIntevention();
+        }
+
+        private void workBox_TextChanged(object sender, EventArgs e)
+        {
+            workArea = workBox.Text;
         }
     }
 }

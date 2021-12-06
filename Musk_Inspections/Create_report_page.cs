@@ -55,7 +55,7 @@ namespace Musk_Inspections
 
         private void Button3_Click(object sender, EventArgs e)
         {
-
+           
             this.pForms.Controls.Add(HSQE2);
             HSQE2.Show();
         }
@@ -90,8 +90,6 @@ namespace Musk_Inspections
         {
           
             return new SqlConnection(Properties.Settings.Default.DB_MUSK);
-            // "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db_Musk.mdf;Integrated Security=True"
-            //(Properties.Settings.Default.db_Musk
         }
 
         private void button4_Click_1(object sender, EventArgs e)
@@ -128,15 +126,6 @@ namespace Musk_Inspections
             filePath = Path.Combine(filePath, "test.pdf");
             SaveFile(filePath);
             MessageBox.Show("A Great Success");
-        }
-        private void numericUpDown1_ValueChanged(Object sender, EventArgs e)
-        {
-
-            MessageBox.Show("You are in the NumericUpDown.ValueChanged event.");
-        }
-        private void numericUpDown1_KeyUp(object sender, KeyEventArgs e)
-        {
-            MessageBox.Show("You are in the NumericUpDown.ValueChanged event.");
         }
     }
 }

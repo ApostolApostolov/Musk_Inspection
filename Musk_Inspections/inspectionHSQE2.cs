@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,9 +12,11 @@ using System.Windows.Forms;
 namespace Musk_Inspections
 {
     public partial class inspectionHSQE2 : Form
+    
     {
         public static int Interventions;
         public static int SumInterventions;
+        public static int inspectionId;
         public inspectionHSQE2()
         {
             InitializeComponent();
@@ -24,21 +27,65 @@ namespace Musk_Inspections
         private void button1_Click(object sender, EventArgs e)
         {
             int total1 = InsepctionHSQE2Interventions();
-            inspectionHSQE test = new inspectionHSQE();
-           // int total2 = inspectionHSQE.InspectionHSQEIntevention();
-          //  Interventions = total1 + total2;
-            MessageBox.Show(Interventions.ToString());
-            
+            SumInterventions = total1 + inspectionHSQE.sumInterventions;
+            if (SumInterventions == 0)
+            {
+                MessageBox.Show("You have not entered any interventions yet");
+                return;
+            }
+
+            //remove if everything works
+            MessageBox.Show("interventions  " + SumInterventions.ToString());
+            MessageBox.Show("interventions 1  " + inspectionHSQE.sumInterventions.ToString());
+            MessageBox.Show("Work area  " + inspectionHSQE.workArea.ToString());
+            MessageBox.Show("site index " + inspectionHSQE.siteIndex.ToString());
+            MessageBox.Show("date " + inspectionHSQE.datePicked.ToString());
+            MessageBox.Show("outstanding " + cbOutstanding.Checked.ToString());
+            inspectionHSQE.sumInterventions = 0;
+
         }
         private int InsepctionHSQE2Interventions()
         {
             int total = Convert.ToInt32(upN16.Value + upN17.Value + upN18.Value + upN19.Value + upN20.Value + upN21.Value + upN22.Value + upN23.Value + upN24.Value);
-            if (total == 0)
-            {
-                MessageBox.Show("You have not entered anything please do before submiting");
-                return -1;
-            }
             return total;
         }
+
+        private SqlConnection GetConnection()
+        {
+            return new SqlConnection(Properties.Settings.Default.DB_MUSK);
+        }
+
+        private void intoDatabase()
+        {
+            using (SqlConnection cn = GetConnection())
+            {
+                 
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "SELECT IDENT_CURRENT('Inspection')";
+                inspectionId = Convert.ToInt32(cmd.ExecuteScalar());
+
+            }
+            using (SqlConnection cn = GetConnection())
+            {
+                //query da vzeme id-to and segashnata inspeciq
+
+                SqlCommand cmd = new SqlCommand("sp_insert", cn);
+
+                /* remove if above works
+                cmd.CommandText = "SELECT IDENT_CURRENT('Inspection')";
+                int inspectionId = Convert.ToInt32(cmd.ExecuteScalar());
+                //SqlCommand cmd = new SqlCommand("sp_insert", cn);
+                */
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Date", inspectionHSQE.datePicked.ToString());
+                cmd.Parameters.AddWithValue("@Site_id", inspectionHSQE.siteIndex.ToString());
+                cmd.Parameters.AddWithValue("@Work_Area", inspectionHSQE.workArea.ToString());
+                cmd.Parameters.AddWithValue("@Inspector_id", LoginPage.userid.currentInspectorId);
+                cmd.Parameters.AddWithValue("@Interventions", SumInterventions.ToString());
+                cmd.Parameters.AddWithValue("@Outsanding", cbOutstanding.Checked.ToString());
+                cmd.Parameters.AddWithValue("@PDF_file", inspectionId + 2);
+            }
+        }
+
     }
 }
