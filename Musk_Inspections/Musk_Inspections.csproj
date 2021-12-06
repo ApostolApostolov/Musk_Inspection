@@ -57,7 +57,9 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="ReachFramework" />
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
@@ -94,18 +96,6 @@
     </Compile>
     <Compile Include="Admin Functions\RemoveUser.Designer.cs">
       <DependentUpon>RemoveUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin Functions\ViewDocx.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin Functions\ViewDocx.Designer.cs">
-      <DependentUpon>ViewDocx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin Functions\ViewPDF.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin Functions\ViewPDF.Designer.cs">
-      <DependentUpon>ViewPDF.cs</DependentUpon>
     </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
@@ -153,9 +143,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin Functions\RemoveUser.resx">
       <DependentUpon>RemoveUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin Functions\ViewDocx.resx">
-      <DependentUpon>ViewDocx.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Create_report_page.resx">
       <DependentUpon>Create_report_page.cs</DependentUpon>
@@ -248,6 +235,7 @@
       <DependentUpon>DB_MUSK.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Musk_Icon.ico" />
     <None Include="Musk_Logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

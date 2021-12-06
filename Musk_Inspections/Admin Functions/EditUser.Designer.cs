@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditUser));
             this.accept = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
             this.unText = new System.Windows.Forms.TextBox();
@@ -199,6 +200,7 @@
             this.Controls.Add(this.unText);
             this.Controls.Add(this.fn);
             this.Controls.Add(this.Header);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditUser";
             this.Text = "Edit User";
             this.ResumeLayout(false);

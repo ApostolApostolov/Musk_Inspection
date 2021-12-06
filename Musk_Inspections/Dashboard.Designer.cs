@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.btnHome = new System.Windows.Forms.Button();
             this.btnOpenCreateReport = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -47,7 +48,7 @@
             // btnHome
             // 
             this.btnHome.Location = new System.Drawing.Point(20, 24);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(2);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(60, 23);
             this.btnHome.TabIndex = 0;
@@ -58,7 +59,7 @@
             // btnOpenCreateReport
             // 
             this.btnOpenCreateReport.Location = new System.Drawing.Point(96, 24);
-            this.btnOpenCreateReport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOpenCreateReport.Margin = new System.Windows.Forms.Padding(2);
             this.btnOpenCreateReport.Name = "btnOpenCreateReport";
             this.btnOpenCreateReport.Size = new System.Drawing.Size(56, 23);
             this.btnOpenCreateReport.TabIndex = 1;
@@ -69,7 +70,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(402, 123);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(6, 6);
             this.button1.TabIndex = 2;
@@ -79,7 +80,7 @@
             // btnLogOff
             // 
             this.btnLogOff.Location = new System.Drawing.Point(866, 24);
-            this.btnLogOff.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogOff.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogOff.Name = "btnLogOff";
             this.btnLogOff.Size = new System.Drawing.Size(52, 23);
             this.btnLogOff.TabIndex = 3;
@@ -105,7 +106,7 @@
             "November",
             "December"});
             this.cbMonths.Location = new System.Drawing.Point(579, 117);
-            this.cbMonths.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbMonths.Margin = new System.Windows.Forms.Padding(2);
             this.cbMonths.Name = "cbMonths";
             this.cbMonths.Size = new System.Drawing.Size(92, 21);
             this.cbMonths.TabIndex = 5;
@@ -143,7 +144,7 @@
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(813, 118);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(56, 19);
             this.btnSearch.TabIndex = 11;
@@ -154,7 +155,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(684, 119);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(126, 20);
             this.dateTimePicker1.TabIndex = 12;
@@ -180,7 +181,7 @@
             this.dgv.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Location = new System.Drawing.Point(20, 150);
-            this.dgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv.Margin = new System.Windows.Forms.Padding(2);
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.RowTemplate.Height = 24;
@@ -206,7 +207,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnOpenCreateReport);
             this.Controls.Add(this.btnHome);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();

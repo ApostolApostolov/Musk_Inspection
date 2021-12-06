@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPanel));
             this.addUser = new System.Windows.Forms.Button();
             this.removeUser = new System.Windows.Forms.Button();
             this.editUser = new System.Windows.Forms.Button();
@@ -37,6 +38,8 @@
             this.Header = new System.Windows.Forms.Label();
             this.HeaderUsers = new System.Windows.Forms.Label();
             this.HeaderDocs = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // addUser
@@ -108,8 +111,9 @@
             // 
             this.Header.AutoSize = true;
             this.Header.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Header.Location = new System.Drawing.Point(75, 9);
+            this.Header.Location = new System.Drawing.Point(75, 20);
             this.Header.Name = "Header";
+            this.Header.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Header.Size = new System.Drawing.Size(118, 24);
             this.Header.TabIndex = 7;
             this.Header.Text = "Admin Panel";
@@ -137,11 +141,22 @@
             this.HeaderDocs.Text = "Documents:";
             this.HeaderDocs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Musk_Inspections.Properties.Resources.Musk_Icon;
+            this.pictureBox1.Location = new System.Drawing.Point(16, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 47);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(270, 397);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.HeaderDocs);
             this.Controls.Add(this.HeaderUsers);
             this.Controls.Add(this.Header);
@@ -151,8 +166,10 @@
             this.Controls.Add(this.editUser);
             this.Controls.Add(this.removeUser);
             this.Controls.Add(this.addUser);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminPanel";
             this.Text = "Admin Panel";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,5 +186,6 @@
         private System.Windows.Forms.Label Header;
         private System.Windows.Forms.Label HeaderUsers;
         private System.Windows.Forms.Label HeaderDocs;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

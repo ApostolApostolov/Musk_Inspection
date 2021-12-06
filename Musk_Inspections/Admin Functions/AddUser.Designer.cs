@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUser));
             this.Header = new System.Windows.Forms.Label();
             this.fn = new System.Windows.Forms.Label();
             this.fnText = new System.Windows.Forms.TextBox();
@@ -164,6 +165,7 @@
             this.Controls.Add(this.ln);
             this.Controls.Add(this.fn);
             this.Controls.Add(this.Header);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddUser";
             this.Text = "Add User";
             this.ResumeLayout(false);

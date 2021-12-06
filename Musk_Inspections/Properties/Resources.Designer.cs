@@ -63,6 +63,16 @@ namespace Musk_Inspections.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Musk_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Musk_Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Musk_Logo {
             get {
                 object obj = ResourceManager.GetObject("Musk_Logo", resourceCulture);
