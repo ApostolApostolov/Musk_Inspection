@@ -62,30 +62,6 @@ namespace Musk_Inspections
         ///
       
 
-        private void SaveFile(string filePath)
-        {
-            using(Stream stream = File.OpenRead(filePath))
-            {
-                byte[] buffer = new byte[stream.Length];
-                stream.Read(buffer, 0, buffer.Length);
-
-                var fi = new FileInfo(filePath);
-                string extn = fi.Extension;
-                string name = fi.Name;
-                string query = "INSERT INTO pdf_files(FileName,Data,Extension)VALUES(@name,@data,@extn)";
-
-                using (SqlConnection cn=GetConnection())
-                {
-                    
-                    SqlCommand cmd = new SqlCommand(query, cn);
-                    cmd.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
-                    cmd.Parameters.Add("@data", SqlDbType.VarBinary).Value = buffer;
-                    cmd.Parameters.Add("@extn", SqlDbType.Char).Value = extn;
-                    cn.Open();
-                    cmd.ExecuteNonQuery();
-                }
-            }
-        }
         public SqlConnection GetConnection()
         {
           
@@ -94,11 +70,7 @@ namespace Musk_Inspections
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            string filePath = Dashboard.Directories.dirPDFfile;
-            filePath = Path.Combine(filePath, "test.pdf");
-            SaveFile(filePath);
-            //insert into inspection
-            MessageBox.Show("A Great Success");
+           
         }
         private void intoDatabase()
         {
