@@ -54,6 +54,10 @@
     <Reference Include="GemBox.Document, Version=33.0.0.1345, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
       <HintPath>..\packages\GemBox.Document.33.0.1345\lib\net35\GemBox.Document.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="ReachFramework" />
@@ -115,6 +119,12 @@
     <Compile Include="AdminPanel.Designer.cs">
       <DependentUpon>AdminPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImageUploadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageUploadForm.designer.cs">
+      <DependentUpon>ImageUploadForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="inspectionHSQE.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPanel.resx">
       <DependentUpon>AdminPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageUploadForm.resx">
+      <DependentUpon>ImageUploadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inspectionHSQE.resx">
       <DependentUpon>inspectionHSQE.cs</DependentUpon>
@@ -228,6 +241,13 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AppData\AppDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AppData\AppDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>AppDB.mdf</DependentUpon>
+    </Content>
     <Content Include="DB_MUSK.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
