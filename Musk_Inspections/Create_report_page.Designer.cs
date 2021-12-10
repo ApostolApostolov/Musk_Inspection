@@ -75,7 +75,7 @@
             this.pForms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pForms.Location = new System.Drawing.Point(2, 65);
             this.pForms.Name = "pForms";
-            this.pForms.Size = new System.Drawing.Size(947, 606);
+            this.pForms.Size = new System.Drawing.Size(947, 885);
             this.pForms.TabIndex = 3;
             this.pForms.Paint += new System.Windows.Forms.PaintEventHandler(this.pForms_Paint);
             // 

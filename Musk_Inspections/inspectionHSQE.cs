@@ -155,8 +155,10 @@ namespace Musk_Inspections
         {
             string filePathWord = Dashboard.Directories.mainDirectory;
             filePathWord = Path.Combine(filePathWord, "Temp.docx");
+
             string newWordFilePath = Dashboard.Directories.dirWordFile;
             newWordFilePath = Path.Combine(filePathWord, "MuskReport.docx");
+
             CreateWordDocument(filePathWord, newWordFilePath);
         }
         public inspectionHSQE()

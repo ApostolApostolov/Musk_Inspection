@@ -87,31 +87,36 @@ namespace Musk_Inspections
         {
             using (SqlConnection cn = GetConnection())
             {
-                 
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "SELECT IDENT_CURRENT('Inspection')";
+                cn.Open();
+                string query = "SELECT IDENT_CURRENT('Inspection')";
+                SqlCommand cmd = new SqlCommand(query, cn);
                 inspectionId = Convert.ToInt32(cmd.ExecuteScalar());
 
             }
             using (SqlConnection cn = GetConnection())
             {
                 //query da vzeme id-to and segashnata inspeciq
-
-                SqlCommand cmd = new SqlCommand("sp_insert", cn);
+               
+                string query = "INSERT INTO Inspection(inspectionDate,Site_id,Work_Area,Inspector_id,Interventions,Outstanding,PDF_file) " +
+                    "VALUES(@Date,@Site_id,@Work_Area,@Inspector_id,@Interventions,@Outstanding,@PDF_file )";
+                SqlCommand cmd = new SqlCommand(query, cn);
 
                 /* remove if above works
                 cmd.CommandText = "SELECT IDENT_CURRENT('Inspection')";
                 int inspectionId = Convert.ToInt32(cmd.ExecuteScalar());
                 //SqlCommand cmd = new SqlCommand("sp_insert", cn);
                 */
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Date", inspectionHSQE.datePicked.ToString());
-                cmd.Parameters.AddWithValue("@Site_id", inspectionHSQE.siteIndex.ToString());
-                cmd.Parameters.AddWithValue("@Work_Area", inspectionHSQE.workArea.ToString());
-                cmd.Parameters.AddWithValue("@Inspector_id", LoginPage.userid.currentInspectorId);
-                cmd.Parameters.AddWithValue("@Interventions", SumInterventions.ToString());
-                cmd.Parameters.AddWithValue("@Outsanding", cbOutstanding.Checked.ToString());
-                cmd.Parameters.AddWithValue("@PDF_file", inspectionId + 2);
+                
+                cmd.Parameters.Add("@Date",SqlDbType.Date).Value = inspectionHSQE.datePicked; //inspectionHSQE.datePicked
+                cmd.Parameters.Add("@Site_id", SqlDbType.Int).Value =inspectionHSQE.siteIndex;
+                cmd.Parameters.Add("@Work_Area", SqlDbType.NVarChar).Value = inspectionHSQE.workArea;
+                cmd.Parameters.Add("@Inspector_id", SqlDbType.Int).Value = 1;
+                cmd.Parameters.Add("@Interventions", SqlDbType.Int).Value =  SumInterventions;
+                cmd.Parameters.Add("@Outstanding", SqlDbType.Bit).Value = cbOutstanding.Checked;
+                cmd.Parameters.Add("@PDF_file", SqlDbType.Int ).Value = inspectionId + 2;
+                //cmd.Parameters.AddWithValue("@Date",SqlDbType.)
+                cn.Open();
+                cmd.ExecuteNonQuery();
             }
         }
 

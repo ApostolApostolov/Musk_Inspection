@@ -165,7 +165,7 @@ namespace Musk_Inspections
                 var reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    var name = reader["FIleName"].ToString();
+                    var name = reader["FileName"].ToString();
                     var data = (byte[])reader["data"];
                     var extn = reader["Extension"].ToString();
                     var newFileName = name.Replace(extn, DateTime.Now.ToString("ddMMyyyyhhmmss")) + extn;
