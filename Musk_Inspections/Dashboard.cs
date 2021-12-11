@@ -16,7 +16,10 @@ namespace Musk_Inspections
             public static string databasePath;
         }
        
-
+        public static class pages
+        {
+            public static Create_report_page Cr = new Create_report_page();
+        }
         public Dashboard()
         {
 
@@ -60,8 +63,8 @@ namespace Musk_Inspections
         private void btnOpenCreateReport_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Create_report_page Cr = new Create_report_page();
-            Cr.ShowDialog();
+
+            pages.Cr.ShowDialog();
             this.Close();
         }
 
