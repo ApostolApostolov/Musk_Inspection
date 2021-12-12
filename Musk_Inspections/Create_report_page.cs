@@ -61,14 +61,20 @@ namespace Musk_Inspections
         
         private void Button2_Click(object sender, EventArgs e)
         {
-            
+            if (pForms.Controls.Count == 0)
+            {
+                return;
+            }
             this.pForms.Controls.Add(pages.HSQE);
             pages.HSQE.Show();
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-           
+            if (pForms.Controls.Count == 0)
+            {
+                return;
+            }
             this.pForms.Controls.Add(pages.HSQE2);
             pages.HSQE2.Show();
         }
