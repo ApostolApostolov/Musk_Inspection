@@ -105,12 +105,6 @@ namespace Musk_Inspections
 
         }
 
-        private void Button5_Click(object sender, EventArgs e)
-        {
-            string filePath = Dashboard.Directories.dirPDFfile;
-            filePath = Path.Combine(filePath, "test.pdf");
-            //SaveFile(filePath);
-            MessageBox.Show("A Great Success");
-        }
+     
     }
 }

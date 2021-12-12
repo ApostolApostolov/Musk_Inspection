@@ -156,12 +156,7 @@ namespace Musk_Inspections
                 MessageBox.Show("You have not entered any interventions yet");
                 return;
             }
-            else
-            {
-               ;
-                MessageBox.Show("this is "+ sumInterventionsHSQE2.ToString());
-                return;
-            }
+            
              //gets the template
             string fpMain = Dashboard.Directories.mainDirectory;
             string filePathWord = Path.Combine(fpMain, "Temp.docx");
@@ -251,22 +246,7 @@ namespace Musk_Inspections
             }
         }
 
-        private void totalInterventions_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        // private void upN16_ValueChanged(object sender, EventArgs e)
-        //  {
-        //     sumtotalInterventions();
-        //   MessageBox.Show("You have not entered any interventions yet");
-        //    totalInterventions.Value = sumInterventionsHSQE2;
-        // }
-        //sumtotalInterventions();
-        //MessageBox.Show("You have not entered any interventions yet");
-        //totalInterventions.Text = sumInterventionsHSQE2.ToString();
-
-
+        
 
         private void sumtotalInterventions()
         {

@@ -23,25 +23,7 @@ namespace Musk_Inspections
         public Dashboard()
         {
 
-            //things to talk about 
-            //where the pdf file is created
 
-
-
-            //Ignore and DO NOT REMOVE THIS GIBBERISH
-            //V momenta v  koito cuknish sumbmit se pravi Word file 
-            // sled tova se pravi nova row s id i drygite atribyti
-            //sled tova vzima word fila i go preimenyva s id to 
-            //chak togava pravi pdf file s id na reporta
-            //!! no moje i da napravim purvo row i sled tova da kopirame id-to i da go slojim na word fila
-            // Da napravish 
-            // 1 da pokazva iztegli vmesto linka kum failsa
-            // nameri nachin da otvaeq faila sled kato cuknish na kletkata (VIEW) tova e samo za PDF
-            // chujdite klychove da pokazvat value vmesto reference
-            //fynkciq za proverqvaneto dali e napisano neshto v HSQE (zasega samo purvite 3 reda) ako ne suobshenie che e ne e napisal nishto ili prosto go ignorira
-
-            // YeeYee
-            //test
             InitializeComponent();
             //correct format for picking a date
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
