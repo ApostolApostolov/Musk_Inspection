@@ -156,7 +156,11 @@ namespace Musk_Inspections
                 MessageBox.Show("You have not entered any interventions yet");
                 return;
             }
-            
+            if(CheckBegginingTextBoxFilledUp() == true)
+            {
+                return;
+            }
+
              //gets the template
             string fpMain = Dashboard.Directories.mainDirectory;
             string filePathWord = Path.Combine(fpMain, "Temp.docx");
@@ -174,6 +178,36 @@ namespace Musk_Inspections
             inspectionIntoDatabase();
 
             MessageBox.Show("A Great Success");
+        }
+
+        private Boolean CheckBegginingTextBoxFilledUp()
+        {
+            if (pages.HSQE.workArea == null)
+            {
+                 MessageBox.Show("Please add a work area");
+                return true;               
+            }
+            else if (pages.HSQE.supervisorBox == null)
+            {
+                MessageBox.Show("Please add a supervisor");
+                return true;
+            }
+            else if (pages.HSQE.jobBox == null)
+            {
+                MessageBox.Show("Please add a job desription");
+                return true;
+            }
+            else if (pages.HSQE.typeBox == null)
+            {
+                MessageBox.Show("Please add a type of job ");
+                return true;
+            }
+           
+            else
+            {
+                return false;
+            }
+
         }
 
 
@@ -257,49 +291,56 @@ namespace Musk_Inspections
         private void upN17_ValueChanged_1(object sender, EventArgs e)
         {
             sumtotalInterventions();
-            MessageBox.Show("You have not entered any interventions yet");
+       
             totalInterventions.Text = sumInterventionsHSQE2.ToString();
         }
 
         private void upN16_ValueChanged(object sender, EventArgs e)
         {
             sumtotalInterventions();
-            MessageBox.Show("You have not entered any interventions yet");
+            totalInterventions.Text = sumInterventionsHSQE2.ToString();
         }
 
         private void upN18_ValueChanged(object sender, EventArgs e)
         {
             sumtotalInterventions();
+            totalInterventions.Text = sumInterventionsHSQE2.ToString();
         }
 
         private void upN19_ValueChanged(object sender, EventArgs e)
         {
             sumtotalInterventions();
+            totalInterventions.Text = sumInterventionsHSQE2.ToString();
         }
 
         private void upN20_ValueChanged(object sender, EventArgs e)
         {
             sumtotalInterventions();
+            totalInterventions.Text = sumInterventionsHSQE2.ToString();
         }
 
         private void upN21_ValueChanged(object sender, EventArgs e)
         {
             sumtotalInterventions();
+            totalInterventions.Text = sumInterventionsHSQE2.ToString();
         }
 
         private void upN22_ValueChanged(object sender, EventArgs e)
         {
             sumtotalInterventions();
+            totalInterventions.Text = sumInterventionsHSQE2.ToString();
         }
 
         private void upN23_ValueChanged(object sender, EventArgs e)
         {
             sumtotalInterventions();
+            totalInterventions.Text = sumInterventionsHSQE2.ToString();
         }
 
         private void upN24_ValueChanged(object sender, EventArgs e)
         {
             sumtotalInterventions();
+            totalInterventions.Text = sumInterventionsHSQE2.ToString();
         }
     }
 }
