@@ -236,7 +236,7 @@ namespace Musk_Inspections
                 cmd.Parameters.Add("@Date",SqlDbType.Date).Value = pages.HSQE.datePicked; 
                 cmd.Parameters.Add("@Site_id", SqlDbType.Int).Value = pages.HSQE.siteIndex;
                 cmd.Parameters.Add("@Work_Area", SqlDbType.NVarChar).Value = pages.HSQE.workArea;
-                cmd.Parameters.Add("@Inspector_id", SqlDbType.Int).Value = 1;
+                cmd.Parameters.Add("@Inspector_id", SqlDbType.Int).Value = LoginPage.userid.currentInspectorId;
                 cmd.Parameters.Add("@Interventions", SqlDbType.Int).Value = sumInterventionsHSQE2;
                 cmd.Parameters.Add("@Outstanding", SqlDbType.Bit).Value = cbOutstanding.Checked;
                 cmd.Parameters.Add("@PDF_file", SqlDbType.Int ).Value = inspectionId + 1;

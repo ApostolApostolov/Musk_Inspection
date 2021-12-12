@@ -17,7 +17,7 @@ namespace Musk_Inspections
     {
         public static class userid
         {
-            public static string currentInspectorId;
+            public  static string currentInspectorId;
 
         }
 
@@ -55,6 +55,7 @@ namespace Musk_Inspections
                     {
                         data = GetUser(cn, "Inspector", u, password);
 
+                        userid.currentInspectorId = u;
                         Reconnect(cn);
                         data.Fill(table);
                         if (table.Rows.Count != 1)
