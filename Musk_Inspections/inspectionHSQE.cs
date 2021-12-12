@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 using System.IO;
-using System.Reflection;
 using System.Data.SqlClient;
 
 namespace Musk_Inspections
@@ -17,7 +9,7 @@ namespace Musk_Inspections
     public partial class inspectionHSQE : Form
     {
         public string workArea;
-        public int sumInterventions = 0;
+        public int sumInterventionsHSQE = 0;
         public int siteIndex;
         public string datePicked = null;
         private void FindAndReplace(Word.Application wordApp, object ToFindText, object replaceWithText)
@@ -127,9 +119,9 @@ namespace Musk_Inspections
 
         public void InspectionHSQEIntevention()
         {
-             int total = Convert.ToInt32(upN1.Value + upN2.Value + upN3.Value +upN4.Value +upN5.Value + upN6.Value + upN7.Value + upN8.Value + upN9.Value +upN10.Value +
+             int total = Convert.ToInt32(upN1.Value + upN2.Value + upN3.Value +upN4.Value +upN5.Value + upN6.Value + upN7.Value + upN8.Value + upN9.Value + upN10.Value +
                 upN10.Value + upN11.Value + upN12.Value + upN13.Value + upN14.Value + upN15.Value);
-            sumInterventions = total;
+            sumInterventionsHSQE = total;
         }
         
         
@@ -147,6 +139,7 @@ namespace Musk_Inspections
         private void upN1_ValueChanged_1(object sender, EventArgs e)
         {
             InspectionHSQEIntevention();
+            
         }
 
         private void upN2_ValueChanged(object sender, EventArgs e)
