@@ -71,19 +71,30 @@ namespace Musk_Inspections
             }
         }
 
-        private void CreateWordDocument(object filename, object SaveAs, object bk)
+        private void CopyTemp(object origin, object temp)
+        {
+            try { File.Copy(origin.ToString(), temp.ToString(), true); }
+            catch (Exception e) { MessageBox.Show("Could not create Temp file. Please try again."); }
+        }
+
+        private void CreateWordDocument(object filename, object SaveAs)
         {
             Word.Application wordApp = new Word.Application();
             object missing = Missing.Value;
             Word.Document myWordDoc = null;
 
-            if (File.Exists((string)filename))
+            object tempTemplate = Path.GetTempPath() + "Temp.docx";
+
+            if (!File.Exists(tempTemplate.ToString()))
+                CopyTemp(filename, tempTemplate);
+
+            if (File.Exists(tempTemplate.ToString()))
             {
                 object readOnly = false;
                 object isVisible = false;
                 wordApp.Visible = false;
 
-                myWordDoc = wordApp.Documents.Open(ref filename, ref missing, ref readOnly,
+                myWordDoc = wordApp.Documents.Open(ref tempTemplate, ref missing, ref readOnly,
                                         ref missing, ref missing, ref missing,
                                         ref missing, ref missing, ref missing,
                                         ref missing, ref missing, ref missing,
@@ -213,26 +224,6 @@ namespace Musk_Inspections
                                ref missing, ref missing, ref missing);
 
                 myWordDoc.Close();
-
-
-                // Replace Temp.docx with backup so is not overridden
-
-                myWordDoc = wordApp.Documents.Open(bk, ref missing, ref missing,
-                                        ref missing, ref missing, ref missing,
-                                        ref missing, ref missing, ref missing,
-                                        ref missing, ref missing, ref missing,
-                                        ref missing, ref missing, ref missing, ref missing);
-
-                myWordDoc.Activate();
-
-                myWordDoc.SaveAs2(ref filename, ref missing, ref missing,
-                               ref missing, ref missing, ref missing,
-                               ref missing, ref missing, ref missing,
-                               ref missing, ref missing, ref missing,
-                               ref missing, ref missing, ref missing);
-
-                myWordDoc.Close();
-
             }
             catch(Exception e)
             {
@@ -265,8 +256,6 @@ namespace Musk_Inspections
             string fpMain = Dashboard.Directories.mainDirectory;
             string filePathWord = Path.Combine(fpMain, "Temp.docx");
 
-            string filePathWordBK = Path.Combine(fpMain, "TempBK.docx");
-
             //create the path for the new file
             string fpPDF = Dashboard.Directories.dirPDFfile;
             string newPDFFilePath = Path.Combine(fpPDF, inspectionId + ".pdf");
@@ -278,7 +267,7 @@ namespace Musk_Inspections
             //filePath = Path.Combine(filePath, inspectionId + ".pdf");
             //when we create pdf file
 
-            CreateWordDocument(filePathWord, newPDFFilePath, filePathWordBK);
+            CreateWordDocument(filePathWord, newPDFFilePath);
 
             SaveFileIntoDatabase(filePath);
             inspectionIntoDatabase();

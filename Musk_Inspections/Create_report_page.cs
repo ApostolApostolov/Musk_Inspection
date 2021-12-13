@@ -42,7 +42,6 @@ namespace Musk_Inspections
             Dashboard dash = new Dashboard();
             dash.ShowDialog();
             this.Close();
-          
         }
 
         private void openFormButton_Click(object sender, EventArgs e)
@@ -87,10 +86,6 @@ namespace Musk_Inspections
             return new SqlConnection(Properties.Settings.Default.DB_MUSK);
         }
 
-        private void button4_Click_1(object sender, EventArgs e)
-        {
-           
-        }
         private void intoDatabase()
         {
  
@@ -99,11 +94,6 @@ namespace Musk_Inspections
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
-        
-        private void button3_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void Create_report_page_Load(object sender, EventArgs e)
