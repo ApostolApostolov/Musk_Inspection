@@ -17,8 +17,6 @@ namespace Musk_Inspections
         public inspectionHSQE2(Create_report_page.Pages pages)
         {
             InitializeComponent();
-            //removes the arrows
-            //totalInterventions.Controls.RemoveAt(0);
             this.pages = pages;
         }
 

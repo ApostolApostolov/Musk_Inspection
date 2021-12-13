@@ -91,6 +91,7 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(76, 20);
             this.tbPassword.TabIndex = 4;
+            this.tbPassword.UseSystemPasswordChar = true;
             // 
             // Logo
             // 

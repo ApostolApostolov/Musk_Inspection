@@ -40,14 +40,6 @@ namespace Musk_Inspections
                 ref matchControl);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string filePathWord = Dashboard.Directories.mainDirectory;
-            filePathWord = Path.Combine(filePathWord, "Temp.docx");
-
-            string newWordFilePath = Dashboard.Directories.dirWordFile;
-            newWordFilePath = Path.Combine(filePathWord, "MuskReport.docx");
-        }
         public inspectionHSQE()
         {
             InitializeComponent();

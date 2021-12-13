@@ -111,7 +111,9 @@ namespace Musk_Inspections
                     "SELECT Inpections_id, Date, SiteName, Work_Area, FirstName, Interventions, Outstanding, FileName  FROM Inspection " +
                     " INNER JOIN Sites ON Sites.Site_id = Inspection.Site_id" +
                     " INNER JOIN Inspector ON Inspector.Inspector_id = Inspection.Inspector_id " +
-                    " INNER JOIN pdf_files ON pdf_files.ID = Inspection.PDF_file", sqlcon);
+                    " INNER JOIN pdf_files ON pdf_files.ID = Inspection.PDF_file" +
+                    "WHERE Inspector_id =" + LoginPage.userid.currentInspectorId +
+                    "Where Sites = " + tbSite + "%", sqlcon);
                 DataTable dtb1 = new DataTable();
                 sqlDa.Fill(dtb1);
 

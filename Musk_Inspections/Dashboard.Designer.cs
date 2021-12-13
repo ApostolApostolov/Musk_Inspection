@@ -34,13 +34,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnLogOff = new System.Windows.Forms.Button();
             this.cbMonths = new System.Windows.Forms.ComboBox();
-            this.lblInspector = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblSite = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tbSite = new System.Windows.Forms.TextBox();
-            this.tbInspector = new System.Windows.Forms.TextBox();
             this.dgv = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
@@ -111,16 +109,6 @@
             this.cbMonths.Size = new System.Drawing.Size(92, 21);
             this.cbMonths.TabIndex = 5;
             // 
-            // lblInspector
-            // 
-            this.lblInspector.AutoSize = true;
-            this.lblInspector.Location = new System.Drawing.Point(279, 118);
-            this.lblInspector.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblInspector.Name = "lblInspector";
-            this.lblInspector.Size = new System.Drawing.Size(51, 13);
-            this.lblInspector.TabIndex = 7;
-            this.lblInspector.Text = "Inspector";
-            // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
@@ -167,13 +155,6 @@
             this.tbSite.Size = new System.Drawing.Size(176, 20);
             this.tbSite.TabIndex = 13;
             // 
-            // tbInspector
-            // 
-            this.tbInspector.Location = new System.Drawing.Point(335, 117);
-            this.tbInspector.Name = "tbInspector";
-            this.tbInspector.Size = new System.Drawing.Size(197, 20);
-            this.tbInspector.TabIndex = 14;
-            // 
             // dgv
             // 
             this.dgv.AllowUserToAddRows = false;
@@ -195,13 +176,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 558);
             this.Controls.Add(this.dgv);
-            this.Controls.Add(this.tbInspector);
             this.Controls.Add(this.tbSite);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.lblSite);
             this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.lblInspector);
             this.Controls.Add(this.cbMonths);
             this.Controls.Add(this.btnLogOff);
             this.Controls.Add(this.button1);
@@ -224,13 +203,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnLogOff;
         private System.Windows.Forms.ComboBox cbMonths;
-        private System.Windows.Forms.Label lblInspector;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblSite;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox tbSite;
-        private System.Windows.Forms.TextBox tbInspector;
         private System.Windows.Forms.DataGridView dgv;
     }
 }

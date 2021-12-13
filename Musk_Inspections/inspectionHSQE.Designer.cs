@@ -126,7 +126,6 @@
             this.label30 = new System.Windows.Forms.Label();
             this.workBox = new System.Windows.Forms.TextBox();
             this.supervisorBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.cb1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.upP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upP2)).BeginInit();
@@ -326,7 +325,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(186, 1);
+            this.label14.Location = new System.Drawing.Point(184, 1);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(86, 37);
@@ -337,7 +336,7 @@
             // upP1
             // 
             this.upP1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upP1.Location = new System.Drawing.Point(200, 76);
+            this.upP1.Location = new System.Drawing.Point(198, 76);
             this.upP1.Margin = new System.Windows.Forms.Padding(2);
             this.upP1.Name = "upP1";
             this.upP1.Size = new System.Drawing.Size(61, 20);
@@ -346,7 +345,7 @@
             // upP2
             // 
             this.upP2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upP2.Location = new System.Drawing.Point(200, 115);
+            this.upP2.Location = new System.Drawing.Point(198, 115);
             this.upP2.Margin = new System.Windows.Forms.Padding(2);
             this.upP2.Name = "upP2";
             this.upP2.Size = new System.Drawing.Size(62, 20);
@@ -355,7 +354,7 @@
             // upP3
             // 
             this.upP3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upP3.Location = new System.Drawing.Point(201, 154);
+            this.upP3.Location = new System.Drawing.Point(199, 154);
             this.upP3.Margin = new System.Windows.Forms.Padding(2);
             this.upP3.Name = "upP3";
             this.upP3.Size = new System.Drawing.Size(60, 20);
@@ -364,7 +363,7 @@
             // upP4
             // 
             this.upP4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upP4.Location = new System.Drawing.Point(200, 193);
+            this.upP4.Location = new System.Drawing.Point(198, 193);
             this.upP4.Margin = new System.Windows.Forms.Padding(2);
             this.upP4.Name = "upP4";
             this.upP4.Size = new System.Drawing.Size(62, 20);
@@ -373,7 +372,7 @@
             // upP5
             // 
             this.upP5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upP5.Location = new System.Drawing.Point(201, 232);
+            this.upP5.Location = new System.Drawing.Point(199, 232);
             this.upP5.Margin = new System.Windows.Forms.Padding(2);
             this.upP5.Name = "upP5";
             this.upP5.Size = new System.Drawing.Size(59, 20);
@@ -388,7 +387,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.61539F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.15385F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.69231F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 525F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 529F));
             this.tableLayoutPanel1.Controls.Add(this.comments15, 4, 19);
             this.tableLayoutPanel1.Controls.Add(this.checkBox13, 3, 17);
             this.tableLayoutPanel1.Controls.Add(this.checkBox14, 3, 18);
@@ -504,7 +503,7 @@
             // comments15
             // 
             this.comments15.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comments15.Location = new System.Drawing.Point(465, 682);
+            this.comments15.Location = new System.Drawing.Point(462, 682);
             this.comments15.Margin = new System.Windows.Forms.Padding(2);
             this.comments15.Multiline = true;
             this.comments15.Name = "comments15";
@@ -516,7 +515,7 @@
             this.checkBox13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox13.AutoSize = true;
             this.checkBox13.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox13.Location = new System.Drawing.Point(409, 629);
+            this.checkBox13.Location = new System.Drawing.Point(407, 629);
             this.checkBox13.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox13.Name = "checkBox13";
             this.checkBox13.Size = new System.Drawing.Size(15, 14);
@@ -528,7 +527,7 @@
             this.checkBox14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox14.AutoSize = true;
             this.checkBox14.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox14.Location = new System.Drawing.Point(409, 658);
+            this.checkBox14.Location = new System.Drawing.Point(407, 658);
             this.checkBox14.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox14.Name = "checkBox14";
             this.checkBox14.Size = new System.Drawing.Size(15, 14);
@@ -540,7 +539,7 @@
             this.checkBox15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox15.AutoSize = true;
             this.checkBox15.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox15.Location = new System.Drawing.Point(409, 687);
+            this.checkBox15.Location = new System.Drawing.Point(407, 687);
             this.checkBox15.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox15.Name = "checkBox15";
             this.checkBox15.Size = new System.Drawing.Size(15, 14);
@@ -550,7 +549,7 @@
             // upP13
             // 
             this.upP13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upP13.Location = new System.Drawing.Point(201, 626);
+            this.upP13.Location = new System.Drawing.Point(199, 626);
             this.upP13.Margin = new System.Windows.Forms.Padding(2);
             this.upP13.Name = "upP13";
             this.upP13.Size = new System.Drawing.Size(59, 20);
@@ -559,7 +558,7 @@
             // upN13
             // 
             this.upN13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upN13.Location = new System.Drawing.Point(295, 626);
+            this.upN13.Location = new System.Drawing.Point(293, 626);
             this.upN13.Margin = new System.Windows.Forms.Padding(2);
             this.upN13.Name = "upN13";
             this.upN13.Size = new System.Drawing.Size(59, 20);
@@ -568,7 +567,7 @@
             // upP14
             // 
             this.upP14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upP14.Location = new System.Drawing.Point(201, 655);
+            this.upP14.Location = new System.Drawing.Point(199, 655);
             this.upP14.Margin = new System.Windows.Forms.Padding(2);
             this.upP14.Name = "upP14";
             this.upP14.Size = new System.Drawing.Size(59, 20);
@@ -577,7 +576,7 @@
             // upN14
             // 
             this.upN14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upN14.Location = new System.Drawing.Point(295, 655);
+            this.upN14.Location = new System.Drawing.Point(293, 655);
             this.upN14.Margin = new System.Windows.Forms.Padding(2);
             this.upN14.Name = "upN14";
             this.upN14.Size = new System.Drawing.Size(59, 20);
@@ -586,7 +585,7 @@
             // upP15
             // 
             this.upP15.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upP15.Location = new System.Drawing.Point(201, 684);
+            this.upP15.Location = new System.Drawing.Point(199, 684);
             this.upP15.Margin = new System.Windows.Forms.Padding(2);
             this.upP15.Name = "upP15";
             this.upP15.Size = new System.Drawing.Size(59, 20);
@@ -595,7 +594,7 @@
             // upN15
             // 
             this.upN15.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upN15.Location = new System.Drawing.Point(295, 684);
+            this.upN15.Location = new System.Drawing.Point(293, 684);
             this.upN15.Margin = new System.Windows.Forms.Padding(2);
             this.upN15.Name = "upN15";
             this.upN15.Size = new System.Drawing.Size(59, 20);
@@ -604,7 +603,7 @@
             // upP12
             // 
             this.upP12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upP12.Location = new System.Drawing.Point(201, 563);
+            this.upP12.Location = new System.Drawing.Point(199, 563);
             this.upP12.Margin = new System.Windows.Forms.Padding(2);
             this.upP12.Name = "upP12";
             this.upP12.Size = new System.Drawing.Size(59, 20);
@@ -613,7 +612,7 @@
             // upN12
             // 
             this.upN12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upN12.Location = new System.Drawing.Point(295, 563);
+            this.upN12.Location = new System.Drawing.Point(293, 563);
             this.upN12.Margin = new System.Windows.Forms.Padding(2);
             this.upN12.Name = "upN12";
             this.upN12.Size = new System.Drawing.Size(59, 20);
@@ -622,7 +621,7 @@
             // upP6
             // 
             this.upP6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upP6.Location = new System.Drawing.Point(201, 300);
+            this.upP6.Location = new System.Drawing.Point(199, 300);
             this.upP6.Margin = new System.Windows.Forms.Padding(2);
             this.upP6.Name = "upP6";
             this.upP6.Size = new System.Drawing.Size(59, 20);
@@ -631,7 +630,7 @@
             // upN6
             // 
             this.upN6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upN6.Location = new System.Drawing.Point(295, 300);
+            this.upN6.Location = new System.Drawing.Point(293, 300);
             this.upN6.Margin = new System.Windows.Forms.Padding(2);
             this.upN6.Name = "upN6";
             this.upN6.Size = new System.Drawing.Size(59, 20);
@@ -640,7 +639,7 @@
             // upP7
             // 
             this.upP7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upP7.Location = new System.Drawing.Point(201, 339);
+            this.upP7.Location = new System.Drawing.Point(199, 339);
             this.upP7.Margin = new System.Windows.Forms.Padding(2);
             this.upP7.Name = "upP7";
             this.upP7.Size = new System.Drawing.Size(59, 20);
@@ -649,7 +648,7 @@
             // upN7
             // 
             this.upN7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upN7.Location = new System.Drawing.Point(295, 339);
+            this.upN7.Location = new System.Drawing.Point(293, 339);
             this.upN7.Margin = new System.Windows.Forms.Padding(2);
             this.upN7.Name = "upN7";
             this.upN7.Size = new System.Drawing.Size(59, 20);
@@ -658,7 +657,7 @@
             // upN8
             // 
             this.upN8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upN8.Location = new System.Drawing.Point(295, 378);
+            this.upN8.Location = new System.Drawing.Point(293, 378);
             this.upN8.Margin = new System.Windows.Forms.Padding(2);
             this.upN8.Name = "upN8";
             this.upN8.Size = new System.Drawing.Size(59, 20);
@@ -667,7 +666,7 @@
             // upP8
             // 
             this.upP8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upP8.Location = new System.Drawing.Point(201, 378);
+            this.upP8.Location = new System.Drawing.Point(199, 378);
             this.upP8.Margin = new System.Windows.Forms.Padding(2);
             this.upP8.Name = "upP8";
             this.upP8.Size = new System.Drawing.Size(59, 20);
@@ -676,7 +675,7 @@
             // upP9
             // 
             this.upP9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upP9.Location = new System.Drawing.Point(201, 446);
+            this.upP9.Location = new System.Drawing.Point(199, 446);
             this.upP9.Margin = new System.Windows.Forms.Padding(2);
             this.upP9.Name = "upP9";
             this.upP9.Size = new System.Drawing.Size(59, 20);
@@ -685,7 +684,7 @@
             // upN9
             // 
             this.upN9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upN9.Location = new System.Drawing.Point(295, 446);
+            this.upN9.Location = new System.Drawing.Point(293, 446);
             this.upN9.Margin = new System.Windows.Forms.Padding(2);
             this.upN9.Name = "upN9";
             this.upN9.Size = new System.Drawing.Size(59, 20);
@@ -694,7 +693,7 @@
             // upN10
             // 
             this.upN10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upN10.Location = new System.Drawing.Point(295, 485);
+            this.upN10.Location = new System.Drawing.Point(293, 485);
             this.upN10.Margin = new System.Windows.Forms.Padding(2);
             this.upN10.Name = "upN10";
             this.upN10.Size = new System.Drawing.Size(59, 20);
@@ -703,7 +702,7 @@
             // upP10
             // 
             this.upP10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upP10.Location = new System.Drawing.Point(201, 485);
+            this.upP10.Location = new System.Drawing.Point(199, 485);
             this.upP10.Margin = new System.Windows.Forms.Padding(2);
             this.upP10.Name = "upP10";
             this.upP10.Size = new System.Drawing.Size(59, 20);
@@ -712,7 +711,7 @@
             // upN11
             // 
             this.upN11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upN11.Location = new System.Drawing.Point(295, 524);
+            this.upN11.Location = new System.Drawing.Point(293, 524);
             this.upN11.Margin = new System.Windows.Forms.Padding(2);
             this.upN11.Name = "upN11";
             this.upN11.Size = new System.Drawing.Size(59, 20);
@@ -721,7 +720,7 @@
             // upP11
             // 
             this.upP11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upP11.Location = new System.Drawing.Point(201, 524);
+            this.upP11.Location = new System.Drawing.Point(199, 524);
             this.upP11.Margin = new System.Windows.Forms.Padding(2);
             this.upP11.Name = "upP11";
             this.upP11.Size = new System.Drawing.Size(59, 20);
@@ -731,7 +730,7 @@
             // 
             this.checkBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(409, 118);
+            this.checkBox2.Location = new System.Drawing.Point(407, 118);
             this.checkBox2.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(15, 14);
@@ -742,7 +741,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(281, 1);
+            this.label23.Location = new System.Drawing.Point(279, 1);
             this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(86, 37);
@@ -756,7 +755,7 @@
             this.label28.Location = new System.Drawing.Point(3, 687);
             this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(178, 13);
+            this.label28.Size = new System.Drawing.Size(176, 13);
             this.label28.TabIndex = 33;
             this.label28.Text = "15. COSHH & Asbestos";
             // 
@@ -767,7 +766,7 @@
             this.label27.Location = new System.Drawing.Point(3, 658);
             this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(178, 13);
+            this.label27.Size = new System.Drawing.Size(176, 13);
             this.label27.TabIndex = 33;
             this.label27.Text = "14. Product  Contamination";
             // 
@@ -778,7 +777,7 @@
             this.label25.Location = new System.Drawing.Point(3, 560);
             this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(178, 26);
+            this.label25.Size = new System.Drawing.Size(176, 26);
             this.label25.TabIndex = 33;
             this.label25.Text = "12. Awareness - Fire Exit, Assembly Point";
             // 
@@ -789,7 +788,7 @@
             this.label24.Location = new System.Drawing.Point(3, 527);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(178, 13);
+            this.label24.Size = new System.Drawing.Size(176, 13);
             this.label24.TabIndex = 33;
             this.label24.Text = "11. Fire Exits and Escape Routes";
             // 
@@ -800,7 +799,7 @@
             this.label15.Location = new System.Drawing.Point(3, 79);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(178, 13);
+            this.label15.Size = new System.Drawing.Size(176, 13);
             this.label15.TabIndex = 15;
             this.label15.Text = "1. Work at height";
             // 
@@ -811,7 +810,7 @@
             this.label9.Location = new System.Drawing.Point(3, 303);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(178, 13);
+            this.label9.Size = new System.Drawing.Size(176, 13);
             this.label9.TabIndex = 26;
             this.label9.Text = "6.Site Set up & Apperance, Sighage";
             // 
@@ -843,7 +842,7 @@
             this.label19.Location = new System.Drawing.Point(3, 369);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(177, 26);
+            this.label19.Size = new System.Drawing.Size(174, 26);
             this.label19.TabIndex = 30;
             this.label19.Text = "8. Certification - Training, Insurance Inspection, Induction current";
             // 
@@ -854,7 +853,7 @@
             this.label21.Location = new System.Drawing.Point(3, 449);
             this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(178, 13);
+            this.label21.Size = new System.Drawing.Size(176, 13);
             this.label21.TabIndex = 32;
             this.label21.Text = "9. Hot Work";
             // 
@@ -889,7 +888,7 @@
             this.label29.Location = new System.Drawing.Point(3, 488);
             this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(178, 13);
+            this.label29.Size = new System.Drawing.Size(176, 13);
             this.label29.TabIndex = 33;
             this.label29.Text = "10. Isolation and Lock Offs";
             // 
@@ -900,7 +899,7 @@
             this.label22.Location = new System.Drawing.Point(3, 629);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(178, 13);
+            this.label22.Size = new System.Drawing.Size(176, 13);
             this.label22.TabIndex = 33;
             this.label22.Text = "13.Waste Managment";
             // 
@@ -908,7 +907,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(374, 1);
+            this.label16.Location = new System.Drawing.Point(372, 1);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(68, 36);
@@ -919,7 +918,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(465, 1);
+            this.label26.Location = new System.Drawing.Point(462, 1);
             this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(90, 18);
@@ -930,7 +929,7 @@
             // 
             this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(409, 79);
+            this.checkBox1.Location = new System.Drawing.Point(407, 79);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
@@ -941,7 +940,7 @@
             // 
             this.checkBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(409, 157);
+            this.checkBox3.Location = new System.Drawing.Point(407, 157);
             this.checkBox3.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(15, 14);
@@ -952,7 +951,7 @@
             // 
             this.checkBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(409, 196);
+            this.checkBox4.Location = new System.Drawing.Point(407, 196);
             this.checkBox4.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(15, 14);
@@ -964,7 +963,7 @@
             this.checkBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox5.AutoSize = true;
             this.checkBox5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox5.Location = new System.Drawing.Point(409, 235);
+            this.checkBox5.Location = new System.Drawing.Point(407, 235);
             this.checkBox5.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(15, 14);
@@ -974,7 +973,7 @@
             // upN1
             // 
             this.upN1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upN1.Location = new System.Drawing.Point(294, 76);
+            this.upN1.Location = new System.Drawing.Point(292, 76);
             this.upN1.Margin = new System.Windows.Forms.Padding(2);
             this.upN1.Name = "upN1";
             this.upN1.Size = new System.Drawing.Size(61, 20);
@@ -984,7 +983,7 @@
             // upN2
             // 
             this.upN2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upN2.Location = new System.Drawing.Point(294, 115);
+            this.upN2.Location = new System.Drawing.Point(292, 115);
             this.upN2.Margin = new System.Windows.Forms.Padding(2);
             this.upN2.Name = "upN2";
             this.upN2.Size = new System.Drawing.Size(61, 20);
@@ -994,7 +993,7 @@
             // upN3
             // 
             this.upN3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upN3.Location = new System.Drawing.Point(294, 154);
+            this.upN3.Location = new System.Drawing.Point(292, 154);
             this.upN3.Margin = new System.Windows.Forms.Padding(2);
             this.upN3.Name = "upN3";
             this.upN3.Size = new System.Drawing.Size(61, 20);
@@ -1003,7 +1002,7 @@
             // upN4
             // 
             this.upN4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upN4.Location = new System.Drawing.Point(294, 193);
+            this.upN4.Location = new System.Drawing.Point(292, 193);
             this.upN4.Margin = new System.Windows.Forms.Padding(2);
             this.upN4.Name = "upN4";
             this.upN4.Size = new System.Drawing.Size(61, 20);
@@ -1012,7 +1011,7 @@
             // upN5
             // 
             this.upN5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.upN5.Location = new System.Drawing.Point(294, 232);
+            this.upN5.Location = new System.Drawing.Point(292, 232);
             this.upN5.Margin = new System.Windows.Forms.Padding(2);
             this.upN5.Name = "upN5";
             this.upN5.Size = new System.Drawing.Size(61, 20);
@@ -1021,7 +1020,7 @@
             // comments1
             // 
             this.comments1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comments1.Location = new System.Drawing.Point(465, 69);
+            this.comments1.Location = new System.Drawing.Point(462, 69);
             this.comments1.Margin = new System.Windows.Forms.Padding(2);
             this.comments1.Multiline = true;
             this.comments1.Name = "comments1";
@@ -1031,7 +1030,7 @@
             // comments2
             // 
             this.comments2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comments2.Location = new System.Drawing.Point(465, 108);
+            this.comments2.Location = new System.Drawing.Point(462, 108);
             this.comments2.Margin = new System.Windows.Forms.Padding(2);
             this.comments2.Multiline = true;
             this.comments2.Name = "comments2";
@@ -1041,7 +1040,7 @@
             // comments3
             // 
             this.comments3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comments3.Location = new System.Drawing.Point(465, 147);
+            this.comments3.Location = new System.Drawing.Point(462, 147);
             this.comments3.Margin = new System.Windows.Forms.Padding(2);
             this.comments3.Multiline = true;
             this.comments3.Name = "comments3";
@@ -1051,7 +1050,7 @@
             // comments4
             // 
             this.comments4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comments4.Location = new System.Drawing.Point(465, 186);
+            this.comments4.Location = new System.Drawing.Point(462, 186);
             this.comments4.Margin = new System.Windows.Forms.Padding(2);
             this.comments4.Multiline = true;
             this.comments4.Name = "comments4";
@@ -1061,7 +1060,7 @@
             // comments5
             // 
             this.comments5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comments5.Location = new System.Drawing.Point(465, 225);
+            this.comments5.Location = new System.Drawing.Point(462, 225);
             this.comments5.Margin = new System.Windows.Forms.Padding(2);
             this.comments5.Multiline = true;
             this.comments5.Name = "comments5";
@@ -1071,7 +1070,7 @@
             // comments7
             // 
             this.comments7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comments7.Location = new System.Drawing.Point(465, 332);
+            this.comments7.Location = new System.Drawing.Point(462, 332);
             this.comments7.Margin = new System.Windows.Forms.Padding(2);
             this.comments7.Multiline = true;
             this.comments7.Name = "comments7";
@@ -1081,7 +1080,7 @@
             // comments8
             // 
             this.comments8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comments8.Location = new System.Drawing.Point(465, 371);
+            this.comments8.Location = new System.Drawing.Point(462, 371);
             this.comments8.Margin = new System.Windows.Forms.Padding(2);
             this.comments8.Multiline = true;
             this.comments8.Name = "comments8";
@@ -1091,7 +1090,7 @@
             // comments9
             // 
             this.comments9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comments9.Location = new System.Drawing.Point(465, 439);
+            this.comments9.Location = new System.Drawing.Point(462, 439);
             this.comments9.Margin = new System.Windows.Forms.Padding(2);
             this.comments9.Multiline = true;
             this.comments9.Name = "comments9";
@@ -1101,7 +1100,7 @@
             // comments10
             // 
             this.comments10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comments10.Location = new System.Drawing.Point(465, 478);
+            this.comments10.Location = new System.Drawing.Point(462, 478);
             this.comments10.Margin = new System.Windows.Forms.Padding(2);
             this.comments10.Multiline = true;
             this.comments10.Name = "comments10";
@@ -1111,7 +1110,7 @@
             // comments11
             // 
             this.comments11.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comments11.Location = new System.Drawing.Point(465, 517);
+            this.comments11.Location = new System.Drawing.Point(462, 517);
             this.comments11.Margin = new System.Windows.Forms.Padding(2);
             this.comments11.Multiline = true;
             this.comments11.Name = "comments11";
@@ -1121,7 +1120,7 @@
             // comments12
             // 
             this.comments12.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comments12.Location = new System.Drawing.Point(465, 556);
+            this.comments12.Location = new System.Drawing.Point(462, 556);
             this.comments12.Margin = new System.Windows.Forms.Padding(2);
             this.comments12.Multiline = true;
             this.comments12.Name = "comments12";
@@ -1131,7 +1130,7 @@
             // comments14
             // 
             this.comments14.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comments14.Location = new System.Drawing.Point(465, 653);
+            this.comments14.Location = new System.Drawing.Point(462, 653);
             this.comments14.Margin = new System.Windows.Forms.Padding(2);
             this.comments14.Multiline = true;
             this.comments14.Name = "comments14";
@@ -1141,7 +1140,7 @@
             // comments13
             // 
             this.comments13.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comments13.Location = new System.Drawing.Point(465, 624);
+            this.comments13.Location = new System.Drawing.Point(462, 624);
             this.comments13.Margin = new System.Windows.Forms.Padding(2);
             this.comments13.Multiline = true;
             this.comments13.Name = "comments13";
@@ -1153,7 +1152,7 @@
             this.checkBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox6.AutoSize = true;
             this.checkBox6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox6.Location = new System.Drawing.Point(409, 303);
+            this.checkBox6.Location = new System.Drawing.Point(407, 303);
             this.checkBox6.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(15, 14);
@@ -1165,7 +1164,7 @@
             this.checkBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox7.AutoSize = true;
             this.checkBox7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox7.Location = new System.Drawing.Point(409, 342);
+            this.checkBox7.Location = new System.Drawing.Point(407, 342);
             this.checkBox7.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(15, 14);
@@ -1177,7 +1176,7 @@
             this.checkBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox8.AutoSize = true;
             this.checkBox8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox8.Location = new System.Drawing.Point(409, 381);
+            this.checkBox8.Location = new System.Drawing.Point(407, 381);
             this.checkBox8.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox8.Name = "checkBox8";
             this.checkBox8.Size = new System.Drawing.Size(15, 14);
@@ -1189,7 +1188,7 @@
             this.checkBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox9.AutoSize = true;
             this.checkBox9.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox9.Location = new System.Drawing.Point(409, 449);
+            this.checkBox9.Location = new System.Drawing.Point(407, 449);
             this.checkBox9.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox9.Name = "checkBox9";
             this.checkBox9.Size = new System.Drawing.Size(15, 14);
@@ -1201,7 +1200,7 @@
             this.checkBox10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox10.AutoSize = true;
             this.checkBox10.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox10.Location = new System.Drawing.Point(409, 488);
+            this.checkBox10.Location = new System.Drawing.Point(407, 488);
             this.checkBox10.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox10.Name = "checkBox10";
             this.checkBox10.Size = new System.Drawing.Size(15, 14);
@@ -1213,7 +1212,7 @@
             this.checkBox11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox11.AutoSize = true;
             this.checkBox11.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox11.Location = new System.Drawing.Point(409, 527);
+            this.checkBox11.Location = new System.Drawing.Point(407, 527);
             this.checkBox11.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox11.Name = "checkBox11";
             this.checkBox11.Size = new System.Drawing.Size(15, 14);
@@ -1225,7 +1224,7 @@
             this.checkBox12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox12.AutoSize = true;
             this.checkBox12.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox12.Location = new System.Drawing.Point(409, 566);
+            this.checkBox12.Location = new System.Drawing.Point(407, 566);
             this.checkBox12.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox12.Name = "checkBox12";
             this.checkBox12.Size = new System.Drawing.Size(15, 14);
@@ -1235,7 +1234,7 @@
             // comments6
             // 
             this.comments6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comments6.Location = new System.Drawing.Point(465, 293);
+            this.comments6.Location = new System.Drawing.Point(462, 293);
             this.comments6.Margin = new System.Windows.Forms.Padding(2);
             this.comments6.Multiline = true;
             this.comments6.Name = "comments6";
@@ -1270,17 +1269,6 @@
             this.supervisorBox.Size = new System.Drawing.Size(171, 20);
             this.supervisorBox.TabIndex = 30;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(816, 81);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 29);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Save Locally";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // cb1
             // 
             this.cb1.FormattingEnabled = true;
@@ -1297,7 +1285,6 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1060, 894);
             this.Controls.Add(this.cb1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.supervisorBox);
             this.Controls.Add(this.workBox);
             this.Controls.Add(this.label30);
@@ -1388,7 +1375,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Button button1;
         public System.Windows.Forms.NumericUpDown upP1;
         public System.Windows.Forms.ComboBox cb1;
         public System.Windows.Forms.ComboBox comboBox4;
