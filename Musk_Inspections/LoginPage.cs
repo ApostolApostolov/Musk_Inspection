@@ -55,7 +55,7 @@ namespace Musk_Inspections
                     {
                         data = GetUser(cn, "Inspector", u, password);
 
-                        userid.currentInspectorId = u;
+                        
                         Reconnect(cn);
                         data.Fill(table);
                         if (table.Rows.Count != 1)
@@ -117,6 +117,7 @@ namespace Musk_Inspections
             {
                 case 'i':
                     {
+                        userid.currentInspectorId = tbUsername.Text.Remove(0,1);
                         this.Hide();
                         Dashboard dash = new Dashboard();
                         dash.ShowDialog();

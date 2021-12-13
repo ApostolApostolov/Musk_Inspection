@@ -77,14 +77,7 @@ namespace Musk_Inspections
             this.pForms.Controls.Add(pages.HSQE2);
             pages.HSQE2.Show();
         }
-        ///
-      
-
-        public SqlConnection GetConnection()
-        {
-          
-            return new SqlConnection(Properties.Settings.Default.DB_MUSK);
-        }
+       
 
         private void intoDatabase()
         {
