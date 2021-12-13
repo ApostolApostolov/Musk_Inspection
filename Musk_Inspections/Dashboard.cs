@@ -103,17 +103,22 @@ namespace Musk_Inspections
         private void btnSearch_Click(object sender, EventArgs e)
             
         {
+            string site = "";
+            if (tbSite != null) {
+                site = tbSite.Text;
+            }
             using (SqlConnection sqlcon = new SqlConnection(Properties.Settings.Default.DB_MUSK))
             {
                 sqlcon.Open();
+                
 
                 SqlDataAdapter sqlDa = new SqlDataAdapter(
-                    "SELECT Inpections_id, Date, SiteName, Work_Area, FirstName, Interventions, Outstanding, FileName  FROM Inspection " +
+                    "SELECT Inpections_id, inspectionDate, SiteName, Work_Area, FirstName, LastName, Interventions, Outstanding, FileName  FROM Inspection " +
                     " INNER JOIN Sites ON Sites.Site_id = Inspection.Site_id" +
                     " INNER JOIN Inspector ON Inspector.Inspector_id = Inspection.Inspector_id " +
                     " INNER JOIN pdf_files ON pdf_files.ID = Inspection.PDF_file" +
-                    "WHERE Inspector_id =" + LoginPage.userid.currentInspectorId +
-                    "Where Sites = " + tbSite + "%", sqlcon);
+                    "   WHERE Inspector.Inspector_id = " + LoginPage.userid.currentInspectorId + "AND SiteName LIKE '%"+ site +"%' ", sqlcon);
+
                 DataTable dtb1 = new DataTable();
                 sqlDa.Fill(dtb1);
 

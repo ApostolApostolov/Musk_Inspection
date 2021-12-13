@@ -271,19 +271,15 @@ namespace Musk_Inspections
             string fpPDF = Dashboard.Directories.dirPDFfile;
             string newPDFFilePath = Path.Combine(fpPDF, inspectionId + ".pdf");
 
-            //gets the pdf file to put it into the database
-            //no pdf file created yet
-            string filePath = Dashboard.Directories.dirPDFfile;
-            filePath = Path.Combine(filePath, "test.pdf");
-            //filePath = Path.Combine(filePath, inspectionId + ".pdf");
-            //when we create pdf file
+           
 
             CreateWordDocument(filePathWord, newPDFFilePath, filePathWordBK);
 
-            SaveFileIntoDatabase(filePath);
+            
+            SaveFileIntoDatabase(newPDFFilePath);
             inspectionIntoDatabase();
 
-            MessageBox.Show("A Great Success");
+            MessageBox.Show("Inspection addedd succefully");
         }
 
         private Boolean CheckBegginingTextBoxFilledUp()
