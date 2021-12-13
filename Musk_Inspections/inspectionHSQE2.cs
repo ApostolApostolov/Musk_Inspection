@@ -171,6 +171,8 @@ namespace Musk_Inspections
             //no pdf file created yet
             string filePath = Dashboard.Directories.dirPDFfile;
             filePath = Path.Combine(filePath, "test.pdf");
+            //filePath = Path.Combine(filePath, inspectionId + ".pdf");
+            //when we create pdf file
 
             CreateWordDocument(filePathWord, newWordFilePath);
 
