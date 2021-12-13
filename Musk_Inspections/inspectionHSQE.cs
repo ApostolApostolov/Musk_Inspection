@@ -102,12 +102,7 @@ namespace Musk_Inspections
         }
 
 
-        //delet after use
-        private void button2_Click(object sender, EventArgs e)
-        {
-           string index = cb1.SelectedIndex.ToString();
-            MessageBox.Show(index);
-        }
+ 
 
         public void InspectionHSQEIntevention()
         {
@@ -117,16 +112,7 @@ namespace Musk_Inspections
         }
         
         
-        //private void button3_Click(object sender, EventArgs e)
-        //{
-        //    Create_report_page cpr = new Create_report_page();
-        //    inspectionHSQE2 HSQE2 = new inspectionHSQE2(cpr.pages);
-        //    HSQE2.TopLevel = false;
-        //    cpr.pForms.Controls.Add(HSQE2);
-        //    HSQE2.Show();
-        //    this.Hide();
-           
-        //}
+      
         
         private void upN1_ValueChanged_1(object sender, EventArgs e)
         {
