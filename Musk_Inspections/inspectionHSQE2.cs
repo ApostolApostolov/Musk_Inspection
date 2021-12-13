@@ -167,6 +167,8 @@ namespace Musk_Inspections
             string fpWord = Dashboard.Directories.dirWordFile;
             string newWordFilePath = Path.Combine(fpWord, inspectionId + ".docx");
 
+            //gets the pdf file to put it into the database
+            //no pdf file created yet
             string filePath = Dashboard.Directories.dirPDFfile;
             filePath = Path.Combine(filePath, "test.pdf");
 
