@@ -46,6 +46,8 @@ namespace Musk_Inspections
 
         private void openFormButton_Click(object sender, EventArgs e)
         {
+            pages = new Pages();
+
             //opent the HSQE form inside the panel
             this.pForms.Controls.Add(pages.HSQE);
             this.pForms.Controls.Add(pages.HSQE2);

@@ -268,6 +268,9 @@ namespace Musk_Inspections
             SaveFileIntoDatabase(newPDFFilePath);
             inspectionIntoDatabase();
 
+            pages.HSQE.Close();
+            pages.HSQE2.Close();
+
             MessageBox.Show("Inspection addedd succefully");
         }
 
