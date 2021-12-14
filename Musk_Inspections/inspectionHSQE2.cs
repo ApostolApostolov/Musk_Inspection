@@ -18,6 +18,19 @@ namespace Musk_Inspections
         {
             InitializeComponent();
             this.pages = pages;
+
+            InitLocalInspID();
+        }
+
+        private void InitLocalInspID()
+        {
+            using (SqlConnection cn = GetConnection())
+            {
+                cn.Open();
+                string query = "SELECT IDENT_CURRENT('Inspection')";
+                SqlCommand cmd = new SqlCommand(query, cn);
+                inspectionId = Convert.ToInt32(cmd.ExecuteScalar());
+            }
         }
 
         public Create_report_page.Pages pages;
@@ -105,10 +118,12 @@ namespace Musk_Inspections
 
                 // Page 1
                 inspectionHSQE hsqe = pages.HSQE;
+                this.FindAndReplace(wordApp, "<report_id>", inspectionId);
                 this.FindAndReplace(wordApp, "<site>", hsqe.cb1.Text);
                 this.FindAndReplace(wordApp, "<workArea>", hsqe.workBox.Text);
                 this.FindAndReplace(wordApp, "<supervisorName>", hsqe.supervisorBox.Text);
                 this.FindAndReplace(wordApp, "<jobDescription>", hsqe.jobBox.Text);
+                this.FindAndReplace(wordApp, "<inspectorName>", hsqe.comboBox4.Text);
                 this.FindAndReplace(wordApp, "<type>", hsqe.typeBox.Text);
                 this.FindAndReplace(wordApp, "<date>", DateTime.Now.ToShortDateString());
                 this.FindAndReplace(wordApp, "<upP1>", hsqe.upP1.Text);
@@ -209,6 +224,7 @@ namespace Musk_Inspections
                 this.FindAndReplace(wordApp, "<upN24>", upN24.Text);
                 this.FindAndReplace(wordApp, "<cb24>", ReturnChecked(checkBox24));
                 this.FindAndReplace(wordApp, "<comments24>", comments24.Text);
+                this.FindAndReplace(wordApp, "<overallComments>", overallComments.Text);
             }
             else
             {
