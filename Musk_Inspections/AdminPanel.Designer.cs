@@ -38,7 +38,6 @@
             this.HeaderUsers = new System.Windows.Forms.Label();
             this.HeaderDocs = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.viewDocx = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +77,7 @@
             // viewPdf
             // 
             this.viewPdf.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.viewPdf.Location = new System.Drawing.Point(12, 316);
+            this.viewPdf.Location = new System.Drawing.Point(12, 272);
             this.viewPdf.Name = "viewPdf";
             this.viewPdf.Size = new System.Drawing.Size(247, 38);
             this.viewPdf.TabIndex = 5;
@@ -88,7 +87,7 @@
             // 
             // logout
             // 
-            this.logout.Location = new System.Drawing.Point(162, 360);
+            this.logout.Location = new System.Drawing.Point(162, 316);
             this.logout.Name = "logout";
             this.logout.Size = new System.Drawing.Size(96, 25);
             this.logout.TabIndex = 6;
@@ -140,28 +139,17 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // viewDocx
-            // 
-            this.viewDocx.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.viewDocx.Location = new System.Drawing.Point(12, 272);
-            this.viewDocx.Name = "viewDocx";
-            this.viewDocx.Size = new System.Drawing.Size(247, 38);
-            this.viewDocx.TabIndex = 4;
-            this.viewDocx.Text = "View Docx";
-            this.viewDocx.UseVisualStyleBackColor = false;
-            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 397);
+            this.ClientSize = new System.Drawing.Size(270, 352);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.HeaderDocs);
             this.Controls.Add(this.HeaderUsers);
             this.Controls.Add(this.Header);
             this.Controls.Add(this.logout);
             this.Controls.Add(this.viewPdf);
-            this.Controls.Add(this.viewDocx);
             this.Controls.Add(this.editUser);
             this.Controls.Add(this.removeUser);
             this.Controls.Add(this.addUser);
@@ -185,6 +173,5 @@
         private System.Windows.Forms.Label HeaderUsers;
         private System.Windows.Forms.Label HeaderDocs;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button viewDocx;
     }
 }
