@@ -78,22 +78,28 @@ namespace Musk_Inspections
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgv.CurrentCell.ColumnIndex.Equals(7) && e.RowIndex != -1) //7 or 8
+            if (dgv.CurrentCell.ColumnIndex.Equals(8) && e.RowIndex != -1) //7 or 8
             {
                 if (dgv.CurrentCell != null && dgv.CurrentCell.Value != null)
                 {
-                    MessageBox.Show(dgv.CurrentCell.Value.ToString());
+                    
 
                     string fileId = dgv.CurrentCell.Value.ToString();
+                    fileId = fileId.Remove(fileId.Length - 4, 4);
                     MessageBox.Show(fileId);
+                    int intId = Convert.ToInt32(fileId);
                     
-                    OpenFile(2);
+
+
+                    OpenFile(intId+1);
+
                     var selectedRow = dgv.SelectedRows;
                     foreach (var row in selectedRow)
                     {
                         int id = (int)((DataGridViewRow)row).Cells[0].Value;
                         MessageBox.Show(id.ToString());
                     }
+
                     //IMPORTANT THE FILE NAME HAS TO BE THE SAME AS THE ID
 
                 }
@@ -126,6 +132,7 @@ namespace Musk_Inspections
                 //proper names in the table displayed to the user
                 dgv.Columns["Inpections_id"].HeaderText = "Id";
                 dgv.Columns["SiteName"].HeaderText = "Site";
+                dgv.Columns["inspectionDate"].HeaderText = "Date";
                 dgv.Columns["Work_Area"].HeaderText = "Work Area";
                 dgv.Columns["FileName"].HeaderText = "Inspection";
             }
@@ -150,17 +157,18 @@ namespace Musk_Inspections
         {
             using (SqlConnection cn = GetConnection())
             {
+
                 string query = "SELECT Data,FileName,Extension FROM pdf_files WHERE ID=@id";
                 SqlCommand cmd = new SqlCommand(query, cn);
-                cmd.Parameters.Add("@id",SqlDbType.Int).Value=id;
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 cn.Open();
                 var reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    var name = reader["FileName"].ToString();
+                    var name = reader["FIleName"].ToString();
                     var data = (byte[])reader["data"];
                     var extn = reader["Extension"].ToString();
-                    var newFileName = name.Replace(extn, DateTime.Now.ToString("ddMMyyyyhhmmss")) + extn;
+                    var newFileName = name.Replace(extn, DateTime.Now.ToString("ddMMyyyy")) + extn;
 
                     File.WriteAllBytes(newFileName, data);
                     System.Diagnostics.Process.Start(newFileName);

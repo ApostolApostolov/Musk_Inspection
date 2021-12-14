@@ -248,7 +248,7 @@ namespace Musk_Inspections
             finally
             {
                 wordApp.Quit();
-                MessageBox.Show("File Created!");
+               
             }
         }
 
@@ -287,7 +287,7 @@ namespace Musk_Inspections
             pages.HSQE.Close();
             pages.HSQE2.Close();
 
-            MessageBox.Show("Inspection addedd succefully");
+            MessageBox.Show("Inspection added succefully");
         }
 
         private Boolean CheckBegginingTextBoxFilledUp()
