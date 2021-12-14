@@ -86,7 +86,7 @@ namespace Musk_Inspections
 
                     string fileId = dgv.CurrentCell.Value.ToString();
                     fileId = fileId.Remove(fileId.Length - 4, 4);
-                    MessageBox.Show(fileId);
+                    
                     int intId = Convert.ToInt32(fileId);
                     
 
