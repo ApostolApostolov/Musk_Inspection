@@ -45,7 +45,7 @@ namespace Musk_Inspections
         private void btnOpenCreateReport_Click(object sender, EventArgs e)
         {
             this.Hide();
-
+            pages.Cr = new Create_report_page();
             pages.Cr.ShowDialog();
             this.Close();
         }

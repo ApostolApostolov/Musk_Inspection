@@ -17,13 +17,24 @@ namespace Musk_Inspections
     {
         public static class userid
         {
-            public  static string currentInspectorId;
-
+            public static string currentInspectorId;
         }
 
         public LoginPage()
         {
             InitializeComponent();
+
+            this.tbUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckEnterKeyPress);
+            this.tbPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckEnterKeyPress);
+        }
+
+        private void CheckEnterKeyPress(object sender, System.Windows.Forms.KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
+
+            {
+                BtnLogin_Click(sender, null);
+            }
         }
 
         private static void Reconnect(SqlConnection cn)
