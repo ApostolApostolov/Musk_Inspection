@@ -32,13 +32,13 @@
             this.addUser = new System.Windows.Forms.Button();
             this.removeUser = new System.Windows.Forms.Button();
             this.editUser = new System.Windows.Forms.Button();
-            this.viewDocx = new System.Windows.Forms.Button();
             this.viewPdf = new System.Windows.Forms.Button();
             this.logout = new System.Windows.Forms.Button();
             this.Header = new System.Windows.Forms.Label();
             this.HeaderUsers = new System.Windows.Forms.Label();
             this.HeaderDocs = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.viewDocx = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,17 +74,6 @@
             this.editUser.Text = "Edit User";
             this.editUser.UseVisualStyleBackColor = false;
             this.editUser.Click += new System.EventHandler(this.editUser_Click);
-            // 
-            // viewDocx
-            // 
-            this.viewDocx.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.viewDocx.Location = new System.Drawing.Point(12, 272);
-            this.viewDocx.Name = "viewDocx";
-            this.viewDocx.Size = new System.Drawing.Size(247, 38);
-            this.viewDocx.TabIndex = 4;
-            this.viewDocx.Text = "View Docx";
-            this.viewDocx.UseVisualStyleBackColor = false;
-            this.viewDocx.Click += new System.EventHandler(this.viewDocx_Click);
             // 
             // viewPdf
             // 
@@ -151,6 +140,16 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // viewDocx
+            // 
+            this.viewDocx.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.viewDocx.Location = new System.Drawing.Point(12, 272);
+            this.viewDocx.Name = "viewDocx";
+            this.viewDocx.Size = new System.Drawing.Size(247, 38);
+            this.viewDocx.TabIndex = 4;
+            this.viewDocx.Text = "View Docx";
+            this.viewDocx.UseVisualStyleBackColor = false;
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,12 +179,12 @@
         private System.Windows.Forms.Button addUser;
         private System.Windows.Forms.Button removeUser;
         private System.Windows.Forms.Button editUser;
-        private System.Windows.Forms.Button viewDocx;
         private System.Windows.Forms.Button viewPdf;
         private System.Windows.Forms.Button logout;
         private System.Windows.Forms.Label Header;
         private System.Windows.Forms.Label HeaderUsers;
         private System.Windows.Forms.Label HeaderDocs;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button viewDocx;
     }
 }

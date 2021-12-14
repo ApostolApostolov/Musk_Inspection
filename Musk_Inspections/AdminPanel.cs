@@ -46,11 +46,6 @@ namespace Musk_Inspections
             eu.Show();
         }
 
-        private void viewDocx_Click(object sender, EventArgs e)
-        {
-            OpenDocumentDialog("docx");
-        }
-
         private void viewPdf_Click(object sender, EventArgs e)
         {
             OpenDocumentDialog("pdf");
@@ -62,6 +57,20 @@ namespace Musk_Inspections
 
             switch (type)
             {
+                default:
+                case "pdf":
+                    {
+                        try
+                        {
+                            process = "chrome.exe";
+                        }
+                        catch (Exception f)
+                        {
+                            process = "msedge.exe";
+                        }
+
+                        break;
+                    }
                 case "docx":
                     {
                         try
@@ -73,19 +82,6 @@ namespace Musk_Inspections
                             process = "wordpad.exe";
                         }
 
-
-                        break;
-                    }
-                case "pdf":
-                    {
-                        try
-                        {
-                            process = "chrome.exe";
-                        }
-                        catch (Exception f)
-                        {
-                            process = "msedge.exe";
-                        }
 
                         break;
                     }
