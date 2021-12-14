@@ -187,7 +187,7 @@ namespace Musk_Inspections
                 this.FindAndReplace(wordApp, "<cb15>", ReturnChecked(hsqe.checkBox15));
                 this.FindAndReplace(wordApp, "<comments15>", hsqe.comments15.Text);
 
-                // Page 2 -- ALL FIELDS THERE BUT NUMBERS NOT CHANGED**
+                // Page 2
                 this.FindAndReplace(wordApp, "<upP16>", upP16.Text);
                 this.FindAndReplace(wordApp, "<upN16>", upN16.Text);
                 this.FindAndReplace(wordApp, "<cb16>", ReturnChecked(checkBox16));
